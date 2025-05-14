@@ -134,6 +134,10 @@ form button.select-btn {
 form button.select-btn .right{
     float: right;
 }
+form .select-btn-icon {
+    width: 80px;
+    height: 80px;
+}
 form .select-icon{
     width: 120px;
     height: 120px;
