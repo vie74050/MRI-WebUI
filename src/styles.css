@@ -11,7 +11,11 @@ html, body {
     background-color: #111;
     color: white;
 }
-
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
 h1{
     font-size: 2em;
 }
@@ -36,11 +40,6 @@ header, footer {
     justify-content:center;
     gap: 2em;
     flex-wrap: wrap;
-}
-
-#schedular {
-    width: 200px;
-    height: 100%;
 }
 
 #registration {
