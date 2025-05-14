@@ -35,6 +35,7 @@ header, footer {
     flex-direction: row;
     justify-content:center;
     gap: 2em;
+    flex-wrap: wrap;
 }
 
 #schedular {
@@ -47,12 +48,12 @@ header, footer {
     padding: 10px;;
 }
 
-#registration form div {
+form div {
     display: flex;
     flex-direction: column;
     min-width: 400px;;
 }
-#registration form div>span {
+form div>span {
     display: flex;
     flex-direction: row;
     justify-content:end;
@@ -64,6 +65,7 @@ form {
     flex-direction: row;
     justify-content: space-evenly;
     gap: 2.5em;
+    flex-wrap: wrap;
 }
 
 form>div{
@@ -90,10 +92,6 @@ form div>span>select,
 form div>span>textarea {
     width: 250px;
 }
-form div span.space {
-    width: 1em;
-    flex-grow: 1;
-}
 
 input, select, textarea, 
 .select-btn {
@@ -110,28 +108,28 @@ input[type="number"] {
     width: 90px;
 }
 input:required, select:required, textarea:required,
-.select-btn {
+.select-btn,
+.field-info-safety {
     border-left: 3px solid rgb(255, 196, 0);
     border-radius: 0;
 }
 
-#registration form div.select-options {
+form div.select-options {
     display: block;
     height: fit-content;
     overflow: hidden;
 }
-#registration form div .select-options.hidden {
-    transition: 0.5s;
+form div .select-options.hidden {
     height: 0;
 }
-#registration form div.inline-flex {
+form div.inline-flex {
     display: inline-flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
 }
-#registration form div.inline-flex select,
-#registration form div.inline-flex .select-btn {
+form div.inline-flex select,
+form div.inline-flex .select-btn {
     width: 100%;
 }
 button.select-btn {
@@ -151,7 +149,7 @@ button.select-btn .right{
 }
 
 input:hover, select:hover, textarea:hover,
-.select-icon:hover {
+.select-icon:hover, button.select-btn:hover {
     background-color: #444;
     border-color: #2196f3;
     border-radius: 5px;
@@ -163,7 +161,15 @@ input:hover, select:hover, textarea:hover,
     transition: 0.3s;
 }
 
-
+div span.space {
+    width: 1em;
+    flex-grow: 1;
+}
+div.break {
+    flex-basis: 100%;
+    height: 0;
+    margin: unset;
+}
 .box {
     border: 1px solid #888;
 }
@@ -173,13 +179,11 @@ input:hover, select:hover, textarea:hover,
     margin: 0;
 }
 
-footer {
+footer{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     padding: 10px 20px;
-    background-color: #333;
-    color: white;
+    
 }
-
