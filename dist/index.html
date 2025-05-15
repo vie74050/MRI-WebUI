@@ -1,1 +1,401 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>MRI Workflow Sim</title></head><body><header><h1>MRI Workflow Simulator</h1></header><div class="main-container"><section id="schedular"><h2>Scheduler</h2><div class="input-group mb-3"><input class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1" disabled="disabled" id="search"/> <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span></div></section><section id="registration"><form id="pt-registration" action="#"><div style="width:370px"><h2>&nbsp;</h2><span><label for="lastName">* Last Name</label> <input id="lastName" name="lastName" required/></span><span><label for="firstName">First Name</label> <input id="firstName" name="firstName" required/></span><span><label for="title">Title</label> <input id="title" name="title"/></span><span><label for="" suffix>Suffix</label> <input id="suffix" name="suffix"/></span><span><label for="middleName">Middle Name</label> <input id="middleName" name="middleName"/></span><span><label for="patientId">* Patient ID</label> <input id="patientId" name="patientId" required/></span><span><label for="dob">* Date of Birth</label> <input type="date" id="dob" name="dob" placeholder="M/D/yyyy" pattern="\d{1,2}/\d{1,2}/\d{4}" required/> </span><span><label for="age">* Age</label> <span><input type="number" id="age" name="age" min="0" step="1" required/> <select id="ageUnit" name="ageUnit" required><option value="years" selected="selected">Year(s)</option><option value="months">Month(s)</option><option value="weeks">Week(s)</option><option value="days">Day(s)</option></select> </span></span><span><label for="sex">* Sex</label> <select id="sex" name="sex" required><option value="" disabled="disabled" selected="selected">Select</option><option value="male">Male</option><option value="female">Female</option><option value="other">Other</option></select> </span><span><label for="height">* Height</label> <span><span><input type="number" id="height" name="height" min="0" step="1" required/> <label id="unitsFt">ft</label></span> <span><input type="number" id="heightInch" name="heightInch" min="0" step="1" required/> <label id="unitsIn">in</label></span> </span></span><span><label for="weight">* Weight</label> <span><span><input type="number" id="weight" name="weight" min="0" step="1" required/> <label id="unitsLb">lb</label></span> <select id="units" name="units" required><option value="us" selected="selected">U.S.</option><option value="metric">Metric</option></select></span></span></div><div><h2>Medical Information</h2><span><label for="admittingDiagnosis">Admitting Diagnosis</label> <textarea id="admittingDiagnosis" name="admittingDiagnosis" rows="4" cols="50"></textarea></span><h2>Alerts</h2><span><label for="MedicalAlerts">Medical Alerts</label> <textarea id="MedicalAlerts" name="MedicalAlerts" rows="4" cols="50"></textarea> </span><span><label for="allergies">Allergies</label> <textarea id="allergies" name="allergies" rows="4" cols="50"></textarea></span><h2>Institution</h2><span><label for="institution">Institution Name</label> <select id="institution" name="institution"><option value="" disabled="disabled" selected="selected">Select</option><option value="hospital1">Institution 1</option><option value="hospital2">Institution 2</option><option value="hospital3">Institution 3</option></select></span><span><label for="performingPhysician">Performing Physician</label> <textarea id="performingPhysician" name="performingPhysician" rows="4" cols="50"></textarea> </span><span><label for="refPhysician">Referring Physician</label> <select id="refPhysician" name="refPhysician"><option value="" disabled="disabled" selected="selected">Select</option><option value="physician1">Physician 1</option><option value="physician2">Physician 2</option><option value="physician3">Physician 3</option></select> </span><span><label for="reqPhysician">Requesting Physician</label> <select id="reqPhysician" name="reqPhysician"><option value="" disabled="disabled" selected="selected">Select</option><option value="physician1">Physician 1</option><option value="physician2">Physician 2</option><option value="physician3">Physician 3</option></select> </span><span><label for="operator">Operator</label> <textarea id="operator" name="operator" rows="4" cols="50"></textarea></span></div><div><h2>Examination Information</h2><div class="box"><h3>Procedure</h3><span><label for="accessionnr">Accession Nr.</label> <input id="accessionnr" name="accessionnr"/> </span><span><label for="reqProcId">Req. Proc. ID</label> <input id="reqProcId" name="reqProcId"/> </span><span><label for="studyDesc">Study Description</label> <input id="studyDesc" name="studyDesc"/> </span><span><label for="studyComments">Study Comments</label> <input id="studyComments" name="studyComments"/></span></div><h2>Program Selection</h2><div class="inline-flex">* &nbsp; <select id="programSelection" name="programSelection"><option value="" selected="selected">...&#187; WorkflowSimulation >> Other</option></select></div><h2>RF Transmit Mode</h2><div class="inline-flex">* &nbsp; <select id="rfTransmit" name="rfTransmit"><option value="" selected="selected">Any Polarization</option></select></div><h2>Body Part and Laterality</h2><div class="inline-flex"><span class="space">* </span><select id="bodyPart" name="bodyPart"><option value="" disabled="disabled" selected="selected">Select</option><option value="abdomen">Abdomen</option><option value="abdomenpelvis">AbdomenPelvis</option><option value="ankle">Ankle</option><option value="aorta">Aorta</option><option value="arm">Arm</option><option value="axilla">Axilla</option><option value="back">Back</option><option value="bladder">Bladder</option><option value="breast">Breast</option><option value="brain">Brain</option><option value="bronchus">Bronchus</option><option value="calcaneus">Calcaneus</option><option value="calf">Calf</option><option value="carotid">Carotid</option><option value="cerebellum">Cerebellum</option><option value="cervix">Cervix</option><option value="chest">Chest</option><option value="chestabdomen">ChestAbdomen</option><option value="chestabdpelvis">ChestAbdPelvis</option><option value="circleofwillis">CircleOfWillis</option><option value="clavicle">Clavicle</option><option value="coccyx">Coccyx</option><option value="colon">Colon</option><option value="coronaryartery">CoronaryArtery</option><option value="cspine">C-Spine</option><option value="ctspine">CtSpine</option><option value="duodenum">Duodenum</option><option value="ear">Ear</option><option value="elbow">Elbow</option><option value="esophagus">Esophagus</option><option value="extremity">Extremity</option><option value="eye">Eye</option><option value="femur">Femur</option><option value="finger">Finger</option><option value="foot">Foot</option><option value="gallbladder">GallBladder</option><option value="hand">Hand</option><option value="head">Head</option><option value="headneck">HeadNeck</option><option value="heart">Heart</option><option value="hip">Hip</option><option value="humerus">Humerus</option><option value="iac">IAC</option><option value="ileum">Ileum</option><option value="ilium">Ilium</option><option value="jaw">Jaw</option><option value="jawmandible">Jaw(Mandible)</option><option value="jejunum">Jejunum</option><option value="kidney">Kidney</option><option value="knee">Knee</option><option value="larynx">Larynx</option><option value="leg">Leg</option><option value="liver">Liver</option><option value="lspine">L-Spine</option><option value="lsspone">LsSpone</option><option value="lung">Lung</option><option value="maxilla">Maxilla</option><option value="mediastinum">Mediastinum</option><option value="mouth">Mouth</option><option value="neck">Neck</option><option value="neckchest">NeckChest</option><option value="neckchestabdomen">NeckChestAbdomen</option><option value="neckchestabdpelvis">NeckChestAbdPelvis</option><option value="nose">Nose</option><option value="orbit">Orbit</option><option value="ovary">Ovary</option><option value="pancreas">Pancreas</option><option value="parotid">Parotid</option><option value="patella">Patella</option><option value="pelvis">Pelvis</option><option value="penis">Penis</option><option value="pharynx">Pharynx</option><option value="prostate">Prostate</option><option value="rectum">Rectum</option><option value="rib">Rib</option><option value="scapula">Scapula</option><option value="scrotum">Scrotum</option><option value="shoulder">Shoulder</option><option value="skull">Skull</option><option value="spine">Spine</option><option value="spleen">Spleen</option><option value="sspine">S-Spine</option><option value="sternum">Sternum</option><option value="stomach">Stomach</option><option value="submandibular">Submandibular</option><option value="testis">Testis</option><option value="thigh">Thigh</option><option value="thumb">Thumb</option><option value="thymus">Thymus</option><option value="thyroid">Thyroid</option><option value="tlspine">TlSpine</option><option value="tmj">TMJ</option><option value="toe">Toe</option><option value="tongue">Tongue</option><option value="trachea">Trachea</option><option value="tspine">T-Spine</option><option value="ureter">Ureter</option><option value="vagina">Vagina</option><option value="vulva">Vulva</option><option value="wholebody">WholeBody</option><option value="wrist">Wrist</option><option value="zygoma">Zygoma</option></select> <span class="space">&nbsp;</span> <select id="laterality" name="laterality" disabled="disabled"><option value="" disabled="disabled" selected="selected">Unpaired</option><option value="left">Left</option><option value="right">Right</option><option value="bilateral">Both</option></select></div><h2>Patient Orientation</h2><div class="inline-flex">* &nbsp; <button type="button" class="select-btn" id="orientationBtn"><img src="a9fdd9cf112218cf0082.PNG" class="select-btn-icon" id="orientationIcon"/> <span id="orientationText">Head First Supine</span> <i class="right icon fa-solid fa-angle-down"></i></button></div><div id="orientationOptions" class="select-options hidden"><span><img src="a9fdd9cf112218cf0082.PNG" alt="Head First Supine" id="headSupine" class="select-icon selected"/> <img src="9945f0bc0b60fd21ff97.PNG" alt="Head First Prone" id="headProne" class="select-icon"/> <img src="1c96700799bf243001b9.PNG" alt="Head First Lef Lateral" id="headLeft" class="select-icon"/> <img src="03a37c47e9c02664c2bd.PNG" alt="Head First Right Lateral" id="headRight" class="select-icon"/> </span><span><img src="a4f11a6097c611aed4ec.PNG" alt="Feet First Supine" id="feetSupine" class="select-icon"/> <img src="22be806d776b90e46f07.PNG" alt="Feet First Prone" id="feetProne" class="select-icon"/> <img src="352ffa691947231a898d.PNG" alt="Feet First Left Lateral" id="feetLeft" class="select-icon"/> <img src="5a55da993be7097f4942.PNG" alt="Feet First Right Lateral" id="feetRight" class="select-icon"/></span></div></div><div class="break"></div></form><div class="inline-flex"><span class="field-info-safety"><span class="space">&nbsp;</span> Safety relevent information needs to be validated and confirmed</span> <span class="field-info-required">* Mandatory information</span></div><footer><span><button type="button" class="btn disabled" id="save" disabled="disabled">Save</button> <button type="button" class="btn disabled" id="cancel" disabled="disabled">Cancel</button> <button type="button" class="btn disabled" id="delete" disabled="disabled">Delete</button> </span><span><button type="button" class="btn disabled" id="localData" disabled="disabled">Local Data</button> <button type="button" class="btn disabled" id="priorStudies" disabled="disabled">Prior Studies</button> </span><span><button type="button" class="btn btn-warning disabled" id="exam" disabled="disabled">Exam</button></span></footer></section></div><script defer="defer" src="bundle.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MRI Workflow Sim</title>
+  </head>
+  <body>
+    <header>
+      <h1>MRI Workflow Simulator</h1>
+    </header>
+    <div class="main-container">
+      <section id="schedular">
+        <h2>Scheduler</h2>
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="basic-addon1"
+            disabled
+            id="search"
+          />
+          <span class="input-group-text" id="basic-addon1"
+            ><i class="fa-solid fa-magnifying-glass"></i
+          ></span>
+        </div>
+      </section>
+
+      <section id="registration">
+        <form id="pt-registration" action="#">
+          <div style="width:370px">
+            <h2> &nbsp;</h2>
+            <span><label for="lastName">* Last Name </label>
+              <input type="text" id="lastName" name="lastName" required/></span>
+
+            <span><label for="firstName"> First Name </label>
+              <input type="text" id="firstName" name="firstName" required/></span>
+
+            <span><label for="title">Title </label>
+              <input type="text" id="title" name="title"/></span>
+
+            <span><label for="" suffix>Suffix </label>
+              <input type="text" id="suffix" name="suffix"/></span>
+
+            <span><label for="middleName">Middle Name </label>
+              <input type="text" id="middleName" name="middleName"/></span>
+
+            <span><label for="patientId">* Patient ID </label>
+              <input type="text" id="patientId" name="patientId" required/></span>
+
+            <span>
+                <label for="dob">* Date of Birth </label>
+                <input type="date" id="dob" name="dob" placeholder="M/D/yyyy" pattern="\d{1,2}/\d{1,2}/\d{4}" required/>
+            </span>
+
+            <span>
+                <label for="age">* Age </label>
+                <span>
+                    <input type="number" id="age" name="age" min="0" step="1" required/>
+                    <select id="ageUnit" name="ageUnit" required>
+                        <option value="years" selected>Year(s)</option>
+                        <option value="months">Month(s)</option>
+                        <option value="weeks">Week(s)</option>
+                        <option value="days">Day(s)</option>
+                    </select> 
+                </span>
+            </span>
+
+            <span>
+                <label for="sex">* Sex </label>
+                <select id="sex" name="sex" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </span>
+
+            <span>
+                <label for="height">* Height </label>
+                <span>
+                    <span>
+                        <input  type="number" id="height" name="height" min="0" step="1" required/> 
+                        <label id="unitsFt"> ft </label></span>
+                    <span>
+                        <input  type="number" id="heightInch" name="heightInch" min="0" step="1" required/>
+                        <label id="unitsIn"> in </label></span>
+                </span>
+            </span>
+
+            <span>
+                <label for="weight" >* Weight </label>
+                <span>
+                    <span>
+                        <input type="number" id="weight" name="weight" min="0" step="1" required/> 
+                    <label id="unitsLb"> lb </label></span>
+                    <select id="units" name="units" required>
+                        <option value="us" selected>U.S.</option>
+                        <option value="metric">Metric</option>
+                    </select>
+                </span>
+            </span>
+          </div>
+
+          <div>
+            <h2>Medical Information</h2>
+
+            <span><label for="admittingDiagnosis">Admitting Diagnosis </label>
+              <textarea
+                id="admittingDiagnosis"
+                name="admittingDiagnosis"
+                rows="4"
+                cols="50"
+              ></textarea>
+            </span>
+
+            <h2>Alerts</h2>
+            <span><label for="MedicalAlerts">Medical Alerts </label>
+              <textarea
+                id="MedicalAlerts"
+                name="MedicalAlerts"
+                rows="4"
+                cols="50"
+              ></textarea>
+            </span>
+
+            <span><label for="allergies">Allergies </label>
+              <textarea
+                id="allergies"
+                name="allergies"
+                rows="4"
+                cols="50"
+              ></textarea>
+            </span>
+
+            <h2>Institution</h2>
+            <span><label for="institution">Institution Name </label>
+              <select id="institution" name="institution">
+                <option value="" disabled selected>Select</option>
+                <option value="hospital1">Institution 1</option>
+                <option value="hospital2">Institution 2</option>
+                <option value="hospital3">Institution 3</option>
+              </select></span>
+            
+              <span>
+                <label for="performingPhysician">Performing Physician </label>
+                <textarea
+                  id="performingPhysician"
+                  name="performingPhysician"
+                  rows="4"
+                  cols="50"
+                ></textarea>
+              </span>
+              <span>
+                <label for="refPhysician">Referring Physician </label>
+                <select id="refPhysician" name="refPhysician">
+                  <option value="" disabled selected>Select</option>
+                  <option value="physician1">Physician 1</option>
+                  <option value="physician2">Physician 2</option>
+                  <option value="physician3">Physician 3</option>
+                </select>
+              </span>
+              <span>
+                <label for="reqPhysician">Requesting Physician </label>
+                <select id="reqPhysician" name="reqPhysician">
+                  <option value="" disabled selected>Select</option>
+                  <option value="physician1">Physician 1</option>
+                  <option value="physician2">Physician 2</option>
+                  <option value="physician3">Physician 3</option>
+                </select>
+              </span>
+              <span>
+                <label for="operator">Operator </label>
+                <textarea
+                  id="operator"
+                  name="operator"
+                  rows="4"
+                  cols="50"
+                ></textarea>
+            </span>
+
+          </div>
+
+          <div>
+                <h2>Examination Information</h2>
+
+                <div class="box">
+                    <h3>Procedure</h3>
+                    <span>
+                        <label for="accessionnr">Accession Nr. </label>
+                        <input type="text" id="accessionnr" name="accessionnr"/>
+                    </span>
+                    <span>
+                        <label for="reqProcId">Req. Proc. ID</label>
+                        <input type="text" id="reqProcId" name="reqProcId"/>
+                    </span>
+                    <span>
+                        <label for="studyDesc">Study Description</label>
+                        <input type="text" id="studyDesc" name="studyDesc"/>
+                    </span>
+                    <span>
+                        <label for="studyComments">Study Comments</label>
+                        <input type="text" id="studyComments" name="studyComments"/>
+                    </span>
+                </div>
+                
+                <h2>Program Selection</h2>
+                <div class="inline-flex"> * &nbsp;
+                    <select id="programSelection" name="programSelection">
+                        <option value="" selected>...&#187; WorkflowSimulation >> Other</option>
+                    </select>
+                </div>
+                
+                <h2>RF Transmit Mode</h2>
+                <div class="inline-flex"> * &nbsp;
+                    <select id="rfTransmit" name="rfTransmit">
+                        <option value="" selected>Any Polarization</option>
+                    </select>
+                </div>
+                
+
+                <h2>Body Part and Laterality</h2>
+                <div class="inline-flex"> 
+                  <span class="space">* </span>
+                  <select id="bodyPart" name="bodyPart">
+                      <option value="" disabled selected>Select</option>
+                      <option value="abdomen">Abdomen</option>
+                      <option value="abdomenpelvis">AbdomenPelvis</option>
+                      <option value="ankle">Ankle</option>
+                      <option value="aorta">Aorta</option>
+                      <option value="arm">Arm</option>
+                      <option value="axilla">Axilla</option>
+                      <option value="back">Back</option>
+                      <option value="bladder">Bladder</option>
+                      <option value="breast">Breast</option>
+                      <option value="brain">Brain</option>
+                      <option value="bronchus">Bronchus</option>
+                      <option value="calcaneus">Calcaneus</option>
+                      <option value="calf">Calf</option>
+                      <option value="carotid">Carotid</option>
+                      <option value="cerebellum">Cerebellum</option>
+                      <option value="cervix">Cervix</option>
+                      <option value="chest">Chest</option>
+                      <option value="chestabdomen">ChestAbdomen</option>
+                      <option value="chestabdpelvis">ChestAbdPelvis</option>
+                      <option value="circleofwillis">CircleOfWillis</option>
+                      <option value="clavicle">Clavicle</option>
+                      <option value="coccyx">Coccyx</option>
+                      <option value="colon">Colon</option>
+                      <option value="coronaryartery">CoronaryArtery</option>
+                      <option value="cspine">C-Spine</option>
+                      <option value="ctspine">CtSpine</option>
+                      <option value="duodenum">Duodenum</option>
+                      <option value="ear">Ear</option>
+                      <option value="elbow">Elbow</option>
+                      <option value="esophagus">Esophagus</option>
+                      <option value="extremity">Extremity</option>
+                      <option value="eye">Eye</option>
+                      <option value="femur">Femur</option>
+                      <option value="finger">Finger</option>
+                      <option value="foot">Foot</option>
+                      <option value="gallbladder">GallBladder</option>
+                      <option value="hand">Hand</option>
+                      <option value="head">Head</option>
+                      <option value="headneck">HeadNeck</option>
+                      <option value="heart">Heart</option>
+                      <option value="hip">Hip</option>
+                      <option value="humerus">Humerus</option>
+                      <option value="iac">IAC</option>
+                      <option value="ileum">Ileum</option>
+                      <option value="ilium">Ilium</option>
+                      <option value="jaw">Jaw</option>
+                      <option value="jawmandible">Jaw(Mandible)</option>
+                      <option value="jejunum">Jejunum</option>
+                      <option value="kidney">Kidney</option>
+                      <option value="knee">Knee</option>
+                      <option value="larynx">Larynx</option>
+                      <option value="leg">Leg</option>
+                      <option value="liver">Liver</option>
+                      <option value="lspine">L-Spine</option>
+                      <option value="lsspone">LsSpone</option>
+                      <option value="lung">Lung</option>
+                      <option value="maxilla">Maxilla</option>
+                      <option value="mediastinum">Mediastinum</option>
+                      <option value="mouth">Mouth</option>
+                      <option value="neck">Neck</option>
+                      <option value="neckchest">NeckChest</option>
+                      <option value="neckchestabdomen">NeckChestAbdomen</option>
+                      <option value="neckchestabdpelvis">NeckChestAbdPelvis</option>
+                      <option value="nose">Nose</option>
+                      <option value="orbit">Orbit</option>
+                      <option value="ovary">Ovary</option>
+                      <option value="pancreas">Pancreas</option>
+                      <option value="parotid">Parotid</option>
+                      <option value="patella">Patella</option>
+                      <option value="pelvis">Pelvis</option>
+                      <option value="penis">Penis</option>
+                      <option value="pharynx">Pharynx</option>
+                      <option value="prostate">Prostate</option>
+                      <option value="rectum">Rectum</option>
+                      <option value="rib">Rib</option>
+                      <option value="scapula">Scapula</option>
+                      <option value="scrotum">Scrotum</option>
+                      <option value="shoulder">Shoulder</option>
+                      <option value="skull">Skull</option>
+                      <option value="spine">Spine</option>
+                      <option value="spleen">Spleen</option>
+                      <option value="sspine">S-Spine</option>
+                      <option value="sternum">Sternum</option>
+                      <option value="stomach">Stomach</option>
+                      <option value="submandibular">Submandibular</option>
+                      <option value="testis">Testis</option>
+                      <option value="thigh">Thigh</option>
+                      <option value="thumb">Thumb</option>
+                      <option value="thymus">Thymus</option>
+                      <option value="thyroid">Thyroid</option>
+                      <option value="tlspine">TlSpine</option>
+                      <option value="tmj">TMJ</option>
+                      <option value="toe">Toe</option>
+                      <option value="tongue">Tongue</option>
+                      <option value="trachea">Trachea</option>
+                      <option value="tspine">T-Spine</option>
+                      <option value="ureter">Ureter</option>
+                      <option value="vagina">Vagina</option>
+                      <option value="vulva">Vulva</option>
+                      <option value="wholebody">WholeBody</option>
+                      <option value="wrist">Wrist</option>
+                      <option value="zygoma">Zygoma</option>
+                  </select>
+                  <span class="space">&nbsp;</span>
+                  <select id="laterality" name="laterality" disabled>
+                      <option value="" disabled selected>Unpaired</option>
+                      <option value="left">Left</option>
+                      <option value="right">Right</option>
+                      <option value="bilateral">Both</option>
+                  </select>
+                </div>
+            
+                <h2>Patient Orientation</h2>
+                <div class="inline-flex">
+                  * &nbsp; <button type="button" class="select-btn" id="orientationBtn">
+                        <img src="a9fdd9cf112218cf0082.PNG" class="select-btn-icon" id="orientationIcon"/>
+                        <span id="orientationText">Head First Supine</span>  
+                        <i class="right icon fa-solid fa-angle-down"></i>
+                    </button>
+                    
+                </div>
+                
+                <div id="orientationOptions" class="select-options hidden">
+                    <span>
+                        <img src="a9fdd9cf112218cf0082.PNG" alt="Head First Supine" id="headSupine" class="select-icon selected" />
+                        <img src="9945f0bc0b60fd21ff97.PNG" alt="Head First Prone" id="headProne" class="select-icon" />
+                        <img src="1c96700799bf243001b9.PNG" alt="Head First Lef Lateral" id="headLeft" class="select-icon" />
+                        <img src="03a37c47e9c02664c2bd.PNG" alt="Head First Right Lateral" id="headRight" class="select-icon" />
+                    </span>
+                    <span>
+                        <img src="a4f11a6097c611aed4ec.PNG" alt="Feet First Supine" id="feetSupine" class="select-icon" />
+                        <img src="22be806d776b90e46f07.PNG" alt="Feet First Prone" id="feetProne" class="select-icon" />
+                        <img src="352ffa691947231a898d.PNG" alt="Feet First Left Lateral" id="feetLeft" class="select-icon" />
+                        <img src="5a55da993be7097f4942.PNG" alt="Feet First Right Lateral" id="feetRight" class="select-icon" />
+                    </span>
+                </div>
+                
+                
+          </div>
+
+          <div class="break"></div> <!-- break -->
+          
+          
+          
+        </form>
+        <div class="inline-flex">
+          <span class="field-info-safety"> 
+            <span class="space">&nbsp;</span> 
+            Safety relevent information needs to be validated and confirmed</span>
+          <span class="field-info-required">* Mandatory information</span>
+        </div>
+      
+        <footer>    
+          <span>
+            <button type="button" class="btn disabled" id="save" disabled>Save</button>
+            <button type="button" class="btn disabled" id="cancel" disabled>Cancel</button>
+            <button type="button" class="btn disabled" id="delete" disabled>Delete</button>
+          </span>
+          <span>
+              <button type="button" class="btn disabled" id="localData" disabled>Local Data</button>
+              <button type="button" class="btn disabled" id="priorStudies" disabled>Prior Studies</button>
+          </span>
+          <span>
+              <button type="button" class="btn btn-warning disabled" id="exam" disabled>Exam</button>
+          </span>
+                      
+        </footer>
+      </section>
+
+    </div>
+    
+  <script defer src="bundle.js"></script></body>
+</html>
