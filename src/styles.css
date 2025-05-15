@@ -39,6 +39,7 @@ header, footer {
     flex-direction: row;
     justify-content:space-evenly;
     flex-wrap: wrap;
+    height:80vh;
 }
 
 #registration {
@@ -48,6 +49,7 @@ header, footer {
     background-color: #252525;
     padding: 0;
     position: relative;
+    height:80vh;
 }
 
 form {
