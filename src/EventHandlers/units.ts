@@ -29,7 +29,7 @@ unitsSelect.addEventListener("change", () => {
         }
         // check if weight input value; convert to metric
         if (weightInput.value) {
-            weightInput.value = (parseFloat(weightInput.value) * 0.45359237).toFixed(2);
+            weightInput.value = Math.round(parseFloat(weightInput.value) * 0.45359237).toString();
         }
        
         unitsFt.innerText = "m";
@@ -44,10 +44,10 @@ unitsSelect.addEventListener("change", () => {
             const feet = Math.floor(heightInInches / 12);
             const inches = heightInInches % 12;
             heightInputFt.value = feet.toString();
-            heightInputIn.value = inches.toString();
+            heightInputIn.value = inches.toString();;
         }   
         if (weightInput.value) {
-            weightInput.value = (parseFloat(weightInput.value) * 2.2046226218).toFixed(2);
+            weightInput.value = Math.round(parseFloat(weightInput.value) * 2.2046226218).toString();
         }
         
         unitsFt.innerText = "ft";
