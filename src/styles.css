@@ -9,10 +9,9 @@ html, body {
     font-family: OpenSans, Arial, sans-serif;
     background-color: #111;
     color: white;
-    overflow: hidden;
 }
 body{
-    height: 100vh;
+    height: 100svh;
     display: flex;
     flex-direction: column;
 }
@@ -37,11 +36,21 @@ header, footer {
 .main-container {
     display: flex;
     flex-direction: row;
+    align-items: stretch;
     justify-content:space-evenly;
-    flex-wrap: wrap;
-    height:80vh;
+    flex-wrap: nowrap;
+    position: absolute;
+    bottom: 0;
+    top: 60px;
+    left: 0;
+    right:0;
 }
-
+@media screen and (max-width: 600px) {
+    .main-container {
+        max-height: 90svh;
+    }
+    
+}
 #registration {
     display: flex;
     flex-direction: column;
@@ -49,7 +58,6 @@ header, footer {
     background-color: #252525;
     padding: 0;
     position: relative;
-    height:80vh;
 }
 
 form {
@@ -58,7 +66,6 @@ form {
     justify-content: space-evenly;
     flex-wrap: wrap;
     overflow: auto;
-    height:80vh;
     margin-bottom: 2em;
     gap:1em;
     
@@ -167,6 +174,7 @@ div.inline-flex {
     display: inline-flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: flex-start;
     width: 100%;
 }
 
@@ -179,6 +187,12 @@ div.break {
     height: 0;
     margin: unset;
 }
+div.center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
 .box {
     border: 1px solid #888;
 }
@@ -187,7 +201,6 @@ div.break {
     padding: 10px;
     margin: 0;
 }
-
 footer{
     display: flex;
     flex-direction: row;
