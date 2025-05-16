@@ -116,14 +116,22 @@ input[type="number"] {
     width: 90px;
 }
 
-
 form div.select-options {
-    display: block;
-    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     overflow: hidden;
+    transform-origin: 100% 0;
+    height: 100%;
 }
-form div .select-options.hidden {
-    height: 0;
+form div .select-options {
+    transform: scaleY(1);
+    transition: 0.1s;
+}
+form div .select-options.hidden{
+    transform: scaleY(0);
+    transition: 0.1s;
 }
 
 form div.inline-flex select,

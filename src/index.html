@@ -63,7 +63,7 @@
                     <input disabled type="number" id="age" name="age" min="0" step="1" 
                       title="Age will be calcuated from DOB. Select the desired age unit (Y, M, W, D)."/
                       style="color:white"/>
-                    <select id="ageUnit" name="ageUnit" required>
+                    <select required id="ageUnit" name="ageUnit">
                         <option value="years" selected>Year(s)</option>
                         <option value="months">Month(s)</option>
                         <option value="weeks">Week(s)</option>
@@ -74,7 +74,7 @@
 
             <span>
                 <label for="sex">* Sex </label>
-                <select id="sex" name="sex" required>
+                <select required id="sex" name="sex">
                     <option value="" disabled selected>Select</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -86,10 +86,10 @@
                 <label for="height">* Height </label>
                 <span>
                     <span>
-                        <input  type="number" id="heightFt" name="height" min="0" step="1" required/> 
+                        <input required type="number" id="heightFt" name="height" min="0" step="1" /> 
                         <label id="unitsFt"> ft </label></span>
                     <span>
-                        <input  type="number" id="heightIn" name="height" min="0" step="1" required/>
+                        <input required type="number" id="heightIn" name="height" min="0" step="1" />
                         <label id="unitsIn"> in </label></span>
                 </span>
             </span>
@@ -98,9 +98,9 @@
                 <label for="weight" >* Weight </label>
                 <span>
                     <span>
-                        <input type="number" id="weight" name="weight" min="0" step="1" required/> 
+                        <input required type="number" id="weight" name="weight" min="0" step="1"/> 
                     <label id="unitsLb"> lb </label></span>
-                    <select id="units" name="units" required>
+                    <select required id="units" name="units" title="Change from U.S imperial units to metric" >
                         <option value="us" selected>U.S.</option>
                         <option value="metric">Metric</option>
                     </select>
@@ -354,16 +354,16 @@
                 
                 <div id="orientationOptions" class="select-options hidden">
                     <span>
-                        <img src="./icons/headFirstSupine.svg" alt="Head First Supine" id="headSupine" class="select-icon selected" />
-                        <img src="./icons/headFirstProne.svg" alt="Head First Prone" id="headProne" class="select-icon" />
+                        <img src="./icons/headFirstSupine.svg" alt="Head First Supine" id="headSupine" class="select-icon selected" title="Head First Supine"/>
+                        <img src="./icons/headFirstProne.svg" alt="Head First Prone" id="headProne" class="select-icon" title="Head First Prone"/>
                         <img src="./icons/headFirstLL.svg" alt="Head First Lef Lateral" id="headLeft" class="select-icon" />
                         <img src="./icons/headFirstRL.svg" alt="Head First Right Lateral" id="headRight" class="select-icon" />
                     </span>
                     <span>
-                        <img src="./icons/feetFirstSupine.svg" alt="Feet First Supine" id="feetSupine" class="select-icon" />
-                        <img src="./icons/feetFirstProne.svg" alt="Feet First Prone" id="feetProne" class="select-icon" />
-                        <img src="./icons/feetFirstLL.svg" alt="Feet First Left Lateral" id="feetLeft" class="select-icon" />
-                        <img src="./icons/feetFirstRL.svg" alt="Feet First Right Lateral" id="feetRight" class="select-icon" />
+                        <img src="./icons/feetFirstSupine.svg" alt="Feet First Supine" id="feetSupine" class="select-icon" title="Feet First Supine" />
+                        <img src="./icons/feetFirstProne.svg" alt="Feet First Prone" id="feetProne" class="select-icon" title="Feet First Prone" />
+                        <img src="./icons/feetFirstLL.svg" alt="Feet First Left Lateral" id="feetLeft" class="select-icon" title="Feet First Left Lateral" />
+                        <img src="./icons/feetFirstRL.svg" alt="Feet First Right Lateral" id="feetRight" class="select-icon" title="Feet First Right Lateral" />
                     </span>
                 </div>
                 
