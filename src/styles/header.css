@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    background-color: #333;
+    padding: 1em 0.5em;
+}
+header h1 {
+    flex-shrink: 1;
+    display: inline;
+    text-align: left;
+    width: 150px;
+}
+span button.btn span{
+    font-size: 1.5em;
+    color: white;   
+}
+span button.btn:hover span{
+    color: #2196f3;
+}

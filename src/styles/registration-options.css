@@ -1,0 +1,30 @@
+#registration-options {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    flex-grow: 1;
+    background-color: #111;
+    padding: 0;
+    position: relative;
+    color: white;
+}
+
+#registration-options-right button{
+    font-size: 10px;
+    width: 70px;
+    align-items: center;
+    color: white;
+}
+#registration-options-right button span{
+    font-size: 20px;
+}
+#registration-options .nav a{
+    color: white;
+    text-decoration: none;
+    background-color: #888;
+    border-color: #aaa;
+    border-radius: 0;
+}
+#registration-options .nav a:not(.active) {
+    background-color: #333;
+}
