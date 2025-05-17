@@ -1,0 +1,31 @@
+#scheduler {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    height: 100%;
+}
+#schedule-options{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 10px;
+}
+#schedule-options span button.btn{
+    border: 0;
+}
+#schedule-options span button.btn span{
+    font-size: 14px;
+    color: white;   
+}
+#schedule-options span button.btn:hover span{
+    color: #2196f3;
+}
+
+#scheduler table {
+    flex-grow: 1;
+    font-size: small;
+}
+#scheduler table th {
+    font-weight: normal;
+}

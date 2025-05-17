@@ -1,516 +1,540 @@
-Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Module not found: Error: Can't resolve './icons/headFirstSupine.svg' in 'C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\src'
-  ModuleNotFoundError: Module not found: Error: Can't resolve './icons/headFirstSupine.svg' in 'C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\src'
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\Compilation.js:2232:28
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:928:13
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:10:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:338:22
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:9:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:520:22
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:155:10
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:788:25
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1013:8
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1142:5
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:6883:13
-      at Array.<anonymous> (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1117:14)
-      at arrayEachFunc (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:2517:19)
-      at Object.parallel (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:6858:9)
-      at NormalModuleFactory._resolveResourceErrorHints (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1041:12)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:973:18
-      at finishWithoutResolve (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:567:11)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:656:15
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\RootsPlugin.js:38:38
-      at _next2 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:8:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:31:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
-      at _next1 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:23:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:46:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
-      at _next0 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:38:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:60:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:41:15
-      at process.processTicksAndRejections (node:internal/process/task_queues:81:21)
-  Module not found: Error: Can't resolve './icons/headFirstProne.svg' in 'C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\src'
-  ModuleNotFoundError: Module not found: Error: Can't resolve './icons/headFirstProne.svg' in 'C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\src'
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\Compilation.js:2232:28
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:928:13
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:10:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:338:22
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:9:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:520:22
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:155:10
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:788:25
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1013:8
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1142:5
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:6883:13
-      at Array.<anonymous> (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1117:14)
-      at arrayEachFunc (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:2517:19)
-      at Object.parallel (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:6858:9)
-      at NormalModuleFactory._resolveResourceErrorHints (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1041:12)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:973:18
-      at finishWithoutResolve (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:567:11)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:656:15
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\RootsPlugin.js:38:38
-      at _next2 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:8:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:31:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
-      at _next1 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:23:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:46:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
-      at _next0 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:38:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:60:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:41:15
-      at process.processTicksAndRejections (node:internal/process/task_queues:81:21)
-  Module not found: Error: Can't resolve './icons/headFirstLL.svg' in 'C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\src'
-  ModuleNotFoundError: Module not found: Error: Can't resolve './icons/headFirstLL.svg' in 'C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\src'
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\Compilation.js:2232:28
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:928:13
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:10:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:338:22
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:9:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:520:22
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:155:10
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:788:25
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1013:8
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1142:5
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:6883:13
-      at Array.<anonymous> (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1117:14)
-      at arrayEachFunc (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:2517:19)
-      at Object.parallel (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:6858:9)
-      at NormalModuleFactory._resolveResourceErrorHints (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1041:12)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:973:18
-      at finishWithoutResolve (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:567:11)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:656:15
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\RootsPlugin.js:38:38
-      at _next2 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:8:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:31:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
-      at _next1 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:23:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:46:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
-      at _next0 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:38:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:60:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:41:15
-      at process.processTicksAndRejections (node:internal/process/task_queues:81:21)
-  Module not found: Error: Can't resolve './icons/headFirstRL.svg' in 'C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\src'
-  ModuleNotFoundError: Module not found: Error: Can't resolve './icons/headFirstRL.svg' in 'C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\src'
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\Compilation.js:2232:28
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:928:13
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:10:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:338:22
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:9:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:520:22
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:155:10
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:788:25
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1013:8
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1142:5
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:6883:13
-      at Array.<anonymous> (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1117:14)
-      at arrayEachFunc (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:2517:19)
-      at Object.parallel (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:6858:9)
-      at NormalModuleFactory._resolveResourceErrorHints (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1041:12)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:973:18
-      at finishWithoutResolve (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:567:11)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:656:15
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\RootsPlugin.js:38:38
-      at _next2 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:8:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:31:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
-      at _next1 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:23:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:46:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
-      at _next0 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:38:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:60:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:41:15
-      at process.processTicksAndRejections (node:internal/process/task_queues:81:21)
-  Module not found: Error: Can't resolve './icons/feetFirstSupine.svg' in 'C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\src'
-  ModuleNotFoundError: Module not found: Error: Can't resolve './icons/feetFirstSupine.svg' in 'C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\src'
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\Compilation.js:2232:28
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:928:13
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:10:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:338:22
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:9:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:520:22
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:155:10
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:788:25
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1013:8
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1142:5
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:6883:13
-      at Array.<anonymous> (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1117:14)
-      at arrayEachFunc (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:2517:19)
-      at Object.parallel (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:6858:9)
-      at NormalModuleFactory._resolveResourceErrorHints (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1041:12)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:973:18
-      at finishWithoutResolve (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:567:11)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:656:15
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\RootsPlugin.js:38:38
-      at _next2 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:8:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:31:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
-      at _next1 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:23:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:46:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
-      at _next0 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:38:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:60:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:41:15
-      at process.processTicksAndRejections (node:internal/process/task_queues:81:21)
-  Module not found: Error: Can't resolve './icons/feetFirstProne.svg' in 'C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\src'
-  ModuleNotFoundError: Module not found: Error: Can't resolve './icons/feetFirstProne.svg' in 'C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\src'
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\Compilation.js:2232:28
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:928:13
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:10:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:338:22
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:9:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:520:22
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:155:10
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:788:25
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1013:8
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1142:5
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:6883:13
-      at Array.<anonymous> (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1117:14)
-      at arrayEachFunc (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:2517:19)
-      at Object.parallel (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:6858:9)
-      at NormalModuleFactory._resolveResourceErrorHints (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1041:12)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:973:18
-      at finishWithoutResolve (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:567:11)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:656:15
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\RootsPlugin.js:38:38
-      at _next2 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:8:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:31:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
-      at _next1 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:23:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:46:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
-      at _next0 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:38:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:60:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:41:15
-      at process.processTicksAndRejections (node:internal/process/task_queues:81:21)
-  Module not found: Error: Can't resolve './icons/feetFirstLL.svg' in 'C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\src'
-  ModuleNotFoundError: Module not found: Error: Can't resolve './icons/feetFirstLL.svg' in 'C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\src'
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\Compilation.js:2232:28
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:928:13
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:10:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:338:22
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:9:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:520:22
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:155:10
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:788:25
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1013:8
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1142:5
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:6883:13
-      at Array.<anonymous> (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1117:14)
-      at arrayEachFunc (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:2517:19)
-      at Object.parallel (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:6858:9)
-      at NormalModuleFactory._resolveResourceErrorHints (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1041:12)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:973:18
-      at finishWithoutResolve (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:567:11)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:656:15
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\RootsPlugin.js:38:38
-      at _next2 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:8:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:31:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
-      at _next1 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:23:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:46:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
-      at _next0 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:38:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:60:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:41:15
-      at process.processTicksAndRejections (node:internal/process/task_queues:81:21)
-  Module not found: Error: Can't resolve './icons/feetFirstRL.svg' in 'C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\src'
-  ModuleNotFoundError: Module not found: Error: Can't resolve './icons/feetFirstRL.svg' in 'C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\src'
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\Compilation.js:2232:28
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:928:13
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:10:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:338:22
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:9:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:520:22
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:155:10
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:788:25
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1013:8
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1142:5
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:6883:13
-      at Array.<anonymous> (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1117:14)
-      at arrayEachFunc (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:2517:19)
-      at Object.parallel (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\neo-async\async.js:6858:9)
-      at NormalModuleFactory._resolveResourceErrorHints (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:1041:12)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\webpack\lib\NormalModuleFactory.js:973:18
-      at finishWithoutResolve (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:567:11)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:656:15
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\RootsPlugin.js:38:38
-      at _next2 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:8:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:31:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
-      at _next1 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:23:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:46:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
-      at _next0 (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:38:1)
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:60:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\Resolver.js:718:5
-      at eval (eval at create (C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
-      at C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:41:15
-      at process.processTicksAndRejections (node:internal/process/task_queues:81:21)
-  
-  - Compilation.js:2232 
-    [MRI-WebUI]/[webpack]/lib/Compilation.js:2232:28
-  
-  - NormalModuleFactory.js:928 
-    [MRI-WebUI]/[webpack]/lib/NormalModuleFactory.js:928:13
-  
-  
-  - NormalModuleFactory.js:338 
-    [MRI-WebUI]/[webpack]/lib/NormalModuleFactory.js:338:22
-  
-  
-  - NormalModuleFactory.js:520 
-    [MRI-WebUI]/[webpack]/lib/NormalModuleFactory.js:520:22
-  
-  - NormalModuleFactory.js:155 
-    [MRI-WebUI]/[webpack]/lib/NormalModuleFactory.js:155:10
-  
-  - NormalModuleFactory.js:788 
-    [MRI-WebUI]/[webpack]/lib/NormalModuleFactory.js:788:25
-  
-  - NormalModuleFactory.js:1013 
-    [MRI-WebUI]/[webpack]/lib/NormalModuleFactory.js:1013:8
-  
-  - NormalModuleFactory.js:1142 
-    [MRI-WebUI]/[webpack]/lib/NormalModuleFactory.js:1142:5
-  
-  - async.js:6883 
-    [MRI-WebUI]/[neo-async]/async.js:6883:13
-  
-  - NormalModuleFactory.js:1117 Array.<anonymous>
-    [MRI-WebUI]/[webpack]/lib/NormalModuleFactory.js:1117:14
-  
-  - async.js:2517 arrayEachFunc
-    [MRI-WebUI]/[neo-async]/async.js:2517:19
-  
-  - async.js:6858 Object.parallel
-    [MRI-WebUI]/[neo-async]/async.js:6858:9
-  
-  - NormalModuleFactory.js:1041 NormalModuleFactory._resolveResourceErrorHints
-    [MRI-WebUI]/[webpack]/lib/NormalModuleFactory.js:1041:12
-  
-  - NormalModuleFactory.js:973 
-    [MRI-WebUI]/[webpack]/lib/NormalModuleFactory.js:973:18
-  
-  - Resolver.js:567 finishWithoutResolve
-    [MRI-WebUI]/[enhanced-resolve]/lib/Resolver.js:567:11
-  
-  - Resolver.js:656 
-    [MRI-WebUI]/[enhanced-resolve]/lib/Resolver.js:656:15
-  
-  - Resolver.js:718 
-    [MRI-WebUI]/[enhanced-resolve]/lib/Resolver.js:718:5
-  
-  
-  - Resolver.js:718 
-    [MRI-WebUI]/[enhanced-resolve]/lib/Resolver.js:718:5
-  
-  
-  - DescriptionFilePlugin.js:89 
-    [MRI-WebUI]/[enhanced-resolve]/lib/DescriptionFilePlugin.js:89:43
-  
-  - Resolver.js:718 
-    [MRI-WebUI]/[enhanced-resolve]/lib/Resolver.js:718:5
-  
-  
-  - Resolver.js:718 
-    [MRI-WebUI]/[enhanced-resolve]/lib/Resolver.js:718:5
-  
-  
-  - Resolver.js:718 
-    [MRI-WebUI]/[enhanced-resolve]/lib/Resolver.js:718:5
-  
-  
-  - RootsPlugin.js:38 
-    [MRI-WebUI]/[enhanced-resolve]/lib/RootsPlugin.js:38:38
-  
-  
-  
-  - ConditionalPlugin.js:40 
-    [MRI-WebUI]/[enhanced-resolve]/lib/ConditionalPlugin.js:40:47
-  
-  
-  
-  - ConditionalPlugin.js:40 
-    [MRI-WebUI]/[enhanced-resolve]/lib/ConditionalPlugin.js:40:47
-  
-  
-  
-  - Resolver.js:718 
-    [MRI-WebUI]/[enhanced-resolve]/lib/Resolver.js:718:5
-  
-  
-  - DescriptionFilePlugin.js:89 
-    [MRI-WebUI]/[enhanced-resolve]/lib/DescriptionFilePlugin.js:89:43
-  
-  - Resolver.js:718 
-    [MRI-WebUI]/[enhanced-resolve]/lib/Resolver.js:718:5
-  
-  
-  - Resolver.js:718 
-    [MRI-WebUI]/[enhanced-resolve]/lib/Resolver.js:718:5
-  
-  
-  - DirectoryExistsPlugin.js:41 
-    [MRI-WebUI]/[enhanced-resolve]/lib/DirectoryExistsPlugin.js:41:15
-  
-  - task_queues:81 process.processTicksAndRejections
-    node:internal/process/task_queues:81:21
-  
-  - Module not found: Error: Can't resolve './icons/headFirstProne.svg' in 'C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\src'
-  
-  - ModuleNotFoundError: Module not found: Error: Can't resolve './icons/headFirstProne.svg' in 'C:\xampp\htdocs\_SOH\MRI-InputScreen\MRI-WebUI\src'
-  
-  - Compilation.js:2232 
-    [MRI-WebUI]/[webpack]/lib/Compilation.js:2232:28
-  
-  - NormalModuleFactory.js:928 
-    [MRI-WebUI]/[webpack]/lib/NormalModuleFactory.js:928:13
-  
-</pre><script defer src="bundle.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MRI Workflow Sim</title>
+  </head>
+  <body>
+    <header>
+      <h1>MRI Workflow Simulator</h1>
+      <span id="level1-options-left">
+        <button type="button" class="btn" id="home-btn">
+          <span>
+            <i class="fa-solid fa-house"></i>
+          </span>
+        </button>
+        <button type="button" class="btn" id="schedule-btn">
+          <span>
+            <i class="fa-solid fa-calendar-days"></i>
+          </span>
+        </button>
+        <button type="button" class="btn" id="registration-btn">
+          <span>
+            <i class="fa-solid fa-contact-card">‌</i>
+          </span>
+        </button>
+      </span>
+      <span class="space"></span>
+      <span id="level1-options-right">
+        <button type="button" class="btn" id="help-btn">
+          <span>
+            <i class="fa-solid fa-circle-question"></i> 
+          </span>
+        </button>
+        <button type="button" class="btn" id="settings-btn">
+          <span>
+            <i class="fa-solid fa-headset">‌</i>
+          </span>
+        <button type="button" class="btn" id="network-btn">
+          <span>
+            <i class="fa-solid fa-network-wired"></i>
+          </span>
+        </button>
+        <button type="button" class="btn" id="logout-btn">
+          <span>
+            <i class="fa-solid fa-database">‌</i>
+          </span>
+        </button>
+        <button type="button" class="btn" id="briefcase-btn">
+          <span>
+            <i class="fa-solid fa-briefcase"></i>
+          </span>
+        </button>
+        <button type="button" class="btn" id="camera-btn">
+          <span>
+            <i class="fa-solid fa-video"></i>
+          </span>
+        </button>
+        <button type="button" class="btn" id="cart-btn">
+          <span>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </span>
+        </button>
+        <button type="button" class="btn" id="settings-btn">
+          <span>
+            <i class="fa-solid fa-gear"></i>
+          </span>
+        <button type="button" class="btn" id="user-btn">
+          <span>
+            <i class="fa-solid fa-user"></i>
+          </span>
+        </button>
+      </span>
+    </header>
+    <div class="main-container">
+      <section id="scheduler">
+        <h2>Scheduler</h2>
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="basic-addon1"
+            disabled
+            id="search"
+          />
+          <span class="input-group-text" id="basic-addon1"
+            ><i class="fa-solid fa-magnifying-glass"></i
+          ></span>
+        </div>
+
+        <div id="schedule-options">
+          <span id="schedule-selected-text" class="small"><i>Scheduled, Today</i></span>
+          <span class="space"></span>
+          <span id="schedule-options-right">
+            <button type="button" class="btn btn-sm" id="refresh-btn" disabled>
+              <span>
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </span>
+            </button>
+            <button type="button" class="btn btn-sm" id="schedule-select-btn" title="Select Schedule" disabled>
+              <span>
+                <i class="fa-solid fa-address-card">‌</i>
+              </span>
+            </button>
+            
+          </span>
+        </div>
+
+        <table id="schedule-table" class="table table-dark table-hover table-borderless">
+          <thead>
+            <tr>
+              <th>&#8593; &#8595;</th>
+              <th>Patient</th>
+              <th>Procedure</th>
+              <th>Date and Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="registration">
+        <div id="registration-options">
+          
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Patient Registration</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Program Registration</a>
+            </li>
+          </ul>
+          
+          <span class="space"></span>
+
+          <span id="registration-options-right" >
+            <button type="button" class="btn" id="er-patient-btn" disabled>
+              <span>
+                <i class="fa-solid fa-hospital-user"></i>
+              </span>
+              <label>Emergency Patient</label>
+            </button>
+            <button type="button" class="btn" id="registration-btn" disabled>
+              <span>
+                <i class="fa-solid fa-user-plus"></i>
+              </span>
+              <label>Register Patient</label>
+            </button>  
+            <button type="button" class="btn" id="deleteProcedure-btn" disabled>
+              <span>
+                <i class="fa-solid fa-trash"></i>
+              </span>
+              <label>Delete Procedure</label>
+            </button>
+          </span>
+        </div>
+        <form id="pt-registration" action="#">
+          <div style="width:370px">
+            <h2> &nbsp;</h2>
+            <span><label for="lastName">* Last Name </label>
+              <input required type="text" id="lastName" name="lastName" title="Last Name"/></span>
+
+            <span><label for="firstName"> First Name </label>
+              <input required type="text" id="firstName" name="firstName" title="First Name"/></span>
+
+            <span><label for="title">Title </label>
+              <input type="text" id="title" name="title"/></span>
+
+            <span><label for="" suffix>Suffix </label>
+              <input type="text" id="suffix" name="suffix"/></span>
+
+            <span><label for="middleName">Middle Name </label>
+              <input type="text" id="middleName" name="middleName"/></span>
+
+            <span><label for="patientId">* Patient ID </label>
+              <input required type="text" id="patientId" name="patientId" /></span>
+
+            <span>
+                <label for="dob">* Date of Birth </label>
+                <input required type="date" id="dob" name="dob" 
+                  title="Date of Birth"
+                  placeholder="M/D/yyyy" pattern="\d{1,2}/\d{1,2}/\d{4}" />
+            </span>
+
+            <span>
+                <label for="age">* Age </label>
+                <span>
+                    <input disabled type="number" id="age" name="age" min="0" step="1" 
+                      title="Age will be calcuated from DOB. Select the desired age unit (Y, M, W, D)."/
+                      style="color:white"/>
+                    <select required id="ageUnit" name="ageUnit">
+                        <option value="years" selected>Year(s)</option>
+                        <option value="months">Month(s)</option>
+                        <option value="weeks">Week(s)</option>
+                        <option value="days">Day(s)</option>
+                    </select> 
+                </span>
+            </span>
+
+            <span>
+                <label for="sex">* Sex </label>
+                <select required id="sex" name="sex">
+                    <option value="" disabled selected>Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </span>
+
+            <span>
+                <label for="height">* Height </label>
+                <span>
+                    <span>
+                        <input required type="number" id="heightFt" name="height" min="0" step="1" /> 
+                        <label id="unitsFt"> ft </label></span>
+                    <span>
+                        <input required type="number" id="heightIn" name="height" min="0" step="1" />
+                        <label id="unitsIn"> in </label></span>
+                </span>
+            </span>
+
+            <span>
+                <label for="weight" >* Weight </label>
+                <span>
+                    <span>
+                        <input required type="number" id="weight" name="weight" min="0" step="1"/> 
+                    <label id="unitsLb"> lb </label></span>
+                    <select required id="units" name="units" title="Change from U.S imperial units to metric" >
+                        <option value="us" selected>U.S.</option>
+                        <option value="metric">Metric</option>
+                    </select>
+                </span>
+            </span>
+          </div>
+
+          <div>
+            <h2>Medical Information</h2>
+
+            <span><label for="admittingDiagnosis">Admitting Diagnosis </label>
+              <textarea
+                id="admittingDiagnosis"
+                name="admittingDiagnosis"
+                rows="4"
+                cols="50"
+              ></textarea>
+            </span>
+
+            <h2>Alerts</h2>
+            <span><label for="MedicalAlerts">Medical Alerts </label>
+              <textarea
+                id="MedicalAlerts"
+                name="MedicalAlerts"
+                rows="4"
+                cols="50"
+              ></textarea>
+            </span>
+
+            <span><label for="allergies">Allergies </label>
+              <textarea
+                id="allergies"
+                name="allergies"
+                rows="4"
+                cols="50"
+              ></textarea>
+            </span>
+
+            <h2>Institution</h2>
+            <span><label for="institution">Institution Name </label>
+              <select id="institution" name="institution">
+                <option value="" selected>Select</option>
+                <option value="hospital1">Institution 1</option>
+                <option value="hospital2">Institution 2</option>
+                <option value="hospital3">Institution 3</option>
+              </select></span>
+            
+              <span>
+                <label for="performingPhysician">Performing Physician </label>
+                <textarea
+                  id="performingPhysician"
+                  name="performingPhysician"
+                  rows="4"
+                  cols="50"
+                ></textarea>
+              </span>
+              <span>
+                <label for="refPhysician">Referring Physician </label>
+                <select id="refPhysician" name="refPhysician">
+                  <option value="" selected>Select</option>
+                  <option value="physician1">Physician 1</option>
+                  <option value="physician2">Physician 2</option>
+                  <option value="physician3">Physician 3</option>
+                </select>
+              </span>
+              <span>
+                <label for="reqPhysician">Requesting Physician </label>
+                <select id="reqPhysician" name="reqPhysician">
+                  <option value="" selected>Select</option>
+                  <option value="physician1">Physician 1</option>
+                  <option value="physician2">Physician 2</option>
+                  <option value="physician3">Physician 3</option>
+                </select>
+              </span>
+              <span>
+                <label for="operator">Operator </label>
+                <textarea
+                  id="operator"
+                  name="operator"
+                  rows="4"
+                  cols="50"
+                ></textarea>
+            </span>
+
+          </div>
+
+          <div>
+                <h2>Examination Information</h2>
+
+                <div class="box">
+                    <h3>Procedure</h3>
+                    <span>
+                        <label for="accessionnr">Accession Nr. </label>
+                        <input type="text" id="accessionnr" name="accessionnr"/>
+                    </span>
+                    <span>
+                        <label for="reqProcId">Req. Proc. ID</label>
+                        <input type="text" id="reqProcId" name="reqProcId"/>
+                    </span>
+                    <span>
+                        <label for="studyDesc">Study Description</label>
+                        <input type="text" id="studyDesc" name="studyDesc"/>
+                    </span>
+                    <span>
+                        <label for="studyComments">Study Comments</label>
+                        <input type="text" id="studyComments" name="studyComments"/>
+                    </span>
+                </div>
+                
+                <h2>Program Selection</h2>
+                <div class="inline-flex"> * &nbsp;
+                    <select id="programSelection" name="programSelection">
+                        <option value="" selected>...&#187; WorkflowSimulation >> Other</option>
+                    </select>
+                </div>
+                
+                <h2>RF Transmit Mode</h2>
+                <div class="inline-flex"> * &nbsp;
+                    <select id="rfTransmit" name="rfTransmit">
+                        <option value="" selected>Any Polarization</option>
+                    </select>
+                </div>
+                
+
+                <h2>Body Part and Laterality</h2>
+                <div class="inline-flex"> 
+                  <span class="space">* </span>
+                  <select id="bodyPart" name="bodyPart">
+                      <option value="" disabled selected>Select</option>
+                      <option value="abdomen">Abdomen</option>
+                      <option value="abdomenpelvis">AbdomenPelvis</option>
+                      <option value="ankle">Ankle</option>
+                      <option value="aorta">Aorta</option>
+                      <option value="arm">Arm</option>
+                      <option value="axilla">Axilla</option>
+                      <option value="back">Back</option>
+                      <option value="bladder">Bladder</option>
+                      <option value="breast">Breast</option>
+                      <option value="brain">Brain</option>
+                      <option value="bronchus">Bronchus</option>
+                      <option value="calcaneus">Calcaneus</option>
+                      <option value="calf">Calf</option>
+                      <option value="carotid">Carotid</option>
+                      <option value="cerebellum">Cerebellum</option>
+                      <option value="cervix">Cervix</option>
+                      <option value="chest">Chest</option>
+                      <option value="chestabdomen">ChestAbdomen</option>
+                      <option value="chestabdpelvis">ChestAbdPelvis</option>
+                      <option value="circleofwillis">CircleOfWillis</option>
+                      <option value="clavicle">Clavicle</option>
+                      <option value="coccyx">Coccyx</option>
+                      <option value="colon">Colon</option>
+                      <option value="coronaryartery">CoronaryArtery</option>
+                      <option value="cspine">C-Spine</option>
+                      <option value="ctspine">CtSpine</option>
+                      <option value="duodenum">Duodenum</option>
+                      <option value="ear">Ear</option>
+                      <option value="elbow">Elbow</option>
+                      <option value="esophagus">Esophagus</option>
+                      <option value="extremity">Extremity</option>
+                      <option value="eye">Eye</option>
+                      <option value="femur">Femur</option>
+                      <option value="finger">Finger</option>
+                      <option value="foot">Foot</option>
+                      <option value="gallbladder">GallBladder</option>
+                      <option value="hand">Hand</option>
+                      <option value="head">Head</option>
+                      <option value="headneck">HeadNeck</option>
+                      <option value="heart">Heart</option>
+                      <option value="hip">Hip</option>
+                      <option value="humerus">Humerus</option>
+                      <option value="iac">IAC</option>
+                      <option value="ileum">Ileum</option>
+                      <option value="ilium">Ilium</option>
+                      <option value="jaw">Jaw</option>
+                      <option value="jawmandible">Jaw(Mandible)</option>
+                      <option value="jejunum">Jejunum</option>
+                      <option value="kidney">Kidney</option>
+                      <option value="knee">Knee</option>
+                      <option value="larynx">Larynx</option>
+                      <option value="leg">Leg</option>
+                      <option value="liver">Liver</option>
+                      <option value="lspine">L-Spine</option>
+                      <option value="lsspone">LsSpone</option>
+                      <option value="lung">Lung</option>
+                      <option value="maxilla">Maxilla</option>
+                      <option value="mediastinum">Mediastinum</option>
+                      <option value="mouth">Mouth</option>
+                      <option value="neck">Neck</option>
+                      <option value="neckchest">NeckChest</option>
+                      <option value="neckchestabdomen">NeckChestAbdomen</option>
+                      <option value="neckchestabdpelvis">NeckChestAbdPelvis</option>
+                      <option value="nose">Nose</option>
+                      <option value="orbit">Orbit</option>
+                      <option value="ovary">Ovary</option>
+                      <option value="pancreas">Pancreas</option>
+                      <option value="parotid">Parotid</option>
+                      <option value="patella">Patella</option>
+                      <option value="pelvis">Pelvis</option>
+                      <option value="penis">Penis</option>
+                      <option value="pharynx">Pharynx</option>
+                      <option value="prostate">Prostate</option>
+                      <option value="rectum">Rectum</option>
+                      <option value="rib">Rib</option>
+                      <option value="scapula">Scapula</option>
+                      <option value="scrotum">Scrotum</option>
+                      <option value="shoulder">Shoulder</option>
+                      <option value="skull">Skull</option>
+                      <option value="spine">Spine</option>
+                      <option value="spleen">Spleen</option>
+                      <option value="sspine">S-Spine</option>
+                      <option value="sternum">Sternum</option>
+                      <option value="stomach">Stomach</option>
+                      <option value="submandibular">Submandibular</option>
+                      <option value="testis">Testis</option>
+                      <option value="thigh">Thigh</option>
+                      <option value="thumb">Thumb</option>
+                      <option value="thymus">Thymus</option>
+                      <option value="thyroid">Thyroid</option>
+                      <option value="tlspine">TlSpine</option>
+                      <option value="tmj">TMJ</option>
+                      <option value="toe">Toe</option>
+                      <option value="tongue">Tongue</option>
+                      <option value="trachea">Trachea</option>
+                      <option value="tspine">T-Spine</option>
+                      <option value="ureter">Ureter</option>
+                      <option value="vagina">Vagina</option>
+                      <option value="vulva">Vulva</option>
+                      <option value="wholebody">WholeBody</option>
+                      <option value="wrist">Wrist</option>
+                      <option value="zygoma">Zygoma</option>
+                  </select>
+                  <span class="space">&nbsp;</span>
+                  <select id="laterality" name="laterality" disabled>
+                      <option value="" disabled selected>Unpaired</option>
+                      <option value="left">Left</option>
+                      <option value="right">Right</option>
+                      <option value="bilateral">Both</option>
+                  </select>
+                </div>
+            
+                <h2>Patient Orientation</h2>
+                <div class="inline-flex">
+                  * &nbsp; <button type="button" class="select-btn" id="orientationBtn">
+                        <img src="0078d62f24c4b80057bf.svg" class="select-btn-icon" id="orientationIcon"/>
+                        <span id="orientationText">Head First Supine</span>  
+                        <i class="right icon fa-solid fa-angle-down"></i>
+                    </button>
+                    
+                </div>
+                
+                <div id="orientationOptions" class="select-options hidden">
+                    <span>
+                        <img src="0078d62f24c4b80057bf.svg" alt="Head First Supine" id="headSupine" class="select-icon selected" title="Head First Supine"/>
+                        <img src="10e6c67083299bfefa39.svg" alt="Head First Prone" id="headProne" class="select-icon" title="Head First Prone"/>
+                        <img src="0401a1b196da5b6a4131.svg" alt="Head First Lef Lateral" id="headLeft" class="select-icon" />
+                        <img src="71d7921679d4143206ea.svg" alt="Head First Right Lateral" id="headRight" class="select-icon" />
+                    </span>
+                    <span>
+                        <img src="043c96dd308c20d2c903.svg" alt="Feet First Supine" id="feetSupine" class="select-icon" title="Feet First Supine" />
+                        <img src="cc2f4a30dbb2fdc5e2a4.svg" alt="Feet First Prone" id="feetProne" class="select-icon" title="Feet First Prone" />
+                        <img src="13f9e801ee2b8b433089.svg" alt="Feet First Left Lateral" id="feetLeft" class="select-icon" title="Feet First Left Lateral" />
+                        <img src="789a693a12c422843ad1.svg" alt="Feet First Right Lateral" id="feetRight" class="select-icon" title="Feet First Right Lateral" />
+                    </span>
+                </div>
+                
+                
+          </div>
+
+          <div class="break"></div> <!-- break -->
+          
+          
+          
+        </form>
+        <div id="registration-note" class="center">
+          <span class="field-info-safety"> 
+            &nbsp;&nbsp; 
+            Safety relevent information needs to be validated and confirmed</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+          <span class="field-info-required">* Mandatory information</span>
+        </div>
+      
+        <footer>    
+          <span>
+            <button type="button" class="btn disabled" id="save" disabled>Save</button>
+            <button type="button" class="btn disabled" id="cancel" disabled>Cancel</button>
+            <button type="button" class="btn disabled" id="delete" disabled>Delete</button>
+          </span>
+          <span>
+              <button type="button" class="btn disabled" id="localData" disabled>Local Data</button>
+              <button type="button" class="btn disabled" id="priorStudies" disabled>Prior Studies</button>
+          </span>
+          <span>
+              <button type="button" class="btn btn-warning disabled" id="exam" disabled>Exam</button>
+          </span>
+                      
+        </footer>
+      </section>
+
+    </div>
+    
+  <script defer src="bundle.js"></script></body>
+</html>
