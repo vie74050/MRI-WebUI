@@ -8,6 +8,69 @@
   <body>
     <header>
       <h1>MRI Workflow Simulator</h1>
+      <span id="level1-options-left">
+        <button type="button" class="btn" id="home-btn">
+          <span>
+            <i class="fa-solid fa-house"></i>
+          </span>
+        </button>
+        <button type="button" class="btn" id="schedule-btn">
+          <span>
+            <i class="fa-solid fa-calendar-days"></i>
+          </span>
+        </button>
+        <button type="button" class="btn" id="registration-btn">
+          <span>
+            <i class="fa-solid fa-contact-card">‌</i>
+          </span>
+        </button>
+      </span>
+      <span class="space"></span>
+      <span id="level1-options-right">
+        <button type="button" class="btn" id="help-btn">
+          <span>
+            <i class="fa-solid fa-circle-question"></i> 
+          </span>
+        </button>
+        <button type="button" class="btn" id="settings-btn">
+          <span>
+            <i class="fa-solid fa-headset">‌</i>
+          </span>
+        <button type="button" class="btn" id="network-btn">
+          <span>
+            <i class="fa-solid fa-network-wired"></i>
+          </span>
+        </button>
+        <button type="button" class="btn" id="logout-btn">
+          <span>
+            <i class="fa-solid fa-database">‌</i>
+          </span>
+        </button>
+        <button type="button" class="btn" id="briefcase-btn">
+          <span>
+            <i class="fa-solid fa-briefcase"></i>
+          </span>
+        </button>
+        <button type="button" class="btn" id="camera-btn">
+          <span>
+            <i class="fa-solid fa-video"></i>
+          </span>
+        </button>
+        <button type="button" class="btn" id="cart-btn">
+          <span>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </span>
+        </button>
+        <button type="button" class="btn" id="settings-btn">
+          <span>
+            <i class="fa-solid fa-gear"></i>
+          </span>
+        <button type="button" class="btn" id="user-btn">
+          <span>
+            <i class="fa-solid fa-user"></i>
+          </span>
+        </button>
+      </span>
     </header>
     <div class="main-container">
       <section id="schedular">
@@ -29,6 +92,33 @@
       </section>
 
       <section id="registration">
+        <div id="registration-options">
+          
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Patient Registration</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Program Registration</a>
+            </li>
+          </ul>
+          
+          <span class="space"></span>
+          <span id="registration-options-right" >
+            <button type="button" class="btn" id="er-patient-btn" disabled>
+              <span>
+                <i class="fa-solid fa-hospital-user"></i>
+              </span>
+              <label>Emergency Patient</label>
+            </button>
+            <button type="button" class="btn" id="registration-btn" disabled>
+              <span>
+                <i class="fa-solid fa-user-plus"></i>
+              </span>
+              <label>Register Patient</label>
+            </button>  
+          </span>
+        </div>
         <form id="pt-registration" action="#">
           <div style="width:370px">
             <h2> &nbsp;</h2>

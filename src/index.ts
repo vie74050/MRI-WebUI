@@ -3,6 +3,10 @@ import '@fortawesome/fontawesome-free/js/fontawesome'
 import '@fortawesome/fontawesome-free/js/solid'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styles.css";
+import "./styles/header.css";
+import "./styles/footer.css";
+import "./styles/registration.css";
+import "./styles/registration-options.css";
 
 require('./EventHandlers/patientOrientation.ts');
 require('./EventHandlers/bodyPartsLaterality.ts');
