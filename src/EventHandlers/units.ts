@@ -14,9 +14,12 @@ unitsSelect.addEventListener("change", () => {
     
     // check if selected option is `metric` or `US`
     if (selectedOption.value === "metric") {
+        
         // check if height input value; convert to metric
-        if (heightInputFt.value) {
-            const heightInInches = getInchesFromFeetAndInches(parseFloat(heightInputFt.value), parseFloat(heightInputIn.value));
+        if (heightInputFt.value || heightInputIn.value) {
+            let ft = heightInputFt.value;
+            let inch = heightInputIn.value;
+            const heightInInches = getInchesFromFeetAndInches(ft, inch);
             
             // convert to display in m, cm
             let heightInMeters = (heightInInches * 0.0254);
@@ -24,7 +27,7 @@ unitsSelect.addEventListener("change", () => {
             let heightInCm = remainder * 100;
             heightInMeters = Math.floor(heightInMeters);
             heightInputFt.value = heightInMeters.toString();
-            heightInputIn.value = heightInCm.toString();
+            heightInputIn.value = heightInCm.toFixed(2);
            
         }
         // check if weight input value; convert to metric
@@ -37,14 +40,18 @@ unitsSelect.addEventListener("change", () => {
         unitsLb.innerText = "kg";
     } else {
         // check if height input value; convert to US
-        if (heightInputFt.value) {
-            const heightInCm = parseFloat(heightInputFt.value)*100 + parseFloat(heightInputIn.value);
+        if (heightInputFt.value || heightInputIn.value) {
+            // convert string to float, if empty, set to 0
+            let input1 = parseFloat(heightInputFt.value) || 0;
+            let input2 = parseFloat(heightInputIn.value) || 0;
+
+            const heightInCm = input1*100 + input2;
             // convert to display in ft, in
             let heightInInches = (heightInCm * 0.393701);
             const feet = Math.floor(heightInInches / 12);
             const inches = heightInInches % 12;
             heightInputFt.value = feet.toString();
-            heightInputIn.value = inches.toString();;
+            heightInputIn.value = inches.toFixed(2);
         }   
         if (weightInput.value) {
             weightInput.value = Math.round(parseFloat(weightInput.value) * 2.2046226218).toString();
@@ -56,6 +63,12 @@ unitsSelect.addEventListener("change", () => {
     }
 });
 
-function getInchesFromFeetAndInches(feet: number, inches: number): number {
+function getInchesFromFeetAndInches(feet_s: string, inches_s: string): number {
+    // convert string to float, if empty, set to 0
+    let feet = parseFloat(feet_s) || 0;
+    let inches = parseFloat(inches_s) || 0;
+    console.log("feet: ", feet_s);
+    console.log("inches: ", inches_s);
+    // Convert feet and inches to total inches
     return (feet * 12) + inches;
 }
