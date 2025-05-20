@@ -4,10 +4,19 @@ const orientationIcon = document.getElementById("orientationIcon") as HTMLDivEle
 const orientationText = document.getElementById("orientationText") as HTMLDivElement;
 const orientationOpts =document.getElementById("orientationOptions") as HTMLButtonElement;
 
+
 orientationBtn.addEventListener("click", () => {    
+    const orientationArrow = orientationBtn.querySelector('svg');
     // toggle panel class hidden
     orientationOpts.classList.toggle("hidden");
-        
+    // toggle icon caret up/dn svg
+    if (orientationOpts.classList.contains("hidden")) {
+        orientationArrow?.setAttribute("data-icon", "angle-down");
+    } else {
+        orientationArrow?.setAttribute("data-icon", "angle-up");
+    }
+
+    
 });
 
 // Get orientationOpts' icons and assign click event

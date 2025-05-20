@@ -115,7 +115,8 @@ form button.select-btn,
 
 input:hover, select:hover, textarea:hover,
 .select-icon:hover, button.select-btn:hover {
-    background-color: #444;
+    background-color: #eee;
+    color: #222;
     border-color: #2196f3;
     border-radius: 5px;
     transition: 0.3s;
@@ -125,7 +126,6 @@ input:hover, select:hover, textarea:hover,
     border-radius: 10px;
     transition: 0.3s;
 }
-
 div.inline-flex {
     display: inline-flex;
     flex-direction: row;
