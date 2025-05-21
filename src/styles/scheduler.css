@@ -3,6 +3,7 @@
     flex-direction: column;
     flex-shrink: 1;
     height: 100%;
+    width: 400px;;
 }
 #schedule-options{
     display: flex;
@@ -29,3 +30,4 @@
 #scheduler table th {
     font-weight: normal;
 }
+

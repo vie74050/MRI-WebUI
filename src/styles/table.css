@@ -1,0 +1,18 @@
+.table-dark{
+    --bs-table-color: #fff;
+    --bs-table-bg: #888888;
+    --bs-table-border-color: #4d5154;
+    --bs-table-striped-bg: #888888;
+    --bs-table-striped-color: #555555;
+    --bs-table-active-bg: #888888;
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: #b1b1b1;
+    --bs-table-hover-color: #444;
+    color: var(--bs-table-color);
+    border-color: var(--bs-table-border-color);
+}
+
+.table-dark thead th{
+    color: var(--bs-table-color);
+    background-color: #4a4a4a;
+}

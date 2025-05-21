@@ -8,6 +8,7 @@ import "./styles/footer.css";
 import "./styles/scheduler.css";
 import "./styles/registration.css";
 import "./styles/registration-options.css";
+import "./styles/table.css";
 
 require('./EventHandlers/patientOrientation.ts');
 require('./EventHandlers/bodyPartsLaterality.ts');
