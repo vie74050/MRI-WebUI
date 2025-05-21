@@ -115,7 +115,7 @@ form button.select-btn,
 
 input:hover, select:hover, textarea:hover,
 .select-icon:hover, button.select-btn:hover {
-    background-color: #eee;
+    background-color: #aaa;
     color: #222;
     border-color: #2196f3;
     border-radius: 5px;
