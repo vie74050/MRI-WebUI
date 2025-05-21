@@ -4,6 +4,9 @@ const ptRegistrationForm = document.getElementById("pt-registration") as HTMLFor
 const reistrationNote = document.getElementById("registration-note") as HTMLDivElement;
 const requiredFields = ptRegistrationForm.querySelectorAll("input.field-info-safety, select.field-info-safety, textarea.field-info-safety") as NodeListOf<HTMLInputElement>;
 
+// exception: orientationBtn
+const orientationText = document.getElementById("orientationText") as HTMLButtonElement;
+
 // exception: heightFt and heightIn
 const heightFt = document.getElementById("heightFt") as HTMLInputElement;
 const heightIn = document.getElementById("heightIn") as HTMLInputElement;
@@ -34,15 +37,20 @@ examBtn.addEventListener("click", (event) => {
         }
     });
 
-    examFeedback.classList.remove("alert-danger", "alert-success");
+    // check if orientationBtn text is not "Select"
+    if (orientationText.innerText === "Select") {
+        allFieldsFilled = false;
+    }
+
+    examFeedback.classList.remove("alert-warning", "alert-success");
 
     if (!allFieldsFilled) {
         
-        examFeedback.innerHTML = "<b>Please fill all required fields.</b>";
-        examFeedback.classList.add("alert-danger");
+        examFeedback.innerHTML = "<b>Please fill all mandatory * fields.</b>";
+        examFeedback.classList.add("alert-warning");
         
     }else {
-        examFeedback.innerHTML = "<b>All required fields are filled. Verify the information is correct.</b>";
+        examFeedback.innerHTML = "<b>All mandatory fields are filled. Verify the information is correct.</b>";
         examFeedback.classList.add("alert-success");
     }
     
