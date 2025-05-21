@@ -106,11 +106,8 @@ form .select-icon{
     margin: 0.2em;
 }
 
-input:required, select:required, textarea:required,
-form button.select-btn,
 .field-info-safety {
-    border-left: 3px solid rgb(255, 196, 0);
-    border-radius: 0;
+    border-left: 3px solid rgb(255, 196, 0) !important;
 }
 
 input:hover, select:hover, textarea:hover,
@@ -134,6 +131,7 @@ div.inline-flex {
     width: 100%;
 }
 
+div.space,
 span.space {
     width: 1em;
     flex-grow: 1;
@@ -148,6 +146,7 @@ div.center {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 .box {
     border: 1px solid #888;

@@ -179,10 +179,10 @@
           <div style="width:370px">
             <h2> &nbsp;</h2>
             <span><label for="lastName">* Last Name </label>
-              <input required type="text" id="lastName" name="lastName" title="Last Name"/></span>
+              <input class="field-info-safety" required type="text" id="lastName" name="lastName" title="Last Name"/></span>
 
             <span><label for="firstName"> First Name </label>
-              <input required type="text" id="firstName" name="firstName" title="First Name"/></span>
+              <input class="field-info-safety" required type="text" id="firstName" name="firstName" title="First Name"/></span>
 
             <span><label for="title">Title </label>
               <input type="text" id="title" name="title"/></span>
@@ -194,11 +194,11 @@
               <input type="text" id="middleName" name="middleName"/></span>
 
             <span><label for="patientId">* Patient ID </label>
-              <input required type="text" id="patientId" name="patientId" /></span>
+              <input class="field-info-safety" required type="text" id="patientId" name="patientId" /></span>
 
             <span>
                 <label for="dob">* Date of Birth </label>
-                <input required type="date" id="dob" name="dob" 
+                <input class="field-info-safety" required type="date" id="dob" name="dob" 
                   title="Date of Birth"
                   placeholder="M/D/yyyy" pattern="\d{1,2}/\d{1,2}/\d{4}" />
             </span>
@@ -206,10 +206,10 @@
             <span>
                 <label for="age">* Age </label>
                 <span>
-                    <input disabled type="number" id="age" name="age" min="0" step="1" 
+                    <input class="field-info-safety" disabled type="number" id="age" name="age" min="0" step="1" 
                       title="Age will be calcuated from DOB. Select the desired age unit (Y, M, W, D)."/
                       style="color:white"/>
-                    <select required id="ageUnit" name="ageUnit">
+                    <select class="field-info-safety" required id="ageUnit" name="ageUnit">
                         <option value="years" selected>Year(s)</option>
                         <option value="months">Month(s)</option>
                         <option value="weeks">Week(s)</option>
@@ -220,7 +220,7 @@
 
             <span>
                 <label for="sex">* Sex </label>
-                <select required id="sex" name="sex">
+                <select class="field-info-safety" required id="sex" name="sex">
                     <option value="" disabled selected>Select</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -232,10 +232,10 @@
                 <label for="height">* Height </label>
                 <span>
                     <span>
-                        <input required type="number" id="heightFt" name="height" min="0" step="1" /> 
+                        <input class="field-info-safety" required type="number" id="heightFt" name="height" min="0" step="1" /> 
                         <label id="unitsFt"> ft </label></span>
                     <span>
-                        <input required type="number" id="heightIn" name="height" min="0" step="1" />
+                        <input class="field-info-safety" required type="number" id="heightIn" name="height" min="0" step="1" />
                         <label id="unitsIn"> in </label></span>
                 </span>
             </span>
@@ -244,9 +244,9 @@
                 <label for="weight" >* Weight </label>
                 <span>
                     <span>
-                        <input required type="number" id="weight" name="weight" min="0" step="1"/> 
+                        <input class="field-info-safety" required type="number" id="weight" name="weight" min="0" step="1"/> 
                     <label id="unitsLb"> lb </label></span>
-                    <select required id="units" name="units" title="Change from U.S imperial units to metric" >
+                    <select class="field-info-safety" required id="units" name="units" title="Change from U.S imperial units to metric" >
                         <option value="us" selected>U.S.</option>
                         <option value="metric">Metric</option>
                     </select>
@@ -358,14 +358,14 @@
                 
                 <h2>Program Selection</h2>
                 <div class="inline-flex"> * &nbsp;
-                    <select id="programSelection" name="programSelection">
+                    <select required id="programSelection" name="programSelection">
                         <option value="" selected>...&#187; WorkflowSimulation >> Other</option>
                     </select>
                 </div>
                 
                 <h2>RF Transmit Mode</h2>
                 <div class="inline-flex"> * &nbsp;
-                    <select id="rfTransmit" name="rfTransmit">
+                    <select required id="rfTransmit" name="rfTransmit">
                         <option value="" selected>Any Polarization</option>
                     </select>
                 </div>
@@ -374,7 +374,7 @@
                 <h2>Body Part and Laterality</h2>
                 <div class="inline-flex"> 
                   <span class="space">* </span>
-                  <select id="bodyPart" name="bodyPart">
+                  <select required id="bodyPart" name="bodyPart">
                       <option value="" disabled selected>Select</option>
                       <option value="abdomen">Abdomen</option>
                       <option value="abdomenpelvis">AbdomenPelvis</option>
@@ -491,7 +491,7 @@
                 <h2>Patient Orientation</h2>
                 <div class="inline-flex">
                   * &nbsp; 
-                    <button type="button" class="select-btn" id="orientationBtn">
+                    <button type="button" class="select-btn field-info-safety" id="orientationBtn">
                         <img src="8ad5f5e579585783cdad.svg" class="select-btn-icon" id="orientationIcon"/>
                         <span id="orientationText">Head First Supine</span>  
                         <i class="right fa-solid fa-angle-down"></i>
@@ -517,7 +517,7 @@
                 
           </div>
 
-          <div class="break"></div> <!-- break -->
+          <div class="break"></div> 
           
         </form>
         <div id="registration-note" class="center alert" role="alert">
@@ -526,6 +526,7 @@
             Safety relevent information needs to be validated and confirmed</span>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
           <span class="field-info-required">* Mandatory information</span>
+          <div class="break"></div> 
         </div>
       
         <footer>    
