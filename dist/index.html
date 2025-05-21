@@ -197,12 +197,29 @@
               <input class="field-info-safety" required type="text" id="patientId" name="patientId" /></span>
 
             <span>
-                <label for="dob">* Date of Birth </label>
-                <input class="field-info-safety" required type="date" id="dob" name="dob" 
-                  title="Date of Birth"
-                  placeholder="M/D/yyyy" pattern="\d{1,2}/\d{1,2}/\d{4}" />
+                <label>* Date of Birth </label>
+                <span>        
+                  <select class="field-info-safety" required id="dobMonth" name="dobMonth" aria-placeholder="M">
+                      <option value="" disabled selected>M</option>
+                      <option value="01">Jan</option>
+                      <option value="02">Feb</option>
+                      <option value="03">Mar</option>
+                      <option value="04">Apr</option>
+                      <option value="05">May</option>
+                      <option value="06">Jun</option>
+                      <option value="07">Jul</option>
+                      <option value="08">Aug</option>
+                      <option value="09">Sep</option>
+                      <option value="10">Oct</option>
+                      <option value="11">Nov</option>
+                      <option value="12">Dec</option>
+                  </select>
+                  <input class="field-info-safety" required type="number" id="dobDay" min="1" max="31" step="1" placeholder="dd"/>
+                  <input class="field-info-safety" required type="number" id="dobYear" min="1900" max="2099" step="1" placeholder="yyyy"/>
+                </span>
+                
             </span>
-
+            
             <span>
                 <label for="age">* Age </label>
                 <span>
@@ -244,8 +261,9 @@
                 <label for="weight" >* Weight </label>
                 <span>
                     <span>
-                        <input class="field-info-safety" required type="number" id="weight" name="weight" min="0" step="1"/> 
-                    <label id="unitsLb"> lb </label></span>
+                      <input class="field-info-safety" required type="number" id="weight" name="weight" min="0" step="1"/> 
+                      <label id="unitsLb"> lb </label>
+                    </span>
                     <select class="field-info-safety" required id="units" name="units" title="Change from U.S imperial units to metric" >
                         <option value="us" selected>U.S.</option>
                         <option value="metric">Metric</option>
@@ -501,7 +519,7 @@
                 
                 <div id="orientationOptions" class="select-options hidden">
                     <span>
-                        <img src="8ad5f5e579585783cdad.svg" alt="Head First Supine" id="headSupine" class="select-icon selected" title="Head First Supine"/>
+                        <img src="8ad5f5e579585783cdad.svg" alt="Head First Supine" id="headSupine" class="select-icon" title="Head First Supine"/>
                         <img src="c41b27adf51c73054f22.svg" alt="Head First Prone" id="headProne" class="select-icon" title="Head First Prone"/>
                         <img src="855c15e2c6c7f2983908.svg" alt="Head First Lef Lateral" id="headLeft" class="select-icon" />
                         <img src="733925866ff2f1f0cbec.svg" alt="Head First Right Lateral" id="headRight" class="select-icon" />

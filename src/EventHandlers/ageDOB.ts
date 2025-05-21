@@ -2,19 +2,35 @@
 // get #dob input and assign change event
 
 // the date input is in the format YYYY-MM-DD
-const dobInput = document.querySelector("#dob") as HTMLInputElement; 
+
+const dobYear = document.querySelector("#dobYear") as HTMLInputElement;
+const dobMonth = document.querySelector("#dobMonth") as HTMLSelectElement;
+const dobDay = document.querySelector("#dobDay") as HTMLInputElement;
+
 // the age to update when dob is changed, depending on the age unit
 // the age unit is in the format of years, months, weeks, days
 const ageInput = document.querySelector("#age") as HTMLInputElement;
 const ageUnit = document.querySelector("#ageUnit") as HTMLInputElement;
 
 function updateAge() {
-    // get the value of the dob input
-    const dobValue = dobInput.value;
+    
+    // get the dob value from the year, month and day inputs
+    const dobYearValue = dobYear.value;
+    const dobMonthValue = dobMonth.value;
+    const dobDayValue = dobDay.value;
+    
+    // validate the date
+    const dobDateString = `${dobYearValue}-${dobMonthValue}-${dobDayValue}`;
+    const dobDate = new Date(dobDateString);
+    // check if the date is valid
+    if (isNaN(dobDate.getTime())) {
+        ageInput.value = "";
+        return;
+    }
+
     // get the current date
     const currentDate = new Date();
-    // get the dob date
-    const dobDate = new Date(dobValue);
+    
     // calculate the age in milliseconds
     const ageInMilliseconds = currentDate.getTime() - dobDate.getTime();
     // calculate the age in years
@@ -45,6 +61,17 @@ function updateAge() {
     }
 }
 
+function validateDate(dateString: string): boolean {
+    const regex = /^\d{4}-\d{2}-\d{2}$/;
+    if (!dateString.match(regex)) {
+        return false;
+    }
+    const date = new Date(dateString);
+    return date.toISOString().slice(0, 10) === dateString;
+}
+
 // add event listener to dob and age unit inputs to update age
-dobInput.addEventListener("change", updateAge);
+dobYear.addEventListener("change", updateAge);
+dobMonth.addEventListener("change", updateAge);
+dobDay.addEventListener("change", updateAge);
 ageUnit.addEventListener("change", updateAge);
