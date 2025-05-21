@@ -14,4 +14,5 @@ require('./EventHandlers/patientOrientation.ts');
 require('./EventHandlers/bodyPartsLaterality.ts');
 require('./EventHandlers/units.ts');
 require('./EventHandlers/ageDOB.ts');
+require('./EventHandlers/exam-btn.ts');
 
