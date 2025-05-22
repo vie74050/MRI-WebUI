@@ -29,8 +29,14 @@ a {
     color: #2196f3;
     text-decoration: none;
 }
+.btn:disabled{
+    background-color: transparent;
+}
 .btn.icon:disabled {
     border-color: transparent;
+}
+button>label{
+    cursor: pointer;
 }
 .main-container {
     display: flex;

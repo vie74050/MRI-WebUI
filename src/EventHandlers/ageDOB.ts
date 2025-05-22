@@ -23,7 +23,8 @@ function updateAge() {
     const dobDateString = `${dobYearValue}-${dobMonthValue}-${dobDayValue}`;
     const dobDate = new Date(dobDateString);
     // check if the date is valid
-    if (isNaN(dobDate.getTime())) {
+    
+    if (validateDate(dobDateString) === false || dobDate.getTime() > Date.now()) {
         ageInput.value = "";
         return;
     }
@@ -62,12 +63,8 @@ function updateAge() {
 }
 
 function validateDate(dateString: string): boolean {
-    const regex = /^\d{4}-\d{2}-\d{2}$/;
-    if (!dateString.match(regex)) {
-        return false;
-    }
-    const date = new Date(dateString);
-    return date.toISOString().slice(0, 10) === dateString;
+    const regex = /^\d{4}-\d{1,2}-\d{1,2}$/;
+    return dateString.match(regex) === null ? false : true;
 }
 
 // add event listener to dob and age unit inputs to update age
