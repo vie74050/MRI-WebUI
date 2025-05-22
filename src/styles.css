@@ -29,6 +29,9 @@ a {
     color: #2196f3;
     text-decoration: none;
 }
+.btn.icon:disabled {
+    border-color: transparent;
+}
 .main-container {
     display: flex;
     flex-direction: row;
@@ -44,3 +47,4 @@ a {
     }
     
 }
+

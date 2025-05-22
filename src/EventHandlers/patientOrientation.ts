@@ -4,6 +4,8 @@ const orientationIcon = document.getElementById("orientationIcon") as HTMLDivEle
 const orientationText = document.getElementById("orientationText") as HTMLDivElement;
 const orientationOpts =document.getElementById("orientationOptions") as HTMLButtonElement;
 
+const defaultIconSrc = orientationIcon.getAttribute("src") as string;
+const defaultIconText = orientationText.innerText;
 
 orientationBtn.addEventListener("click", () => {    
     const orientationArrow = orientationBtn.querySelector('svg');
@@ -37,3 +39,22 @@ orientationIcons.forEach((icon) => {
         orientationText.innerText = iconText;               
     });
 });
+
+function ResetSelection() {
+    // remove active class from all icons
+    orientationIcons.forEach((icon) => {
+        icon.classList.remove("selected");
+    });
+    // reset orientationIcon src and orientationText text
+    
+    orientationIcon.setAttribute("src", defaultIconSrc);
+    orientationText.innerText = defaultIconText;
+    // hide orientationOpts
+    orientationOpts.classList.add("hidden");
+
+    // reset orientationBtn arrow
+    const orientationArrow = orientationBtn.querySelector('svg');
+    orientationArrow?.setAttribute("data-icon", "angle-down");
+
+}
+export { ResetSelection };

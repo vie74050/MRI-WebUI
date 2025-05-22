@@ -9,17 +9,17 @@
     <header>
       <h1>MRI Workflow Simulator</h1>
       <span id="level1-options-left">
-        <button type="button" class="btn" id="home-btn">
+        <button type="button" class="btn icon" disabled id="home-btn">
           <span>
             <i class="fa-solid fa-house"></i>
           </span>
         </button>
-        <button type="button" class="btn" id="schedule-btn">
+        <button type="button" class="btn icon" disabled id="schedule-btn">
           <span>
             <i class="fa-solid fa-calendar-days"></i>
           </span>
         </button>
-        <button type="button" class="btn" id="registration-btn">
+        <button type="button" class="btn icon" disabled id="registration-btn">
           <span>
             <i class="fa-solid fa-contact-card">‌</i>
           </span>
@@ -27,45 +27,47 @@
       </span>
       <span class="space"></span>
       <span id="level1-options-right">
-        <button type="button" class="btn" id="help-btn">
+        <button type="button" class="btn icon" disabled id="help-btn">
           <span>
             <i class="fa-solid fa-circle-question"></i> 
           </span>
         </button>
-        <button type="button" class="btn" id="settings-btn">
+        <button type="button" class="btn icon" disabled id="settings-btn">
           <span>
             <i class="fa-solid fa-headset">‌</i>
           </span>
-        <button type="button" class="btn" id="network-btn">
+        </button>
+        <button type="button" class="btn icon" disabled id="network-btn">
           <span>
             <i class="fa-solid fa-network-wired"></i>
           </span>
         </button>
-        <button type="button" class="btn" id="logout-btn">
+        <button type="button" class="btn icon" disabled id="logout-btn">
           <span>
             <i class="fa-solid fa-database">‌</i>
           </span>
         </button>
-        <button type="button" class="btn" id="briefcase-btn">
+        <button type="button" class="btn icon" disabled id="briefcase-btn">
           <span>
             <i class="fa-solid fa-briefcase"></i>
           </span>
         </button>
-        <button type="button" class="btn" id="camera-btn">
+        <button type="button" class="btn icon" disabled id="camera-btn">
           <span>
             <i class="fa-solid fa-video"></i>
           </span>
         </button>
-        <button type="button" class="btn" id="cart-btn">
+        <button type="button" class="btn icon" disabled id="cart-btn">
           <span>
             <i class="fa-solid fa-cart-shopping"></i>
           </span>
         </button>
-        <button type="button" class="btn" id="settings-btn">
+        <button type="button" class="btn icon" disabled id="settings-btn">
           <span>
             <i class="fa-solid fa-gear"></i>
           </span>
-        <button type="button" class="btn" id="user-btn">
+        </button>
+        <button type="button" class="btn icon" disabled id="user-btn">
           <span>
             <i class="fa-solid fa-user"></i>
           </span>
@@ -148,26 +150,26 @@
               <a class="nav-link active" aria-current="page" href="#">Patient Registration</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Program Registration</a>
+              <a class="nav-link" disabled href="#">Program Registration</a>
             </li>
           </ul>
           
           <span class="space"></span>
 
           <span id="registration-options-right" >
-            <button type="button" class="btn" id="er-patient-btn" >
+            <button disabled type="button" class="btn icon" id="er-patient-btn" >
               <span>
                 <i class="fa-solid fa-hospital-user"></i>
               </span>
               <label>Emergency Patient</label>
             </button>
-            <button type="button" class="btn" id="registration-btn" >
+            <button type="button" class="btn icon" id="registration-btn" >
               <span>
                 <i class="fa-solid fa-user-plus"></i>
               </span>
               <label>Register Patient</label>
             </button>  
-            <button type="button" class="btn" id="deleteProcedure-btn" >
+            <button disabled type="button" class="btn icon" id="deleteProcedure-btn" >
               <span>
                 <i class="fa-solid fa-trash"></i>
               </span>
@@ -549,13 +551,13 @@
       
         <footer>    
           <span>
-            <button type="button" class="btn disabled" id="save" disabled>Save</button>
-            <button type="button" class="btn disabled" id="cancel" disabled>Cancel</button>
-            <button type="button" class="btn disabled" id="delete" disabled>Delete</button>
+            <button type="button" class="btn btn-secondary" id="save" disabled>Save</button>
+            <button type="button" class="btn btn-secondary" id="cancel" disabled>Cancel</button>
+            <button type="button" class="btn btn-secondary" id="delete">Delete</button>
           </span>
           <span>
-              <button type="button" class="btn disabled" id="localData" disabled>Local Data</button>
-              <button type="button" class="btn disabled" id="priorStudies" disabled>Prior Studies</button>
+              <button type="button" class="btn btn-secondary" id="localData" disabled>Local Data</button>
+              <button type="button" class="btn  btn-secondary" id="priorStudies" disabled>Prior Studies</button>
           </span>
           <span>
               <button type="button" class="btn btn-warning" id="exam-btn">Exam</button>

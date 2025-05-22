@@ -29,5 +29,7 @@
     border-radius: 0;
 }
 #registration-options .nav a:not(.active) {
-    background-color: #333;
+    background-color: #111;
+    border-color: #333;
+    color: #888;
 }
