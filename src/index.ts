@@ -15,5 +15,6 @@ require('./EventHandlers/bodyPartsLaterality.ts');
 require('./EventHandlers/units.ts');
 require('./EventHandlers/ageDOB.ts');
 require('./EventHandlers/exam-btn.ts');
-require('./EventHandlers/clearForm.ts');
+require('./EventHandlers/delete-btn.ts');
+require('./EventHandlers/registerPatient-btn.ts');
 

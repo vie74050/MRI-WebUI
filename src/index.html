@@ -157,13 +157,13 @@
           <span class="space"></span>
 
           <span id="registration-options-right" >
-            <button disabled type="button" class="btn icon" id="er-patient-btn" >
+            <button disabled type="button" class="btn icon" id="erPatient-btn" >
               <span>
                 <i class="fa-solid fa-hospital-user"></i>
               </span>
               <label>Emergency Patient</label>
             </button>
-            <button type="button" class="btn icon" id="registration-btn" >
+            <button type="button" class="btn icon" id="registerPatient-btn" >
               <span>
                 <i class="fa-solid fa-user-plus"></i>
               </span>
@@ -216,8 +216,8 @@
                       <option value="11">Nov</option>
                       <option value="12">Dec</option>
                   </select>
-                  <input class="field-info-safety" required type="number" id="dobDay" min="1" max="31" step="1" placeholder="dd"/>
-                  <input class="field-info-safety" required type="number" id="dobYear" min="1900" max="2099" step="1" placeholder="yyyy"/>
+                  <input class="field-info-safety" required type="number" id="dobDay" name="dobDay" min="1" max="31" step="1" placeholder="dd"/>
+                  <input class="field-info-safety" required type="number" id="dobYear" name="dobYear" min="1900" max="2099" step="1" placeholder="yyyy"/>
                 </span>
                 
             </span>
@@ -287,10 +287,10 @@
             </span>
 
             <h2>Alerts</h2>
-            <span><label for="MedicalAlerts">Medical Alerts </label>
+            <span><label for="medicalAlerts">Medical Alerts </label>
               <textarea
-                id="MedicalAlerts"
-                name="MedicalAlerts"
+                id="medicalAlerts"
+                name="medicalAlerts"
                 rows="4"
                 cols="50"
               ></textarea>
@@ -359,8 +359,8 @@
                 <div class="box">
                     <h3>Procedure</h3>
                     <span>
-                        <label for="accessionnr">Accession Nr. </label>
-                        <input type="text" id="accessionnr" name="accessionnr"/>
+                        <label for="accessionNr">Accession Nr. </label>
+                        <input type="text" id="accessionNr" name="accessionNr"/>
                     </span>
                     <span>
                         <label for="reqProcId">Req. Proc. ID</label>
@@ -379,14 +379,14 @@
                 <h2>Program Selection</h2>
                 <div class="inline-flex"> * &nbsp;
                     <select required id="programSelection" name="programSelection">
-                        <option value="" selected>...&#187; WorkflowSimulation >> Other</option>
+                        <option value="0" selected>...&#187; WorkflowSimulation >> Other</option>
                     </select>
                 </div>
                 
                 <h2>RF Transmit Mode</h2>
                 <div class="inline-flex"> * &nbsp;
                     <select required id="rfTransmit" name="rfTransmit">
-                        <option value="" selected>Any Polarization</option>
+                        <option value="0" selected>Any Polarization</option>
                     </select>
                 </div>
                 
@@ -511,7 +511,7 @@
                 <h2>Patient Orientation</h2>
                 <div class="inline-flex">
                   * &nbsp; 
-                    <button type="button" class="select-btn field-info-safety" id="orientationBtn">
+                    <button type="button" class="select-btn field-info-safety" id="orientationBtn" name="orientationBtn" title="Select Patient Orientation">
                         <img src="./styles/icons/mri-empty.svg" class="select-btn-icon" id="orientationIcon"/>
                         <span id="orientationText">Select</span>  
                         <i class="right fa-solid fa-angle-down"></i>
@@ -551,9 +551,9 @@
       
         <footer>    
           <span>
-            <button type="button" class="btn btn-secondary" id="save" disabled>Save</button>
-            <button type="button" class="btn btn-secondary" id="cancel" disabled>Cancel</button>
-            <button type="button" class="btn btn-secondary" id="delete" title="Clear form">Delete</button>
+            <button type="button" class="btn btn-secondary" id="save-btn" disabled>Save</button>
+            <button type="button" class="btn btn-secondary" id="cancel-btn" disabled>Cancel</button>
+            <button type="button" class="btn btn-secondary" id="delete-btn" title="Clear form">Delete</button>
           </span>
           <span>
               <button type="button" class="btn btn-secondary" id="localData" disabled>Local Data</button>

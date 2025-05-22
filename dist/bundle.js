@@ -247,6 +247,17 @@ eval("// get #bodyPart select element's options\nvar bodyPartSelect = document.g
 
 /***/ }),
 
+/***/ "./src/EventHandlers/delete-btn.ts":
+/*!*****************************************!*\
+  !*** ./src/EventHandlers/delete-btn.ts ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_patientRegistrationForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/patientRegistrationForm */ \"./src/components/patientRegistrationForm.ts\");\n\nvar btn = document.querySelector(\"#delete-btn\");\nbtn.addEventListener(\"click\", function (e) {\n  e.preventDefault();\n  (0,_components_patientRegistrationForm__WEBPACK_IMPORTED_MODULE_0__.clearForm)(_components_patientRegistrationForm__WEBPACK_IMPORTED_MODULE_0__.patientRegistrationForm);\n});\n\n//# sourceURL=webpack://mri-siemenui/./src/EventHandlers/delete-btn.ts?");
+
+/***/ }),
+
 /***/ "./src/EventHandlers/exam-btn.ts":
 /*!***************************************!*\
   !*** ./src/EventHandlers/exam-btn.ts ***!
@@ -268,6 +279,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/EventHandlers/registerPatient-btn.ts":
+/*!**************************************************!*\
+  !*** ./src/EventHandlers/registerPatient-btn.ts ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_patientRegistrationForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/patientRegistrationForm */ \"./src/components/patientRegistrationForm.ts\");\n\nvar registerPatientBtn = document.getElementById(\"registerPatient-btn\");\nregisterPatientBtn.addEventListener(\"click\", function (e) {\n  e.preventDefault();\n  (0,_components_patientRegistrationForm__WEBPACK_IMPORTED_MODULE_0__.saveFormData)();\n});\n\n//# sourceURL=webpack://mri-siemenui/./src/EventHandlers/registerPatient-btn.ts?");
+
+/***/ }),
+
 /***/ "./src/EventHandlers/units.ts":
 /*!************************************!*\
   !*** ./src/EventHandlers/units.ts ***!
@@ -278,6 +300,17 @@ eval("// HTML elements\nvar unitsSelect = document.getElementById(\"units\");\nv
 
 /***/ }),
 
+/***/ "./src/components/patientRegistrationForm.ts":
+/*!***************************************************!*\
+  !*** ./src/components/patientRegistrationForm.ts ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   clearForm: () => (/* binding */ clearForm),\n/* harmony export */   patientRegistrationForm: () => (/* binding */ patientRegistrationForm),\n/* harmony export */   saveFormData: () => (/* binding */ saveFormData)\n/* harmony export */ });\n/* harmony import */ var _EventHandlers_patientOrientation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../EventHandlers/patientOrientation */ \"./src/EventHandlers/patientOrientation.ts\");\n\nvar patientRegistrationForm = document.querySelector(\"#pt-registration\");\nfunction clearForm(form) {\n  var inputs = form.querySelectorAll(\"input\");\n  inputs.forEach(function (input) {\n    if (input.type !== \"submit\") {\n      input.value = \"\";\n    }\n  });\n  var selects = form.querySelectorAll(\"select\");\n  selects.forEach(function (select) {\n    select.selectedIndex = 0;\n  });\n  var textareas = form.querySelectorAll(\"textarea\");\n  textareas.forEach(function (textarea) {\n    textarea.value = \"\";\n  });\n  (0,_EventHandlers_patientOrientation__WEBPACK_IMPORTED_MODULE_0__.ResetSelection)();\n}\nfunction saveFormData() {\n  var formData = new FormData(patientRegistrationForm);\n  var formDataObj = Object.fromEntries(formData.entries());\n  console.log(\"Form Data Object:\", formDataObj);\n}\n\n\n//# sourceURL=webpack://mri-siemenui/./src/components/patientRegistrationForm.ts?");
+
+/***/ }),
+
 /***/ "./src/index.ts":
 /*!**********************!*\
   !*** ./src/index.ts ***!
@@ -285,7 +318,7 @@ eval("// HTML elements\nvar unitsSelect = document.getElementById(\"units\");\nv
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/fontawesome */ \"./node_modules/@fortawesome/fontawesome-free/js/fontawesome.js\");\n/* harmony import */ var _fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _fortawesome_fontawesome_free_js_solid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/solid */ \"./node_modules/@fortawesome/fontawesome-free/js/solid.js\");\n/* harmony import */ var _fortawesome_fontawesome_free_js_solid__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_solid__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ \"./node_modules/bootstrap/dist/css/bootstrap.min.css\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n/* harmony import */ var _styles_header_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/header.css */ \"./src/styles/header.css\");\n/* harmony import */ var _styles_footer_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/footer.css */ \"./src/styles/footer.css\");\n/* harmony import */ var _styles_scheduler_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/scheduler.css */ \"./src/styles/scheduler.css\");\n/* harmony import */ var _styles_registration_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/registration.css */ \"./src/styles/registration.css\");\n/* harmony import */ var _styles_registration_options_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles/registration-options.css */ \"./src/styles/registration-options.css\");\n/* harmony import */ var _styles_table_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./styles/table.css */ \"./src/styles/table.css\");\n\n\n\n\n\n\n\n\n\n\n__webpack_require__(/*! ./EventHandlers/patientOrientation.ts */ \"./src/EventHandlers/patientOrientation.ts\");\n__webpack_require__(/*! ./EventHandlers/bodyPartsLaterality.ts */ \"./src/EventHandlers/bodyPartsLaterality.ts\");\n__webpack_require__(/*! ./EventHandlers/units.ts */ \"./src/EventHandlers/units.ts\");\n__webpack_require__(/*! ./EventHandlers/ageDOB.ts */ \"./src/EventHandlers/ageDOB.ts\");\n__webpack_require__(/*! ./EventHandlers/exam-btn.ts */ \"./src/EventHandlers/exam-btn.ts\");\n__webpack_require__(Object(function webpackMissingModule() { var e = new Error(\"Cannot find module './EventHandlers/clearForm.ts'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));\n\n//# sourceURL=webpack://mri-siemenui/./src/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/fontawesome */ \"./node_modules/@fortawesome/fontawesome-free/js/fontawesome.js\");\n/* harmony import */ var _fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _fortawesome_fontawesome_free_js_solid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/solid */ \"./node_modules/@fortawesome/fontawesome-free/js/solid.js\");\n/* harmony import */ var _fortawesome_fontawesome_free_js_solid__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_solid__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ \"./node_modules/bootstrap/dist/css/bootstrap.min.css\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n/* harmony import */ var _styles_header_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/header.css */ \"./src/styles/header.css\");\n/* harmony import */ var _styles_footer_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/footer.css */ \"./src/styles/footer.css\");\n/* harmony import */ var _styles_scheduler_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/scheduler.css */ \"./src/styles/scheduler.css\");\n/* harmony import */ var _styles_registration_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/registration.css */ \"./src/styles/registration.css\");\n/* harmony import */ var _styles_registration_options_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles/registration-options.css */ \"./src/styles/registration-options.css\");\n/* harmony import */ var _styles_table_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./styles/table.css */ \"./src/styles/table.css\");\n\n\n\n\n\n\n\n\n\n\n__webpack_require__(/*! ./EventHandlers/patientOrientation.ts */ \"./src/EventHandlers/patientOrientation.ts\");\n__webpack_require__(/*! ./EventHandlers/bodyPartsLaterality.ts */ \"./src/EventHandlers/bodyPartsLaterality.ts\");\n__webpack_require__(/*! ./EventHandlers/units.ts */ \"./src/EventHandlers/units.ts\");\n__webpack_require__(/*! ./EventHandlers/ageDOB.ts */ \"./src/EventHandlers/ageDOB.ts\");\n__webpack_require__(/*! ./EventHandlers/exam-btn.ts */ \"./src/EventHandlers/exam-btn.ts\");\n__webpack_require__(/*! ./EventHandlers/delete-btn.ts */ \"./src/EventHandlers/delete-btn.ts\");\n__webpack_require__(/*! ./EventHandlers/registerPatient-btn.ts */ \"./src/EventHandlers/registerPatient-btn.ts\");\n\n//# sourceURL=webpack://mri-siemenui/./src/index.ts?");
 
 /***/ }),
 
