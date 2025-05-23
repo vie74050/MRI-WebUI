@@ -35,6 +35,9 @@ a {
 .btn.icon:disabled {
     border-color: transparent;
 }
+.btn.icon:disabled span {
+    color: #888;
+}
 button>label{
     cursor: pointer;
 }

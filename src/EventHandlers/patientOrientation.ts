@@ -57,4 +57,31 @@ function ResetSelection() {
     orientationArrow?.setAttribute("data-icon", "angle-down");
 
 }
-export { ResetSelection };
+
+type orientationDataType = {
+    iconSrc: string;
+    iconText: string;
+    iconId: string;
+}
+function getOrientationData(): orientationDataType {
+    const selectedIcon = orientationOpts.querySelector(".selected") as HTMLDivElement;
+    let orientationData: orientationDataType = {
+        iconSrc: defaultIconSrc,
+        iconText: defaultIconText,
+        iconId: ""
+    };
+    if (selectedIcon) {
+        const iconSrc = selectedIcon.getAttribute("src") as string;
+        const iconText = selectedIcon.getAttribute("alt") as string;
+        const iconId = selectedIcon.getAttribute("id") as string;
+        orientationData = {
+            iconSrc: iconSrc,
+            iconText: iconText,
+            iconId: iconId,
+        };
+    }
+     
+    return orientationData;
+}
+
+export { ResetSelection, getOrientationData };

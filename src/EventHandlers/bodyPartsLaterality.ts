@@ -45,9 +45,11 @@ bodyPartSelect.addEventListener("change", () => {
     if (bodyPartsWithLaterality.includes(selectedOption.value)) {
         // enable laterality select element
         lateralitySelect.removeAttribute("disabled");
+        lateralitySelect.setAttribute("required", "true");
     } else {
         // disable laterality select element
-        lateralitySelect.disabled = true;
+        lateralitySelect.disabled = true;     
+        lateralitySelect.removeAttribute("required");   
         // reset laterality select element to 0 (unaired)
         lateralitySelect.selectedIndex = 0;
     }
