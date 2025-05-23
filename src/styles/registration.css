@@ -157,11 +157,11 @@ div.center {
     margin: 0;
 }
 
-#registration b {
+#registration b.mandatory {
     display: inline-block;
     font-weight: bold;
     font-size: 1.2em;
-    color: white;
+    color: rgb(255, 230, 0);
     padding-right: 0.25em;
     vertical-align: text-top;
 }

@@ -46,10 +46,12 @@ bodyPartSelect.addEventListener("change", () => {
         // enable laterality select element
         lateralitySelect.removeAttribute("disabled");
         lateralitySelect.setAttribute("required", "true");
+        lateralitySelect.classList.add("field-info-safety");
     } else {
         // disable laterality select element
         lateralitySelect.disabled = true;     
         lateralitySelect.removeAttribute("required");   
+        lateralitySelect.classList.remove("field-info-safety");
         // reset laterality select element to 0 (unaired)
         lateralitySelect.selectedIndex = 0;
     }

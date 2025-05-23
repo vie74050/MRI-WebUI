@@ -32,7 +32,7 @@
             <i class="fa-solid fa-circle-question"></i> 
           </span>
         </button>
-        <button type="button" class="btn icon" disabled id="settings-btn">
+        <button type="button" class="btn icon" disabled id="headset-btn">
           <span>
             <i class="fa-solid fa-headset">‌</i>
           </span>
@@ -42,9 +42,14 @@
             <i class="fa-solid fa-network-wired"></i>
           </span>
         </button>
-        <button type="button" class="btn icon" disabled id="logout-btn">
+        <button type="button" class="btn icon" disabled id="database-btn">
           <span>
             <i class="fa-solid fa-database">‌</i>
+          </span>
+        </button>
+        <button type="button" class="btn icon" disabled id="settings-btn">
+          <span>
+            <i class="fa-solid fa-gear"></i>
           </span>
         </button>
         <button type="button" class="btn icon" disabled id="briefcase-btn">
@@ -62,11 +67,7 @@
             <i class="fa-solid fa-cart-shopping"></i>
           </span>
         </button>
-        <button type="button" class="btn icon" disabled id="settings-btn">
-          <span>
-            <i class="fa-solid fa-gear"></i>
-          </span>
-        </button>
+        
         <button type="button" class="btn icon" disabled id="user-btn">
           <span>
             <i class="fa-solid fa-user"></i>
@@ -162,7 +163,7 @@
         <form id="pt-registration" action="#">
           <div>
             <h2> &nbsp;</h2>
-            <span><label for="lastName"><b> * </b> Last Name </label>
+            <span><label for="lastName"><b class="mandatory"> * </b> Last Name </label>
               <input class="field-info-safety" required type="text" id="lastName" name="lastName" title="Last Name"/></span>
 
             <span><label for="firstName"> First Name </label>
@@ -177,11 +178,11 @@
             <span><label for="middleName">Middle Name </label>
               <input type="text" id="middleName" name="middleName"/></span>
 
-            <span><label for="patientId"><b> * </b> Patient ID </label>
+            <span><label for="patientId"><b class="mandatory"> * </b> Patient ID </label>
               <input class="field-info-safety" required type="text" id="patientId" name="patientId" /></span>
 
             <span>
-                <label><b> * </b> Date of Birth </label>
+                <label><b class="mandatory"> * </b> Date of Birth </label>
                 <span>        
                   <select class="field-info-safety" required id="dobMonth" name="dobMonth" aria-placeholder="M">
                       <option value="" disabled selected>M</option>
@@ -205,7 +206,7 @@
             </span>
             
             <span>
-                <label for="age"><b> * </b> Age </label>
+                <label for="age"><b class="mandatory"> * </b> Age </label>
                 <span>
                     <input class="field-info-safety" disabled type="number" id="age" name="age" min="0" step="1" 
                       title="Age will be calcuated from DOB. Select the desired age unit (Y, M, W, D)."/
@@ -220,7 +221,7 @@
             </span>
 
             <span>
-                <label for="sex"><b> * </b> Sex </label>
+                <label for="sex"><b class="mandatory"> * </b> Sex </label>
                 <select class="field-info-safety" required id="sex" name="sex">
                     <option value="" disabled selected>Select</option>
                     <option value="male">Male</option>
@@ -230,7 +231,7 @@
             </span>
 
             <span>
-                <label for="height"><b> * </b> Height </label>
+                <label for="height"><b class="mandatory"> * </b> Height </label>
                 <span>
                     <span>
                         <input class="field-info-safety" required type="number" id="heightFt" name="height" min="0" step="1" /> 
@@ -242,7 +243,7 @@
             </span>
 
             <span>
-                <label for="weight" ><b> * </b> Weight </label>
+                <label for="weight" ><b class="mandatory"> * </b> Weight </label>
                 <span>
                     <span>
                       <input class="field-info-safety" required type="number" id="weight" name="weight" min="0" step="1"/> 
@@ -359,14 +360,14 @@
                 </div>
                 
                 <h2>Program Selection</h2>
-                <div class="inline-flex"> <b> * </b> &nbsp;
+                <div class="inline-flex"> <b class="mandatory"> * </b> &nbsp;
                     <select required id="programSelection" name="programSelection">
                         <option value="0" selected>...&#187; WorkflowSimulation >> Other</option>
                     </select>
                 </div>
                 
                 <h2>RF Transmit Mode</h2>
-                <div class="inline-flex"> <b> * </b> &nbsp;
+                <div class="inline-flex"> <b class="mandatory"> * </b> &nbsp;
                     <select required id="rfTransmit" name="rfTransmit">
                         <option value="0" selected>Any Polarization</option>
                     </select>
@@ -375,7 +376,7 @@
 
                 <h2>Body Part and Laterality</h2>
                 <div class="inline-flex"> 
-                  <b> * </b> &nbsp;
+                  <b class="mandatory"> * </b> &nbsp;
                   <select required id="bodyPart" name="bodyPart">
                       <option value="" disabled selected>Select</option>
                       <option value="abdomen">Abdomen</option>
@@ -492,7 +493,7 @@
             
                 <h2>Patient Orientation</h2>
                 <div class="inline-flex">
-                  <b> * </b> &nbsp; 
+                  <b class="mandatory"> * </b> &nbsp; 
                     <button type="button" class="select-btn field-info-safety" id="orientationBtn" name="orientationBtn" title="Select Patient Orientation">
                         <img src="./styles/icons/mri-empty.svg" class="select-btn-icon" id="orientationIcon"/>
                         <span id="orientationText">Select</span>  
@@ -527,7 +528,7 @@
             &nbsp;&nbsp; 
             Safety relevent information needs to be validated and confirmed</span>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
-          <span class="field-info-required"><b> * </b> Mandatory information</span>
+          <span class="field-info-required"><b class="mandatory"> * </b> Mandatory information</span>
           <div class="break"></div> 
         </div>
       

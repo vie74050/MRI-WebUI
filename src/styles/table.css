@@ -15,4 +15,5 @@
 .table-dark thead th{
     color: var(--bs-table-color);
     background-color: #4a4a4a;
+    border: 1px solid black;
 }
