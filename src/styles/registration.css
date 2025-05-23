@@ -156,3 +156,12 @@ div.center {
     padding: 10px;
     margin: 0;
 }
+
+#registration b {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+    padding-right: 0.25em;
+    vertical-align: text-top;
+}
