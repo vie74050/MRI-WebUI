@@ -31,3 +31,9 @@
     font-weight: normal;
 }
 
+.table-head-btn {
+    float: right;
+    color: white;
+    cursor: pointer;
+}
+

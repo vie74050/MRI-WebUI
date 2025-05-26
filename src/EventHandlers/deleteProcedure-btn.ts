@@ -1,7 +1,7 @@
 import { clearForm } from "../components/patientRegistrationForm";
-const btn = document.querySelector("#delete-btn") as HTMLButtonElement;
+const btn = document.querySelector("#deleteProcedure-btn") as HTMLButtonElement;
 
 btn.addEventListener("click", (e) => {
     e.preventDefault();
-    clearForm();
+    clearForm(); console.log("Procedure deleted");
 });

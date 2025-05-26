@@ -1,5 +1,5 @@
-import { ResetSelection } from "../EventHandlers/patientOrientation";
-import { getOrientationData } from "../EventHandlers/patientOrientation";
+import { ResetSelection, getOrientationData } from "../EventHandlers/orientation-btn";
+import { formDataType } from "./data";
 
 const patientRegistrationForm = document.querySelector("#pt-registration") as HTMLFormElement;
 
@@ -23,9 +23,9 @@ function clearForm() {
 
 }
 
-function getFormData(): Object {
+function getFormData(): formDataType {
     const formData = new FormData(patientRegistrationForm);
-    const formDataObj = Object.fromEntries(formData.entries());
+    const formDataObj = Object.fromEntries(formData.entries()) as formDataType;
     const orientationData = getOrientationData();
     // merge orientationData with formDataObj
     Object.keys(orientationData).forEach((key) => {
@@ -44,8 +44,8 @@ function validateMandatoryFields(): boolean {
     // get all required fields
     const requiredFields = patientRegistrationForm.querySelectorAll("input[required], select[required], textarea[required]") as NodeListOf<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>;
     // exception: min 1 height field is required
-    const heightFt = document.getElementById("heightFt") as HTMLInputElement;
-    const heightIn = document.getElementById("heightIn") as HTMLInputElement;
+    const height1 = document.getElementById("height1") as HTMLInputElement;
+    const height2 = document.getElementById("height2") as HTMLInputElement;
     // exception: orientation
     const orientationData = getOrientationData();
 
@@ -53,8 +53,8 @@ function validateMandatoryFields(): boolean {
     let allFieldsFilled = true;
     requiredFields.forEach((field) => {
         if (field.value.trim() === "") {
-            if (field.id === "heightFt" || field.id === "heightIn") {
-                if (heightFt.value.trim() === "" && heightIn.value.trim() === "") {
+            if (field.id === "height1" || field.id === "height2") {
+                if (height1.value.trim() === "" && height2.value.trim() === "") {
                    allFieldsFilled = false;
                 }
             }else {

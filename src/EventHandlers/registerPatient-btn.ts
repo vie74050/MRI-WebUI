@@ -9,14 +9,19 @@ registerPatientBtn.addEventListener("click", (e) => {
 
     if (allFieldsFilled) {
         const formdata = getFormData(); // console.log("Form data: ", formdata);
-        const date = new Date();
-        const formattedDate = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+        
         const patientText = formdata["firstName"] as string + " " + formdata["lastName"] as string;
+        const procedureText = getProcedureText(formdata as Record<string, string>);
+
+        const date = new Date();
+        const formattedDate = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}` 
+                            + ` ` + date.toLocaleTimeString();
+
         const rowData: schedulerTableRowType = {
             id: formdata["patientId"] as string,
             patient: patientText,
-            procedure: formdata["reqProcId"] as string,
-            date: formattedDate + " " + date.toLocaleTimeString()
+            procedure: procedureText,
+            date: formattedDate
         };
 
         updateSchedulerTable(rowData);
@@ -24,3 +29,20 @@ registerPatientBtn.addEventListener("click", (e) => {
     }
 
 });
+
+function getProcedureText(formdata: Record<string, string>): string {
+    let returnString = "";
+    // bodyPart and laterality are mandatory fields
+    // if laterality is not selected, return only bodyPart
+    const bodyPart = formdata["bodyPart"] as string;
+    const laterality = formdata["laterality"] as string;
+    if (laterality) {
+        returnString = `${bodyPart} (${laterality})`;
+    } else {
+        returnString = bodyPart;
+    }
+    // to title case
+    returnString = returnString.charAt(0).toUpperCase() + returnString.slice(1).toLowerCase();
+
+    return returnString;
+}

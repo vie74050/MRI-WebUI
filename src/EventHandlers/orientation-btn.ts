@@ -1,5 +1,5 @@
 // Get #orientationBtn and assign click event
-const orientationBtn = document.getElementById("orientationBtn") as HTMLButtonElement;
+const orientationBtn = document.getElementById("orientation-btn") as HTMLButtonElement;
 const orientationIcon = document.getElementById("orientationIcon") as HTMLDivElement;
 const orientationText = document.getElementById("orientationText") as HTMLDivElement;
 const orientationOpts =document.getElementById("orientationOptions") as HTMLButtonElement;

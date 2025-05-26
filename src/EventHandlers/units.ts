@@ -1,8 +1,8 @@
 // HTML elements
 const unitsSelect = document.getElementById("units") as HTMLSelectElement;
 
-const heightInputFt = document.getElementById("heightFt") as HTMLInputElement;
-const heightInputIn = document.getElementById("heightIn") as HTMLInputElement;
+const height2putFt = document.getElementById("height1") as HTMLInputElement;
+const height2putIn = document.getElementById("height2") as HTMLInputElement;
 const weightInput = document.getElementById("weight") as HTMLInputElement;
 const unitsFt = document.getElementById("unitsFt") as HTMLLabelElement;
 const unitsIn = document.getElementById("unitsIn") as HTMLLabelElement;
@@ -16,18 +16,18 @@ unitsSelect.addEventListener("change", () => {
     if (selectedOption.value === "metric") {
         
         // check if height input value; convert to metric
-        if (heightInputFt.value || heightInputIn.value) {
-            let ft = heightInputFt.value;
-            let inch = heightInputIn.value;
-            const heightInInches = getInchesFromFeetAndInches(ft, inch);
+        if (height2putFt.value || height2putIn.value) {
+            let ft = height2putFt.value;
+            let inch = height2putIn.value;
+            const height2Inches = getInchesFromFeetAndInches(ft, inch);
             
             // convert to display in m, cm
-            let heightInMeters = (heightInInches * 0.0254);
-            let remainder = heightInMeters % 1;
-            let heightInCm = remainder * 100;
-            heightInMeters = Math.floor(heightInMeters);
-            heightInputFt.value = heightInMeters.toString();
-            heightInputIn.value = heightInCm.toFixed(2);
+            let height2Meters = (height2Inches * 0.0254);
+            let remainder = height2Meters % 1;
+            let height2Cm = remainder * 100;
+            height2Meters = Math.floor(height2Meters);
+            height2putFt.value = height2Meters.toString();
+            height2putIn.value = height2Cm.toFixed(2);
            
         }
         // check if weight input value; convert to metric
@@ -40,18 +40,18 @@ unitsSelect.addEventListener("change", () => {
         unitsLb.innerText = "kg";
     } else {
         // check if height input value; convert to US
-        if (heightInputFt.value || heightInputIn.value) {
+        if (height2putFt.value || height2putIn.value) {
             // convert string to float, if empty, set to 0
-            let input1 = parseFloat(heightInputFt.value) || 0;
-            let input2 = parseFloat(heightInputIn.value) || 0;
+            let input1 = parseFloat(height2putFt.value) || 0;
+            let input2 = parseFloat(height2putIn.value) || 0;
 
-            const heightInCm = input1*100 + input2;
+            const height2Cm = input1*100 + input2;
             // convert to display in ft, in
-            let heightInInches = (heightInCm * 0.393701);
-            const feet = Math.floor(heightInInches / 12);
-            const inches = heightInInches % 12;
-            heightInputFt.value = feet.toString();
-            heightInputIn.value = inches.toFixed(2);
+            let height2Inches = (height2Cm * 0.393701);
+            const feet = Math.floor(height2Inches / 12);
+            const inches = height2Inches % 12;
+            height2putFt.value = feet.toString();
+            height2putIn.value = inches.toFixed(2);
         }   
         if (weightInput.value) {
             weightInput.value = Math.round(parseFloat(weightInput.value) * 2.2046226218).toString();
