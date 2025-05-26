@@ -24,7 +24,6 @@
 }
 
 #scheduler table {
-    flex-grow: 1;
     font-size: small;
 }
 #scheduler table th {
@@ -32,7 +31,8 @@
 }
 
 .table-head-btn {
-    float: right;
+    font-size:18px;
+    margin:auto;
     color: white;
     cursor: pointer;
 }

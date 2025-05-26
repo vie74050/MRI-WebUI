@@ -30,6 +30,7 @@ registerPatientBtn.addEventListener("click", (e) => {
 
 });
 
+// get the text from BodyPart and Laterality fields
 function getProcedureText(formdata: Record<string, string>): string {
     let returnString = "";
     // bodyPart and laterality are mandatory fields
