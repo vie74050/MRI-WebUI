@@ -1,24 +1,25 @@
 import { schedulerTableRowType, updateSchedulerTable } from "../components/scheduler-table";
 
 // create some mock scheduler table rows
+const mockdate = new Date("2025-01-10T10:00:00Z"); 
 const mockRows: schedulerTableRowType[] = [
     {
         id: "1",
         patient: "Doe, John",
         procedure: "Arm (Left)",
-        date: "10/3/2025 10:00"
+        date: `${mockdate.getMonth() + 1}/${mockdate.getDate()}/${mockdate.getFullYear()} ${mockdate.toLocaleTimeString()}`
     },
     {
         id: "2",
         patient: "Smith, Jane",
         procedure: "Ankle (Right)",
-        date: "10/3/2025 11:00"
+        date: `${mockdate.getMonth() + 1}/${mockdate.getDate()}/${mockdate.getFullYear()} ${new Date(mockdate.getTime() + 60 * 60 * 1000).toLocaleTimeString()}`
     },
     {
         id: "3",
         patient: "Johnson, Alice",
         procedure: "Abdomen",
-        date: "10/3/2025 12:00"
+        date: `${mockdate.getMonth() + 1}/${mockdate.getDate()}/${mockdate.getFullYear()} ${new Date(mockdate.getTime() + 120 * 60 * 1000).toLocaleTimeString()}`
     }
 ];
 
