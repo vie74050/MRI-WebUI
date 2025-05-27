@@ -40,7 +40,7 @@ orientationIcons.forEach((icon) => {
     });
 });
 
-function ResetSelection() {
+function ResetOrientationSelect() {
     // remove active class from all icons
     orientationIcons.forEach((icon) => {
         icon.classList.remove("selected");
@@ -84,4 +84,4 @@ function getOrientationData(): orientationDataType {
     return orientationData;
 }
 
-export { ResetSelection, getOrientationData };
+export { ResetOrientationSelect, getOrientationData };

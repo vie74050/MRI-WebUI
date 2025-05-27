@@ -1,4 +1,5 @@
-import { ResetSelection, getOrientationData } from "../EventHandlers/orientation-btn";
+import { ResetOrientationSelect, getOrientationData } from "../EventHandlers/orientation-btn";
+import { ResetLateralitySelection } from "../EventHandlers/bodyPartsLaterality";
 import { formDataType } from "./data";
 
 const patientRegistrationForm = document.querySelector("#pt-registration") as HTMLFormElement;
@@ -19,7 +20,8 @@ function clearForm() {
         textarea.value = "";
     }); 
 
-    ResetSelection();
+    ResetOrientationSelect();
+    ResetLateralitySelection();
 
 }
 
