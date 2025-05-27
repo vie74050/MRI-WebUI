@@ -18,6 +18,4 @@ require('./EventHandlers/orientation-btn.ts');
 require('./EventHandlers/deleteProcedure-btn.ts');
 require('./EventHandlers/registerPatient-btn.ts');
 require('./EventHandlers/scheduler-sort-btn.ts');
-
-/** TEST */
-require('./test/scheduler-table-test.ts');
+require('./EventHandlers/schedule-select-btn.ts');

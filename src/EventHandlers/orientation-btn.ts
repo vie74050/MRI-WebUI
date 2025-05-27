@@ -84,4 +84,4 @@ function getOrientationData(): orientationDataType {
     return orientationData;
 }
 
-export { ResetOrientationSelect, getOrientationData };
+export { orientationBtn, ResetOrientationSelect, getOrientationData };

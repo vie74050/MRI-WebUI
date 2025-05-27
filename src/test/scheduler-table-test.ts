@@ -23,19 +23,8 @@ const mockRows: schedulerTableRowType[] = [
 ];
 
 // Function to simulate adding mock rows to the scheduler table
-function addMockRowsToSchedulerTable() {
+export function AddMockRowsToSchedulerTable() {
     mockRows.forEach(rowData => {
         updateSchedulerTable(rowData);
-    });
-}
-// Call the function to add mock rows with #schedule-select-btn
-const btn = document.getElementById('schedule-select-btn') as HTMLButtonElement;
-if (btn) {
-    // enable the button if it exists
-    btn.disabled = false;
-    btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        btn.disabled = true;
-        addMockRowsToSchedulerTable();
     });
 }

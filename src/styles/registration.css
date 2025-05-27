@@ -110,8 +110,12 @@ form .select-icon{
     border-left: 3px solid rgb(255, 196, 0) !important;
 }
 
-input:hover, select:hover, textarea:hover,
-.select-icon:hover, button.select-btn:hover {
+input:hover, 
+select:hover, 
+textarea:hover,
+.select-icon:hover, 
+button.select-btn:hover,
+*.not-filled {
     background-color: #aaa;
     color: #222;
     border-color: #2196f3;

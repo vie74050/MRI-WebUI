@@ -1,4 +1,4 @@
-import { ResetOrientationSelect, getOrientationData } from "../EventHandlers/orientation-btn";
+import { ResetOrientationSelect, getOrientationData, orientationBtn } from "../EventHandlers/orientation-btn";
 import { ResetLateralitySelection } from "../EventHandlers/bodyPartsLaterality";
 import { formDataType } from "./data";
 
@@ -53,13 +53,17 @@ function validateMandatoryFields(): boolean {
 
     // check if all required fields are filled
     let allFieldsFilled = true;
+    let fieldsNotFilled: (HTMLElement)[] = [];
     requiredFields.forEach((field) => {
         if (field.value.trim() === "") {
             if (field.id === "height1" || field.id === "height2") {
                 if (height1.value.trim() === "" && height2.value.trim() === "") {
-                   allFieldsFilled = false;
+                    // add empty height fields to fieldsNotFilled
+                    fieldsNotFilled.push(field);
+                    allFieldsFilled = false;
                 }
             }else {
+                fieldsNotFilled.push(field);
                 allFieldsFilled = false;
             }
             
@@ -67,6 +71,7 @@ function validateMandatoryFields(): boolean {
     });
     // check if orientationBtn text is not "Select"
     if (orientationData.iconText === "Select") {
+        fieldsNotFilled.push(orientationBtn);
         allFieldsFilled = false;
     }
 
@@ -81,12 +86,18 @@ function validateMandatoryFields(): boolean {
         examFeedback.classList.add("alert-warning");
     }
     else {
-        examFeedback.innerHTML = "<b>All mandatory fields are filled. Verify the information is correct.</b>";
+        examFeedback.innerHTML = "<b>All mandatory fields are filled. Added Patient Registration to Scheduler</b>";
         examFeedback.classList.add("alert-success");
     }
     reistrationNote.appendChild(examFeedback);
+    fieldsNotFilled.forEach((field) => {
+        field.classList.add("not-filled");
+    });
     setTimeout(() => {
         reistrationNote.removeChild(examFeedback);
+        fieldsNotFilled.forEach((field) => {
+            field.classList.remove("not-filled");
+        });
     }, 2500);
     
     return allFieldsFilled;
