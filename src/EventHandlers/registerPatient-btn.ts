@@ -1,14 +1,14 @@
-import { getFormData, clearForm, validateMandatoryFields } from "../components/patientRegistrationForm"; 
+import { GetFormData, ClearForm, ValidateMandatoryFields } from "../components/patientRegistrationForm"; 
 import { updateSchedulerTable, schedulerTableRowType } from "../components/scheduler-table";
 const registerPatientBtn = document.getElementById("registerPatient-btn") as HTMLButtonElement;
 
 registerPatientBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    const allFieldsFilled = validateMandatoryFields();
+    const allFieldsFilled = ValidateMandatoryFields();
 
     if (allFieldsFilled) {
-        const formdata = getFormData(); // console.log("Form data: ", formdata);
+        const formdata = GetFormData(); // console.log("Form data: ", formdata);
         
         const lastName = formdata["lastName"] as string;
         const firstName = (formdata["firstName"] as string || "").trim();
@@ -27,7 +27,7 @@ registerPatientBtn.addEventListener("click", (e) => {
         };
 
         updateSchedulerTable(rowData);
-        clearForm();
+        ClearForm();
     }
 
 });

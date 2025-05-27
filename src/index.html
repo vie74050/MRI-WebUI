@@ -115,15 +115,25 @@
             <tr>
               <th>
                 <span 
-                  id="scheduler-sort-btn" 
+                  id="scheduler-sortIndex-btn" 
                   class="table-head-btn" 
                   title="Sort by Patient or registeration time">
                   <i class="fa-solid fa-arrow-down-1-9"></i>
                 </span>
               </th>
-              <th>Patient</th>
+              <th>                
+                <span 
+                  id="scheduler-sortPatient-btn" >
+                  Patient
+                </span>
+              </th>
               <th>Procedure</th>
-              <th>Date &amp; Time</th>
+              <th>
+                <span 
+                  id="scheduler-sortDate-btn" >
+                  Date &amp; Time
+                </span>
+              </th>    
             </tr>
           </thead>
           <tbody>
@@ -546,8 +556,8 @@
             <button type="button" class="btn btn-secondary" id="delete-btn" disabled>Delete</button>
           </span>
           <span>
-              <button type="button" class="btn btn-secondary" id="localData" disabled>Local Data</button>
-              <button type="button" class="btn  btn-secondary" id="priorStudies" disabled>Prior Studies</button>
+              <button type="button" class="btn btn-secondary" id="localData-btn" disabled>Local Data</button>
+              <button type="button" class="btn  btn-secondary" id="priorStudies-btn" disabled>Prior Studies</button>
           </span>
           <span>
               <button type="button" class="btn btn-warning" id="exam-btn">Exam</button>

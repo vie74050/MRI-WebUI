@@ -17,5 +17,6 @@ require('./EventHandlers/bodyPartsLaterality.ts');
 require('./EventHandlers/orientation-btn.ts');
 require('./EventHandlers/deleteProcedure-btn.ts');
 require('./EventHandlers/registerPatient-btn.ts');
-require('./EventHandlers/scheduler-sort-btn.ts');
-require('./EventHandlers/schedule-select-btn.ts');
+require('./EventHandlers/scheduler-sort-btns.ts');
+require('./EventHandlers/scheduler-select-btn.ts');
+require('./EventHandlers/localData-btn.ts');

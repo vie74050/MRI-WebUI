@@ -1,4 +1,4 @@
-import { resetSortIcon } from "../EventHandlers/scheduler-sort-btn";
+import { resetSortIcon } from "../EventHandlers/scheduler-sort-btns";
 const schedulerTable = document.getElementById('scheduler-table') as HTMLTableElement;
 type schedulerTableRowType = {
     id: string;

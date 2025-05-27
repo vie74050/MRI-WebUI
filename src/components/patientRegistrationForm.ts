@@ -2,20 +2,20 @@ import { ResetOrientationSelect, getOrientationData, orientationBtn } from "../E
 import { ResetLateralitySelection } from "../EventHandlers/bodyPartsLaterality";
 import { formDataType } from "./data";
 
-const patientRegistrationForm = document.querySelector("#pt-registration") as HTMLFormElement;
+const PatientRegistrationForm = document.querySelector("#pt-registration") as HTMLFormElement;
 
-function clearForm() {
-    const inputs = patientRegistrationForm.querySelectorAll("input");
+function ClearForm() {
+    const inputs = PatientRegistrationForm.querySelectorAll("input");
     inputs.forEach((input) => {
         if (input.type !== "submit") {
         input.value = "";
         }
     });
-    const selects = patientRegistrationForm.querySelectorAll("select");
+    const selects = PatientRegistrationForm.querySelectorAll("select");
     selects.forEach((select) => {
         select.selectedIndex = 0;
     });
-    const textareas = patientRegistrationForm.querySelectorAll("textarea");
+    const textareas = PatientRegistrationForm.querySelectorAll("textarea");
     textareas.forEach((textarea) => {
         textarea.value = "";
     }); 
@@ -25,8 +25,8 @@ function clearForm() {
 
 }
 
-function getFormData(): formDataType {
-    const formData = new FormData(patientRegistrationForm);
+function GetFormData(): formDataType {
+    const formData = new FormData(PatientRegistrationForm);
     const formDataObj = Object.fromEntries(formData.entries()) as formDataType;
     const orientationData = getOrientationData();
     // merge orientationData with formDataObj
@@ -37,14 +37,14 @@ function getFormData(): formDataType {
     return formDataObj;
 }
 
-function validateMandatoryFields(): boolean {
+function ValidateMandatoryFields(): boolean {
     // feedback fields
     const reistrationNote = document.getElementById("registration-note") as HTMLDivElement;
     var examFeedback = document.createElement("div");
     examFeedback.classList.add("alert","space", "center");
 
     // get all required fields
-    const requiredFields = patientRegistrationForm.querySelectorAll("input[required], select[required], textarea[required]") as NodeListOf<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>;
+    const requiredFields = PatientRegistrationForm.querySelectorAll("input[required], select[required], textarea[required]") as NodeListOf<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>;
     // exception: min 1 height field is required
     const height1 = document.getElementById("height1") as HTMLInputElement;
     const height2 = document.getElementById("height2") as HTMLInputElement;
@@ -102,4 +102,32 @@ function validateMandatoryFields(): boolean {
     
     return allFieldsFilled;
 }
-export {patientRegistrationForm, clearForm, getFormData, validateMandatoryFields};
+
+function FillPatientRegistrationForm(data: formDataType): void {
+    const inputs = PatientRegistrationForm.querySelectorAll("input");
+    inputs.forEach((input) => {
+        if (input.type !== "submit") {
+            if (data[input.name] !== undefined) {
+                input.value = data[input.name];
+            }
+        }
+    });
+    const selects = PatientRegistrationForm.querySelectorAll("select");
+    selects.forEach((select) => {
+        if (data[select.name] !== undefined) {
+            const option = select.querySelector(`option[value="${data[select.name]}"]`);
+            if (option) {
+                select.value = data[select.name];
+            }
+        }
+    });
+    const textareas = PatientRegistrationForm.querySelectorAll("textarea");
+    textareas.forEach((textarea) => {
+        if (data[textarea.name] !== undefined) {
+            textarea.value = data[textarea.name];
+        }
+    });
+    // set orientation data
+   
+}
+export {PatientRegistrationForm, ClearForm, GetFormData, ValidateMandatoryFields, FillPatientRegistrationForm};

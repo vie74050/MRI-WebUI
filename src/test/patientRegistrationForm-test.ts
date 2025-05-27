@@ -1,0 +1,41 @@
+import { formDataType } from "../components/data";
+
+const mockNewData: formDataType = {
+    lastName: "Matlock",
+    firstName: "Matty",
+    title: null,
+    suffix: null,
+    middleName: null,
+    patientId: "1",
+    dobMonth: "01",
+    dobDay: "15",
+    dobYear: "1980",
+    age: "45",
+    ageUnit: "years",
+    sex: "M",
+    height1: "5",
+    height2: "10",
+    weight: "180",
+    units: "imperial",
+    admittingDiagnosis: "Fractured arm",
+    medicalAlerts: null,
+    allergies: "Penicillin",
+    institution: "institution1",
+    performingPhysician: "Dr. Smith",
+    refPhysician: "physician1",
+    reqPhysician: "physician2",
+    operator: "Operator1",
+    accessionNr: "ACC123456",
+    reqProcId: "PROC789",
+    studyDesc: "MRI Left Arm",
+    studyComments: "Patient complains of pain",
+    programSelection: "0",
+    rfTransmit: "0",
+    bodyPart: "arm",
+    laterality: "left",
+    iconSrc: "./styles/icons/headFirstSupine.svg",
+    iconText: "Head First Supine",
+    iconId: "headSupine"
+}
+
+export {mockNewData}
