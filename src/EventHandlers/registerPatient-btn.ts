@@ -10,7 +10,9 @@ registerPatientBtn.addEventListener("click", (e) => {
     if (allFieldsFilled) {
         const formdata = getFormData(); // console.log("Form data: ", formdata);
         
-        const patientText = formdata["firstName"] as string + " " + formdata["lastName"] as string;
+        const lastName = formdata["lastName"] as string;
+        const firstName = (formdata["firstName"] as string || "").trim();
+        const patientText = firstName ? `${lastName}, ${firstName}` : lastName;
         const procedureText = getProcedureText(formdata as Record<string, string>);
 
         const date = new Date();
