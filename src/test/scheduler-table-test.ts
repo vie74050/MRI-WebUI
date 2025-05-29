@@ -1,8 +1,8 @@
-import { schedulerTableRowType, updateSchedulerTable } from "../components/scheduler-table";
+import { SchedulerTableRowType, UpdateSchedulerTable } from "../components/scheduler-table";
 
 // create some mock scheduler table rows
 const mockdate = new Date("2025-01-10T10:00:00Z"); 
-const mockRows: schedulerTableRowType[] = [
+const mockRows: SchedulerTableRowType[] = [
     {
         id: "1",
         patient: "Doe, John",
@@ -26,6 +26,6 @@ const mockRows: schedulerTableRowType[] = [
 // Function to simulate adding mock rows to the scheduler table
 export function AddMockRowsToSchedulerTable() {
     mockRows.forEach(rowData => {
-        updateSchedulerTable(rowData);
+        UpdateSchedulerTable(rowData);
     });
 }

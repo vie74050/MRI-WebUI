@@ -1,5 +1,5 @@
-import { ResetOrientationSelect, getOrientationData, orientationBtn } from "../EventHandlers/orientation-btn";
-import { ResetLateralitySelection } from "../EventHandlers/bodyPartsLaterality";
+import { ResetOrientationSelect, GetOrientationData, OrientationBtn, SetOrientationData } from "../EventHandlers/orientation-btn";
+import { SetLateralitySelection, ResetLateralitySelection } from "../EventHandlers/bodyPartsLaterality";
 import { formDataType } from "./data";
 
 const PatientRegistrationForm = document.querySelector("#pt-registration") as HTMLFormElement;
@@ -28,7 +28,7 @@ function ClearForm() {
 function GetFormData(): formDataType {
     const formData = new FormData(PatientRegistrationForm);
     const formDataObj = Object.fromEntries(formData.entries()) as formDataType;
-    const orientationData = getOrientationData();
+    const orientationData = GetOrientationData();
     // merge orientationData with formDataObj
     Object.keys(orientationData).forEach((key) => {
         formDataObj[key] = orientationData[key];
@@ -49,7 +49,7 @@ function ValidateMandatoryFields(): boolean {
     const height1 = document.getElementById("height1") as HTMLInputElement;
     const height2 = document.getElementById("height2") as HTMLInputElement;
     // exception: orientation
-    const orientationData = getOrientationData();
+    const orientationData = GetOrientationData();
 
     // check if all required fields are filled
     let allFieldsFilled = true;
@@ -69,9 +69,9 @@ function ValidateMandatoryFields(): boolean {
             
         }
     });
-    // check if orientationBtn text is not "Select"
+    // check if OrientationBtn text is not "Select"
     if (orientationData.iconText === "Select") {
-        fieldsNotFilled.push(orientationBtn);
+        fieldsNotFilled.push(OrientationBtn);
         allFieldsFilled = false;
     }
 
@@ -112,22 +112,36 @@ function FillPatientRegistrationForm(data: formDataType): void {
             }
         }
     });
-    const selects = PatientRegistrationForm.querySelectorAll("select");
-    selects.forEach((select) => {
-        if (data[select.name] !== undefined) {
-            const option = select.querySelector(`option[value="${data[select.name]}"]`);
-            if (option) {
-                select.value = data[select.name];
-            }
-        }
-    });
+    
     const textareas = PatientRegistrationForm.querySelectorAll("textarea");
     textareas.forEach((textarea) => {
         if (data[textarea.name] !== undefined) {
             textarea.value = data[textarea.name];
         }
     });
+
+    const selects = PatientRegistrationForm.querySelectorAll("select");
+    selects.forEach((select) => {
+        if (data[select.name] !== undefined) {
+            // find matching option value
+            const value = data[select.name];
+            const optionToSelect = Array.from(select.options).find(option => option.value === value);
+            if (optionToSelect) {
+                select.value = value;
+            } else {
+                select.selectedIndex = 0;
+            }
+        }
+    });
+
+    // set laterality selection
+    if (data.bodyPart && data.laterality) {
+        SetLateralitySelection(data.bodyPart, data.laterality);
+    }
     // set orientation data
+    if (data.orientationText) {
+        SetOrientationData(data.orientationText);
+    }
    
 }
 export {PatientRegistrationForm, ClearForm, GetFormData, ValidateMandatoryFields, FillPatientRegistrationForm};

@@ -1,6 +1,6 @@
-import { resetSortIcon } from "../EventHandlers/scheduler-sort-btns";
+import { ResetSortIcon } from "../EventHandlers/scheduler-sort-btns";
 const schedulerTable = document.getElementById('scheduler-table') as HTMLTableElement;
-type schedulerTableRowType = {
+type SchedulerTableRowType = {
     id: string;
     patient: string;
     procedure: string;
@@ -8,7 +8,7 @@ type schedulerTableRowType = {
 }
 
 // Function to update the scheduler table with a new row
-function updateSchedulerTable(rowData: schedulerTableRowType) {
+function UpdateSchedulerTable(rowData: SchedulerTableRowType) {
     // add new row to the table
     const newRow = schedulerTable.tBodies[0].insertRow(-1);
     const idCell = newRow.insertCell(0);
@@ -21,12 +21,12 @@ function updateSchedulerTable(rowData: schedulerTableRowType) {
     dateCell.innerText = rowData.date;    
 
     // Reset sort after adding a new row
-    resetSortIcon(); 
-    sortTableByIndex();
+    ResetSortIcon(); 
+    SortTableByIndex();
 }
 
 // Function to sort table by patient
-function sortTableByPatient() {
+function SortTableByPatient() {
     const rows = Array.from(schedulerTable.rows).slice(1); // Exclude header row
     rows.sort((a, b) => {
         const patientA = a.cells[1].innerText;
@@ -39,7 +39,7 @@ function sortTableByPatient() {
 }
 
 // function to sort table by date
-function sortTableByIndex() {
+function SortTableByIndex() {
     const rows = Array.from(schedulerTable.rows).slice(1); // Exclude header row
     rows.sort((a, b) => {
         const indexA = parseInt(a.cells[0].innerText, 10);
@@ -51,4 +51,4 @@ function sortTableByIndex() {
     rows.forEach(row => schedulerTable.tBodies[0].appendChild(row));
 }
 
-export { schedulerTableRowType, updateSchedulerTable, sortTableByPatient, sortTableByIndex};
+export { SchedulerTableRowType, UpdateSchedulerTable, SortTableByPatient, SortTableByIndex};

@@ -1,4 +1,4 @@
-import { sortTableByPatient, sortTableByIndex } from "../components/scheduler-table";
+import { SortTableByPatient, SortTableByIndex } from "../components/scheduler-table";
 
 // get elem #scheduler-sort-btn
 const schedulerSortBtn = document.getElementById('scheduler-sortIndex-btn') as HTMLButtonElement;
@@ -10,20 +10,20 @@ schedulerSortBtn.addEventListener('click', () => {
     if (icon) {
         // if icon attribute is not set, set it to 'arrow-down-a-z'
         if (icon.getAttribute('data-icon') !== 'arrow-down-a-z') {
-            sortTableByPatient();
+            SortTableByPatient();
             icon.setAttribute('data-icon', 'arrow-down-a-z');
         } else {
-            sortTableByIndex();
-            resetSortIcon();
+            SortTableByIndex();
+            ResetSortIcon();
         }
     }
 });
 
-function resetSortIcon() {
+function ResetSortIcon() {
     const icon = schedulerSortBtn.querySelector('svg') as SVGElement;
     if (icon) {
         icon.setAttribute('data-icon', 'arrow-down-1-9');
     }
 }
 
-export { resetSortIcon };
+export { ResetSortIcon };

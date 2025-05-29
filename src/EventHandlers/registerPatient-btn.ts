@@ -1,5 +1,5 @@
 import { GetFormData, ClearForm, ValidateMandatoryFields } from "../components/patientRegistrationForm"; 
-import { updateSchedulerTable, schedulerTableRowType } from "../components/scheduler-table";
+import { UpdateSchedulerTable, SchedulerTableRowType } from "../components/scheduler-table";
 const registerPatientBtn = document.getElementById("registerPatient-btn") as HTMLButtonElement;
 
 registerPatientBtn.addEventListener("click", (e) => {
@@ -19,20 +19,20 @@ registerPatientBtn.addEventListener("click", (e) => {
         const formattedDate = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}` 
                             + ` ` + date.toLocaleTimeString();
 
-        const rowData: schedulerTableRowType = {
+        const rowData: SchedulerTableRowType = {
             id: formdata["patientId"] as string,
             patient: patientText,
             procedure: procedureText,
             date: formattedDate
         };
 
-        updateSchedulerTable(rowData);
+        UpdateSchedulerTable(rowData);
         ClearForm();
     }
 
 });
 
-// get the text from BodyPart and Laterality fields
+// 'Procedure' column: get the text from BodyPart and Laterality fields
 function getProcedureText(formdata: Record<string, string>): string {
     let returnString = "";
     // bodyPart and laterality are mandatory fields
