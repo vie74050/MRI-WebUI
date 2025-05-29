@@ -15,7 +15,7 @@ type formDataType =
     "height1": string | null,
     "height2": string | null,
     "weight": string,
-    "units": string,
+    "units": 'us' | 'metric',
     "admittingDiagnosis": string | null,
     "medicalAlerts": string | null,
     "allergies": string | null,
@@ -30,11 +30,9 @@ type formDataType =
     "studyComments": string | null,
     "programSelection": '0',
     "rfTransmit": '0',
-    "bodyPart": string,
+    "bodyPart": string | null,
     "laterality": string | null,
-    "iconSrc": string,
-    "iconText": string,
-    "iconId": string
+    "orientationText": string
 }
 
 // TEMP: global variable to hold form data

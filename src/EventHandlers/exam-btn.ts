@@ -1,3 +1,4 @@
+/**TODO:placeholder functionality, TBD */
 // check that all required fields in pt-registration are filled when the exam button is clicked
 
 import { ValidateMandatoryFields } from "../components/patientRegistrationForm";
