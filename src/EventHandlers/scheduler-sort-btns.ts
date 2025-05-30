@@ -4,7 +4,6 @@ import { SortTableByPatient, SortTableByIndex } from "../components/scheduler-ta
 const schedulerSortBtn = document.getElementById('scheduler-sortIndex-btn') as HTMLButtonElement;
 
 schedulerSortBtn.addEventListener('click', () => {
-    console.log('Scheduler sort button clicked');
     const icon = schedulerSortBtn.querySelector('svg') as SVGElement;
     
     if (icon) {

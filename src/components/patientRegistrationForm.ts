@@ -4,6 +4,14 @@ import { formDataType } from "./data";
 
 const PatientRegistrationForm = document.querySelector("#pt-registration") as HTMLFormElement;
 
+
+function emitFormChangeEvent() {
+    const formData = GetFormData();
+    const formChangeEvent = new CustomEvent("formChanged", { detail: formData });
+    PatientRegistrationForm.dispatchEvent(formChangeEvent);
+    console.log("PatientRegistrationForm changed, emitting formChanged event with data:", formData);
+}
+
 function ClearForm() {
     const inputs = PatientRegistrationForm.querySelectorAll("input");
     inputs.forEach((input) => {
@@ -23,16 +31,33 @@ function ClearForm() {
     ResetOrientationSelect();
     ResetLateralitySelection();
 
+    // emit formChanged event 
+    emitFormChangeEvent();
+
 }
 
+// Saves the form content as formDataType
 function GetFormData(): formDataType {
-    const formData = new FormData(PatientRegistrationForm);
+    // Get all form fields, including disabled ones
+    const formData = new FormData();
+    const elements = PatientRegistrationForm.elements as HTMLFormControlsCollection;
+    for (let i = 0; i < elements.length; i++) {
+        const element = elements[i] as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+        if (element.name && (element.type !== "submit" && element.type !== "button")) {
+            // For checkboxes and radios, only add if checked
+            if ((element.type === "checkbox" || element.type === "radio")) {
+                if ((element as HTMLInputElement).checked) {
+                    formData.append(element.name, element.value);
+                }
+            } else {
+                formData.append(element.name, element.value);
+            }
+        }
+    }
     const formDataObj = Object.fromEntries(formData.entries()) as formDataType;
     const orientationData = GetOrientationData();
-    // merge orientationData with formDataObj
-    Object.keys(orientationData).forEach((key) => {
-        formDataObj[key] = orientationData[key];
-    });
+    // add orientation data to formDataObj
+    formDataObj.orientationId = orientationData.iconId;
         
     return formDataObj;
 }
@@ -86,7 +111,7 @@ function ValidateMandatoryFields(): boolean {
         examFeedback.classList.add("alert-warning");
     }
     else {
-        examFeedback.innerHTML = "<b>All mandatory fields are filled. Added Patient Registration to Scheduler</b>";
+        examFeedback.innerHTML = "<b>&#10003; All mandatory fields are filled.</b>";
         examFeedback.classList.add("alert-success");
     }
     reistrationNote.appendChild(examFeedback);
@@ -139,9 +164,12 @@ function FillPatientRegistrationForm(data: formDataType): void {
         SetLateralitySelection(data.bodyPart, data.laterality);
     }
     // set orientation data
-    if (data.orientationText) {
-        SetOrientationData(data.orientationText);
+    if (data.orientationId) {
+        SetOrientationData(data.orientationId);
     }
-   
+
+    // emit formChanged event 
+    emitFormChangeEvent();   
 }
+
 export {PatientRegistrationForm, ClearForm, GetFormData, ValidateMandatoryFields, FillPatientRegistrationForm};

@@ -32,7 +32,7 @@ type formDataType =
     "rfTransmit": '0',
     "bodyPart": string | null,
     "laterality": string | null,
-    "orientationText": string
+    "orientationId": string
 }
 
 // TEMP: global variable to hold form data

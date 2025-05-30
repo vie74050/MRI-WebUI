@@ -1,31 +1,16 @@
-import { SchedulerTableRowType, UpdateSchedulerTable } from "../components/scheduler-table";
+import { AddSchedulerTableRow } from "../components/scheduler-table";
+import { formDataType, __DATA__ } from "../components/data";
+import { GetNewMockData } from "./patientRegistrationForm-test";
 
-// create some mock scheduler table rows
-const mockdate = new Date("2025-01-10T10:00:00Z"); 
-const mockRows: SchedulerTableRowType[] = [
-    {
-        id: "1",
-        patient: "Doe, John",
-        procedure: "Arm (Left)",
-        date: `${mockdate.getMonth() + 1}/${mockdate.getDate()}/${mockdate.getFullYear()} ${mockdate.toLocaleTimeString()}`
-    },
-    {
-        id: "2",
-        patient: "Smith, Jane",
-        procedure: "Ankle (Right)",
-        date: `${mockdate.getMonth() + 1}/${mockdate.getDate()}/${mockdate.getFullYear()} ${new Date(mockdate.getTime() + 60 * 60 * 1000).toLocaleTimeString()}`
-    },
-    {
-        id: "3",
-        patient: "Johnson, Alice",
-        procedure: "Abdomen",
-        date: `${mockdate.getMonth() + 1}/${mockdate.getDate()}/${mockdate.getFullYear()} ${new Date(mockdate.getTime() + 120 * 60 * 1000).toLocaleTimeString()}`
-    }
-];
-
-// Function to simulate adding mock rows to the scheduler table
 export function AddMockRowsToSchedulerTable() {
-    mockRows.forEach(rowData => {
-        UpdateSchedulerTable(rowData);
-    });
+    // Generate mock data
+    const mockData: formDataType = GetNewMockData();
+
+    // Add the mock data to the scheduler table
+    AddSchedulerTableRow(mockData);
+    // Add the mock data to the __DATA__ array
+    __DATA__.push(mockData);
+    // Log the mock data to the console
+    console.log("Mock data added to scheduler table:", mockData);
+
 }

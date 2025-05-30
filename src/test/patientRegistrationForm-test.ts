@@ -130,7 +130,7 @@ function GetNewMockData(): formDataType {
         rfTransmit: "0",
         bodyPart: bodyPart,
         laterality: laterality,
-        orientationText: orientationText
+        orientationId: orientationText
     }
 
     //console.log("Generated mock data:", mockNewData);

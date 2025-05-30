@@ -32,3 +32,10 @@ th:first-child .table-head-btn {
     display: flex;
     justify-content: center;
 }
+
+tbody tr {
+    cursor: pointer;
+}
+tbody tr.selected {
+    outline: 1px solid #eeff00;
+}
