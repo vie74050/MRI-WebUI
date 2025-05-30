@@ -1,6 +1,5 @@
 // HTML elements
 const unitsSelect = document.getElementById("units") as HTMLSelectElement;
-
 const height2putFt = document.getElementById("height1") as HTMLInputElement;
 const height2putIn = document.getElementById("height2") as HTMLInputElement;
 const weightInput = document.getElementById("weight") as HTMLInputElement;

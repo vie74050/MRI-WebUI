@@ -1,5 +1,5 @@
 import { ResetSortIcon } from "../EventHandlers/scheduler-sort-btns";
-import { formDataType, __DATA__ } from "./data";
+import { FormDataType, RemoveDataByIndex } from "./data";
 import { AddTableRowEventListener } from "../EventHandlers/scheduler-table-row";
 
 const schedulerTable = document.getElementById('scheduler-table') as HTMLTableElement;
@@ -11,7 +11,7 @@ type schedulerTableRowType = {
 }
 
 // Update the scheduler table with a new row
-function AddSchedulerTableRow(formdata: formDataType) {
+function AddSchedulerTableRow(formdata: FormDataType) {
     const rowData: schedulerTableRowType = getRowdDataFromFormData(formdata);
 
     // add new row to the table
@@ -30,6 +30,35 @@ function AddSchedulerTableRow(formdata: formDataType) {
     // Reset sort after adding a new row
     ResetSortIcon(); 
     SortTableByIndex();
+}
+
+// Remove a row from the scheduler table
+// If rowIndex is provided, remove that row; otherwise, remove the .selected row if any
+function RemoveSchedulerTableRow(rowIndex?: number) {
+    let indexToRemove: number | undefined = rowIndex;
+
+    if (indexToRemove === undefined) {
+        // Find the row with 'selected' class
+        const rows = Array.from(schedulerTable.rows).slice(1); // Exclude header
+        const selectedRow = rows.find(row => row.classList.contains('selected'));
+        //console.log("Selected row:", rows);
+        if (selectedRow) {
+            indexToRemove = selectedRow.rowIndex;
+        }
+    }
+
+    if (
+        typeof indexToRemove === "number" &&
+        indexToRemove >= 0 &&
+        indexToRemove < schedulerTable.rows.length
+    ) {
+        schedulerTable.deleteRow(indexToRemove);
+        RemoveDataByIndex(indexToRemove - 1); // Adjust index for data array (header row is excluded)
+        ResetSortIcon(); // Reset sort icon after removing a row
+        SortTableByIndex(); // Resort the table by index
+    } else {
+        console.error("Invalid row index:", indexToRemove);
+    }
 }
 
 // Sort table by patient
@@ -60,8 +89,19 @@ function SortTableByIndex() {
     rows.forEach(row => schedulerTable.tBodies[0].appendChild(row));
 }
 
+/* * Get the index of the selected row in the scheduler table.
+ * Returns the index of the selected row, or null if no row is selected.
+*/
+function GetSelectedRowIndex(): number | null {
+    const selectedRow = Array.from(schedulerTable.rows).find(row => row.classList.contains('selected'));
+    if (selectedRow) {
+        return selectedRow.rowIndex; // Returns the index of the selected row
+    }
+    return null; // No row is selected
+}
+
 // Returns table row data from form data
-function getRowdDataFromFormData(formdata: formDataType): schedulerTableRowType {
+function getRowdDataFromFormData(formdata: FormDataType): schedulerTableRowType {
     const lastName = formdata["lastName"] as string;
     const firstName = (formdata["firstName"] as string || "").trim();
     const patientText = firstName ? `${lastName}, ${firstName}` : lastName;
@@ -78,12 +118,13 @@ function getRowdDataFromFormData(formdata: formDataType): schedulerTableRowType 
 }
 
 // 'Procedure' column: get the text from BodyPart and Laterality fields
-function getProcedureText(formdata: formDataType): string {
+function getProcedureText(formdata: FormDataType): string {
     let returnString = "";
     // bodyPart and laterality are mandatory fields
     // if laterality is not selected, return only bodyPart
     const bodyPart = formdata["bodyPart"] as string;
     const laterality = formdata["laterality"] as string;
+
     if (laterality) {
         returnString = `${bodyPart} (${laterality})`;
     } else {
@@ -95,4 +136,4 @@ function getProcedureText(formdata: formDataType): string {
     return returnString;
 }
 
-export { AddSchedulerTableRow, SortTableByPatient, SortTableByIndex};
+export { AddSchedulerTableRow, RemoveSchedulerTableRow, GetSelectedRowIndex, SortTableByPatient, SortTableByIndex};

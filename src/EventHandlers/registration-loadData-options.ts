@@ -4,12 +4,21 @@ import { GetNewMockData } from "../test/patientRegistrationForm-test";
 
 const localDataBtn = document.getElementById('localData-btn') as HTMLButtonElement;
 if (localDataBtn) {
-    initializeLocalDataBtn();
+    //initializeLocalDataBtn();
+}
+function initializeLocalDataBtn() {
+    
 }
 
-function initializeLocalDataBtn() {
-    localDataBtn.disabled = false;
-    localDataBtn.addEventListener('click', (e) => {
+const priorStudiesBtn = document.getElementById('priorStudies-btn') as HTMLButtonElement;
+if (priorStudiesBtn) {
+    initializePriorStudiesBtn();
+}
+
+function initializePriorStudiesBtn() {
+    priorStudiesBtn.title = "Load a random data set, for testing";
+    priorStudiesBtn.disabled = false;
+    priorStudiesBtn.addEventListener('click', (e) => {
         e.preventDefault();
         FillPatientRegistrationForm(GetNewMockData());
     });

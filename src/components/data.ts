@@ -1,4 +1,4 @@
-type formDataType =
+type FormDataType =
 {
     "lastName": string
     "firstName": string | null,
@@ -36,6 +36,29 @@ type formDataType =
 }
 
 // TEMP: global variable to hold form data
-var __DATA__: formDataType[] = [];
+var __DATA__: FormDataType[] = [];
 
-export {__DATA__, formDataType};
+function GetData(): FormDataType[] {
+    return __DATA__;
+}
+function SetData(data: FormDataType[]): void {
+    __DATA__ = data;
+}
+function RemoveDataByIndex(index: number): void {
+    if (index >= 0 && index < __DATA__.length) {
+        __DATA__.splice(index, 1);
+    }
+    console.log("Current data: ", __DATA__);
+}
+function AddData(formData: FormDataType): void {
+    __DATA__.push(formData);
+    //console.log("Data added: ", formData);
+    //console.log("Current data: ", __DATA__);
+}
+function UpdateDataByIndex(index: number, formData: FormDataType): void {
+    
+    if (index >= 0 && index < __DATA__.length) {
+        __DATA__[index] = formData;
+    }
+}
+export { AddData, RemoveDataByIndex, UpdateDataByIndex, GetData, SetData, FormDataType };

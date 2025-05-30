@@ -1,9 +1,11 @@
 import { FillPatientRegistrationForm, PatientRegistrationForm } from "../components/patientRegistrationForm";
-import { __DATA__ } from "../components/data";
+import { GetData } from "../components/data";
 
 const registrationOptionsRight = document.getElementById('registration-options-right') as HTMLDivElement;
 const regtrationEditBtns = document.getElementById('registration-edit-options') as HTMLDivElement;
 
+// Add event listener to the scheduler table rows
+// tables rows are dynamically added when user registers a new patient
 export function AddTableRowEventListener(newRow: HTMLTableRowElement) {
     // add event listener to the new row
     newRow.addEventListener('click', () => {
@@ -14,8 +16,14 @@ export function AddTableRowEventListener(newRow: HTMLTableRowElement) {
 function selectSchedulerRow(newRow: HTMLTableRowElement) {
     // populate the form with the data from the clicked row
     const rowIndex = newRow.rowIndex;
-    const formdata = __DATA__[rowIndex-1]; 
-    FillPatientRegistrationForm(formdata);
+    const formdata = GetData(); 
+    // check if rowIndex is valid
+    if (rowIndex < 1 || rowIndex > formdata.length) {
+        console.error("Invalid row index: ", rowIndex);
+        return;
+    }
+    
+    FillPatientRegistrationForm(formdata[rowIndex-1]);
 
     // mark the clicked row as selected
     const siblinRows = newRow.parentElement?.children as HTMLCollectionOf<HTMLTableRowElement>;
@@ -28,7 +36,6 @@ function selectSchedulerRow(newRow: HTMLTableRowElement) {
     setRegistrationOptionsBtns();
     
 }
-
 
 // listen for PatientRegistrationForm change event
 PatientRegistrationForm.addEventListener('formChanged', () => {
@@ -48,8 +55,10 @@ PatientRegistrationForm.addEventListener('formChanged', () => {
 */
 function setRegistrationOptionsBtns(opt: boolean = true) {
     const registrationButtons = registrationOptionsRight.querySelectorAll('button') as NodeListOf<HTMLButtonElement>;
-    registrationButtons.forEach(button => {
-        button.disabled = opt;
+    registrationButtons.forEach((button, index) => {
+        if (index !== 0) { /** TODO: TBD emergency btn functionality */
+            button.disabled = opt;
+        }
     });
 
     const registrationEditOptions = regtrationEditBtns.querySelectorAll('button') as NodeListOf<HTMLButtonElement>;

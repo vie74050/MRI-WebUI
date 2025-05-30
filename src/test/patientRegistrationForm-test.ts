@@ -1,4 +1,4 @@
-import { formDataType } from "../components/data";
+import { FormDataType } from "../components/data";
 
 let patientIdCounter = Math.floor(10000 + Math.random() * 90000);
 
@@ -62,7 +62,7 @@ function getRandomOptionFromSelect(selectId: string): string {
 }
 
 // Function to generate new mock data for patient registration form
-function GetNewMockData(): formDataType {
+function GetNewMockData(): FormDataType {
     const randomName = getRandomName();
     const randomDOB = getRandomDOBAndAge();
 
@@ -97,7 +97,7 @@ function GetNewMockData(): formDataType {
     ];
     const orientationText = orientationOptions[Math.floor(Math.random() * orientationOptions.length)];
 
-    let mockNewData: formDataType = {
+    let mockNewData: FormDataType = {
         lastName: randomName.lastName,
         firstName: randomName.firstName,
         title: null,

@@ -1,17 +1,20 @@
 import { ResetOrientationSelect, GetOrientationData, OrientationBtn, SetOrientationData } from "../EventHandlers/orientation-btn";
 import { SetLateralitySelection, ResetLateralitySelection } from "../EventHandlers/bodyPartsLaterality";
-import { formDataType } from "./data";
+import { FormDataType } from "./data";
 
 const PatientRegistrationForm = document.querySelector("#pt-registration") as HTMLFormElement;
-
 
 function emitFormChangeEvent() {
     const formData = GetFormData();
     const formChangeEvent = new CustomEvent("formChanged", { detail: formData });
     PatientRegistrationForm.dispatchEvent(formChangeEvent);
-    console.log("PatientRegistrationForm changed, emitting formChanged event with data:", formData);
 }
 
+/* Clears the Patient Registration Form.
+ * Resets all input fields, selects, and textareas to their default values.
+ * Also resets orientation and laterality selections.
+ * Emits a formChanged event to notify that the form has been cleared.
+*/
 function ClearForm() {
     const inputs = PatientRegistrationForm.querySelectorAll("input");
     inputs.forEach((input) => {
@@ -36,8 +39,10 @@ function ClearForm() {
 
 }
 
-// Saves the form content as formDataType
-function GetFormData(): formDataType {
+/* Saves the form content as FormDataType
+ * @returns FormDataType object containing the form data
+*/
+function GetFormData(): FormDataType {
     // Get all form fields, including disabled ones
     const formData = new FormData();
     const elements = PatientRegistrationForm.elements as HTMLFormControlsCollection;
@@ -54,7 +59,7 @@ function GetFormData(): formDataType {
             }
         }
     }
-    const formDataObj = Object.fromEntries(formData.entries()) as formDataType;
+    const formDataObj = Object.fromEntries(formData.entries()) as FormDataType;
     const orientationData = GetOrientationData();
     // add orientation data to formDataObj
     formDataObj.orientationId = orientationData.iconId;
@@ -62,6 +67,12 @@ function GetFormData(): formDataType {
     return formDataObj;
 }
 
+/** Validates mandatory fields in the Patient Registration Form.
+ * Checks if all required fields are filled, including at least one height field.
+ * Also checks if the orientation button is not set to "Select".
+ * Displays feedback in the registration note area.
+ * @returns true if all mandatory fields are filled
+ */
 function ValidateMandatoryFields(): boolean {
     // feedback fields
     const reistrationNote = document.getElementById("registration-note") as HTMLDivElement;
@@ -128,7 +139,10 @@ function ValidateMandatoryFields(): boolean {
     return allFieldsFilled;
 }
 
-function FillPatientRegistrationForm(data: formDataType): void {
+/* Fills the Patient Registration Form with data from FormDataType.
+ * @param data - The data to fill the form with, of type FormDataType.
+*/
+function FillPatientRegistrationForm(data: FormDataType): void {
     const inputs = PatientRegistrationForm.querySelectorAll("input");
     inputs.forEach((input) => {
         if (input.type !== "submit") {

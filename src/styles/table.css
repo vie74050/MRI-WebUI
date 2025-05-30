@@ -37,5 +37,5 @@ tbody tr {
     cursor: pointer;
 }
 tbody tr.selected {
-    outline: 1px solid #eeff00;
+    outline: 2px solid #ffc720;
 }
