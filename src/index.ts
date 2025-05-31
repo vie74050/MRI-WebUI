@@ -8,6 +8,7 @@ import "./styles/scheduler.css";
 import "./styles/registration.css";
 import "./styles/registration-options.css";
 import "./styles/table.css";
+import "./styles/tooltip.css";
 
 // patient registration
 require('./EventHandlers/units.ts');
@@ -22,3 +23,10 @@ require('./EventHandlers/registration-edit-options.ts');
 // scheduler
 require('./EventHandlers/scheduler-sort-btns.ts');
 require('./EventHandlers/scheduler-select-btn.ts');
+// bootstrap tooltips
+import { Tooltip } from 'bootstrap';
+const tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+const tooltipList = tooltipTriggerList.map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl, { 
+    customClass: 'custom-tooltip',
+    boundary: 'window', // Ensures tooltips are not cut off by overflow 
+}));

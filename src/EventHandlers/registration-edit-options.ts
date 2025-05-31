@@ -4,7 +4,8 @@ import { UpdateDataByIndex } from "../components/data";
 
 const saveBtn = document.getElementById('save-btn') as HTMLButtonElement;
 if (saveBtn) {
-    saveBtn.title = "Save the changes made to the patient registration data";
+    saveBtn.title = "Save any changes made to the patient registration data";
+    saveBtn.setAttribute("data-bs-toggle", "tooltip");
     saveBtn.addEventListener('click', (e) => {
         e.preventDefault();
         const row_index = GetSelectedRowIndex();
@@ -21,6 +22,7 @@ if (saveBtn) {
 const cancelBtn = document.getElementById('cancel-btn') as HTMLButtonElement;
 if (cancelBtn) {
     cancelBtn.title = "Clear the form";
+    cancelBtn.setAttribute("data-bs-toggle", "tooltip");
     cancelBtn.addEventListener('click', (e) => {
         e.preventDefault();
         ClearForm();
@@ -29,7 +31,8 @@ if (cancelBtn) {
 
 const deleteBtn = document.getElementById('delete-btn') as HTMLButtonElement;
 if (deleteBtn) {
-    deleteBtn.title = "Delete the selected patient from the scheduler and data";
+    deleteBtn.title = "Delete the selected patient data and remove from the scheduler";
+    deleteBtn.setAttribute("data-bs-toggle", "tooltip");
     deleteBtn.addEventListener('click', (e) => {
         e.preventDefault();
         if (confirm("Are you sure you want to delete the selected patient?")) {

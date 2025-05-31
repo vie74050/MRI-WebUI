@@ -17,6 +17,7 @@ if (priorStudiesBtn) {
 
 function initializePriorStudiesBtn() {
     priorStudiesBtn.title = "Load a random data set, for testing";
+    priorStudiesBtn.setAttribute("data-bs-toggle", "tooltip");
     priorStudiesBtn.disabled = false;
     priorStudiesBtn.addEventListener('click', (e) => {
         e.preventDefault();

@@ -3,12 +3,17 @@ import { AddSchedulerTableRow } from "../components/scheduler-table";
 import { AddData } from "../components/data";
 const registerPatientBtn = document.getElementById("registerPatient-btn") as HTMLButtonElement;
 
-registerPatientBtn.addEventListener("click", (e) => {
-    e.preventDefault();
+if (registerPatientBtn) {
+    registerPatientBtn.title = "Register a new patient";
+    registerPatientBtn.setAttribute("data-bs-toggle", "tooltip");
+    registerPatientBtn.setAttribute("data-bs-placement", "top");
 
-    registerNewPatient();
+    registerPatientBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        registerNewPatient();
 
-});
+    });
+}
 
 function registerNewPatient() {
     const allFieldsFilled = ValidateMandatoryFields("Patient has been registered successfully!");
