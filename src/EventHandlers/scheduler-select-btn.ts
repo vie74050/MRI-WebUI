@@ -1,3 +1,4 @@
+/* TODO: TBD, may be used for testing purposes */
 import { AddMockRowsToSchedulerTable } from "../test/scheduler-table-test";
 
 const btn = document.getElementById('schedule-select-btn') as HTMLButtonElement;

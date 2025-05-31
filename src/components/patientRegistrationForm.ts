@@ -73,7 +73,7 @@ function GetFormData(): FormDataType {
  * Displays feedback in the registration note area.
  * @returns true if all mandatory fields are filled
  */
-function ValidateMandatoryFields(): boolean {
+function ValidateMandatoryFields(feedback?:string): boolean {
     // feedback fields
     const reistrationNote = document.getElementById("registration-note") as HTMLDivElement;
     var examFeedback = document.createElement("div");
@@ -118,13 +118,14 @@ function ValidateMandatoryFields(): boolean {
     }  
     examFeedback.classList.remove("alert-warning", "alert-success");
     if (!allFieldsFilled) {
-        examFeedback.innerHTML = "<b>Please fill all mandatory * fields.</b>";
+        examFeedback.innerHTML = "Please fill all <b>mandatory * fields.</b>";
         examFeedback.classList.add("alert-warning");
     }
     else {
-        examFeedback.innerHTML = "<b>&#10003; All mandatory fields are filled.</b>";
+        examFeedback.innerHTML = "&#10003; " + (feedback ? feedback : "All mandatory fields are filled.");
         examFeedback.classList.add("alert-success");
     }
+
     reistrationNote.appendChild(examFeedback);
     fieldsNotFilled.forEach((field) => {
         field.classList.add("not-filled");

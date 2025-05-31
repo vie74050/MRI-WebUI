@@ -11,7 +11,7 @@ registerPatientBtn.addEventListener("click", (e) => {
 });
 
 function registerNewPatient() {
-    const allFieldsFilled = ValidateMandatoryFields();
+    const allFieldsFilled = ValidateMandatoryFields("Patient has been registered successfully!");
 
     if (allFieldsFilled) {
         const formdata = GetFormData(); // console.log("Form data: ", formdata);

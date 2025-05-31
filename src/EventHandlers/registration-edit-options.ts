@@ -9,7 +9,7 @@ if (saveBtn) {
         e.preventDefault();
         const row_index = GetSelectedRowIndex();
         const formData = GetFormData();
-        const isValid = ValidateMandatoryFields();
+        const isValid = ValidateMandatoryFields("Patient data has been updated successfully!");
         // Update the data array with the form data
         if (row_index !== null && isValid) {
             UpdateDataByIndex(row_index-1, formData);
@@ -32,7 +32,10 @@ if (deleteBtn) {
     deleteBtn.title = "Delete the selected patient from the scheduler and data";
     deleteBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        RemoveSchedulerTableRow(); 
-        ClearForm();      
+        if (confirm("Are you sure you want to delete the selected patient?")) {
+            RemoveSchedulerTableRow();
+            ClearForm();
+        }
     });
 }
+
