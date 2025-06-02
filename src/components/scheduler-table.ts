@@ -42,21 +42,22 @@ function RemoveSchedulerTableRow(rowIndex?: number) {
         const selectedRow = rows.find(row => row.classList.contains('selected'));
         //console.log("Selected row:", rows);
         if (selectedRow) {
-            indexToRemove = selectedRow.rowIndex;
+            indexToRemove = parseInt(selectedRow.cells[0].innerText, 10);
+
+            // delete selected row from the table
+            schedulerTable.deleteRow(selectedRow.rowIndex);
+            // Remove data from the __DATA_ array
+            RemoveDataByIndex(indexToRemove - 1); // Adjust index for data array (header row is excluded)
+            // sort the table by index
+            SortTableByIndex();
+            // Update remaining rows' index
+            for (let i = 1; i < schedulerTable.rows.length; i++) {
+                schedulerTable.rows[i].cells[0].innerText = (i).toString(); // Update index in the first cell
+            }
+
         }
     }
 
-    if (
-        typeof indexToRemove === "number" &&
-        indexToRemove >= 0 &&
-        indexToRemove < schedulerTable.rows.length
-    ) {
-        schedulerTable.deleteRow(indexToRemove);
-        RemoveDataByIndex(indexToRemove - 1); // Adjust index for data array (header row is excluded)
-        SortTableByIndex(); // Resort the table by index
-    } else {
-        console.error("Invalid row index:", indexToRemove);
-    }
 }
 
 // Update the scheduler table data
@@ -67,7 +68,6 @@ function UpdateSchedulerTableRow(rowIndex: number, formdata: FormDataType) {
         row.cells[0].innerText = (rowIndex).toString(); // Update index
         row.cells[1].innerText = rowData.patient; // Update patient name
         row.cells[2].innerText = rowData.procedure; // Update procedure
-        row.cells[3].innerText = rowData.date; // Update date
     }
     
     SortTableByIndex(); // Resort the table by index
@@ -109,7 +109,7 @@ function SortTableByIndex() {
 function GetSelectedRowIndex(): number | null {
     const selectedRow = Array.from(schedulerTable.rows).find(row => row.classList.contains('selected'));
     if (selectedRow) {
-        return selectedRow.rowIndex; // Returns the index of the selected row
+        return parseInt(selectedRow.cells[0].innerText, 10); // Return the index from the first cell
     }
     return null; // No row is selected
 }
