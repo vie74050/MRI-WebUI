@@ -1,6 +1,6 @@
 import { GetFormData, ValidateMandatoryFields, ClearForm } from "../components/patientRegistrationForm";
-import { GetSelectedRowIndex, RemoveSchedulerTableRow } from "../components/scheduler-table";
-import { UpdateDataByIndex } from "../components/data";
+import { GetSelectedRowIndex, RemoveSchedulerTableRow, UpdateSchedulerTableRow } from "../components/scheduler-table";
+import { UpdateDataByIndex, GetData } from "../components/data";
 
 const saveBtn = document.getElementById('save-btn') as HTMLButtonElement;
 if (saveBtn) {
@@ -8,14 +8,28 @@ if (saveBtn) {
     saveBtn.setAttribute("data-bs-toggle", "tooltip");
     saveBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        const row_index = GetSelectedRowIndex();
-        const formData = GetFormData();
-        const isValid = ValidateMandatoryFields("Patient data has been updated successfully!");
-        // Update the data array with the form data
-        if (row_index !== null && isValid) {
-            UpdateDataByIndex(row_index-1, formData);
-        }
 
+        const row_index = GetSelectedRowIndex();
+        const origData = GetData();
+        const formData = GetFormData();
+        
+        if (row_index !== null ) {
+
+            if (origData[row_index-1] && JSON.stringify(origData[row_index-1]) === JSON.stringify(formData)) {
+                // no changes made, do not update
+                return;
+            }else {
+                const isValid = ValidateMandatoryFields("Patient data has been updated successfully!");
+                if (!isValid) {
+                    // validation failed, do not update
+                    return;
+                }else if (confirm("Are you sure you want to save the changes?")) {
+                    // Update the data array
+                    UpdateDataByIndex(row_index-1, formData);
+                    UpdateSchedulerTableRow(row_index, formData);
+                }
+            }
+        }
     });
 }
 

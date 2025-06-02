@@ -1,4 +1,4 @@
-import { ClearForm, PatientRegistrationForm } from "../components/patientRegistrationForm";
+import { ClearForm } from "../components/patientRegistrationForm";
 const btn = document.getElementById("deleteProcedure-btn") as HTMLButtonElement;
 
 if (btn) {

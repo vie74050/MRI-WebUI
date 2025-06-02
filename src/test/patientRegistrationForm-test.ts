@@ -82,7 +82,8 @@ function GetNewMockData(): FormDataType {
     const bodyPart = getRandomOptionFromSelect('bodyPart');
     
     // Get list of lateralities from #laterality select options, randomly select one
-    const laterality = getRandomOptionFromSelect('laterality');
+    const lateralities = ['left', 'right', 'both'];
+    const laterality = lateralities[Math.floor(Math.random() * lateralities.length)];
 
     // Randomly select Patient orientation select options
     const orientationOptions = [

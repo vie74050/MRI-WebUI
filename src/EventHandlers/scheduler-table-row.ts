@@ -15,8 +15,8 @@ export function AddTableRowEventListener(newRow: HTMLTableRowElement) {
 
 function selectSchedulerRow(newRow: HTMLTableRowElement) {
     // populate the form with the data from the clicked row
-    const rowIndex = newRow.rowIndex;
-    const formdata = GetData(); 
+    const rowIndex = parseInt((newRow.cells[0]?.textContent || "0").trim(), 10);
+    const formdata = GetData(); //console.log("formdata: ", formdata[rowIndex-1]);
     // check if rowIndex is valid
     if (rowIndex < 1 || rowIndex > formdata.length) {
         console.error("Invalid row index: ", rowIndex);

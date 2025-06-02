@@ -118,11 +118,11 @@ function ValidateMandatoryFields(feedback?:string): boolean {
     }  
     examFeedback.classList.remove("alert-warning", "alert-success");
     if (!allFieldsFilled) {
-        examFeedback.innerHTML = "Please fill all <b>mandatory * fields.</b>";
+        examFeedback.innerHTML = "Please fill all mandatory * fields.";
         examFeedback.classList.add("alert-warning");
     }
     else {
-        examFeedback.innerHTML = "&#10003; " + (feedback ? feedback : "All mandatory fields are filled.");
+        examFeedback.innerHTML = "&#10003; " + (feedback ? feedback : " All mandatory fields are filled.");
         examFeedback.classList.add("alert-success");
     }
 
@@ -175,7 +175,7 @@ function FillPatientRegistrationForm(data: FormDataType): void {
     });
 
     // set laterality selection
-    if (data.bodyPart && data.laterality) {
+    if (data.bodyPart && data.laterality !== null && data.laterality !== undefined) {
         SetLateralitySelection(data.bodyPart, data.laterality);
     }
     // set orientation data

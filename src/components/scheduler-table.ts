@@ -28,7 +28,6 @@ function AddSchedulerTableRow(formdata: FormDataType) {
     AddTableRowEventListener(newRow);
 
     // Reset sort after adding a new row
-    ResetSortIcon(); 
     SortTableByIndex();
 }
 
@@ -54,11 +53,24 @@ function RemoveSchedulerTableRow(rowIndex?: number) {
     ) {
         schedulerTable.deleteRow(indexToRemove);
         RemoveDataByIndex(indexToRemove - 1); // Adjust index for data array (header row is excluded)
-        ResetSortIcon(); // Reset sort icon after removing a row
         SortTableByIndex(); // Resort the table by index
     } else {
         console.error("Invalid row index:", indexToRemove);
     }
+}
+
+// Update the scheduler table data
+function UpdateSchedulerTableRow(rowIndex: number, formdata: FormDataType) {
+    const rowData: schedulerTableRowType = getRowdDataFromFormData(formdata);
+    const row = schedulerTable.rows[rowIndex];
+    if (row) {
+        row.cells[0].innerText = (rowIndex).toString(); // Update index
+        row.cells[1].innerText = rowData.patient; // Update patient name
+        row.cells[2].innerText = rowData.procedure; // Update procedure
+        row.cells[3].innerText = rowData.date; // Update date
+    }
+    
+    SortTableByIndex(); // Resort the table by index
 }
 
 // Sort table by patient
@@ -87,6 +99,8 @@ function SortTableByIndex() {
     // Clear the table and reinsert sorted rows
     schedulerTable.tBodies[0].innerHTML = '';
     rows.forEach(row => schedulerTable.tBodies[0].appendChild(row));
+
+    ResetSortIcon(); // Reset sort icon 
 }
 
 /* * Get the index of the selected row in the scheduler table.
@@ -136,4 +150,4 @@ function getProcedureText(formdata: FormDataType): string {
     return returnString;
 }
 
-export { AddSchedulerTableRow, RemoveSchedulerTableRow, GetSelectedRowIndex, SortTableByPatient, SortTableByIndex};
+export { AddSchedulerTableRow, RemoveSchedulerTableRow, GetSelectedRowIndex, SortTableByPatient, SortTableByIndex, UpdateSchedulerTableRow };
