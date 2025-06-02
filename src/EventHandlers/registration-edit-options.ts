@@ -1,6 +1,7 @@
 import { GetFormData, ValidateMandatoryFields, ClearForm } from "../components/patientRegistrationForm";
 import { GetSelectedRowIndex, RemoveSchedulerTableRow, UpdateSchedulerTableRow } from "../components/scheduler-table";
 import { UpdateDataByIndex, GetData } from "../components/data";
+import { DialogModal } from "../components/dialogModal";
 
 const saveBtn = document.getElementById('save-btn') as HTMLButtonElement;
 if (saveBtn) {
@@ -23,10 +24,16 @@ if (saveBtn) {
                 if (!isValid) {
                     // validation failed, do not update
                     return;
-                }else if (confirm("Are you sure you want to save the changes?")) {
-                    // Update the data array
-                    UpdateDataByIndex(row_index-1, formData);
-                    UpdateSchedulerTableRow(row_index, formData);
+                } else {
+                    DialogModal.confirm("Are you sure you want to save the changes? This will over-write previously saved data.").then(
+                        (confirmation) => {
+                            if (confirmation) {
+                                // Update the data array
+                                UpdateDataByIndex(row_index-1, formData);
+                                UpdateSchedulerTableRow(row_index, formData);
+                            }                            
+                        }
+                    );
                 }
             }
         }
@@ -49,10 +56,14 @@ if (deleteBtn) {
     deleteBtn.setAttribute("data-bs-toggle", "tooltip");
     deleteBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        if (confirm("Are you sure you want to delete the selected patient?")) {
-            RemoveSchedulerTableRow();
-            ClearForm();
-        }
+        DialogModal.confirm("Are you sure you want to delete the selected patient? This will remove all patient data.").then(
+            (confirmation) => {
+            if (confirmation) {
+                RemoveSchedulerTableRow();
+                ClearForm();
+            }
+            }
+        );
     });
 }
 

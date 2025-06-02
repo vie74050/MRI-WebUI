@@ -1,4 +1,6 @@
 import { ClearForm } from "../components/patientRegistrationForm";
+import { DialogModal } from "../components/dialogModal";
+
 const btn = document.getElementById("deleteProcedure-btn") as HTMLButtonElement;
 
 if (btn) {
@@ -10,10 +12,11 @@ if (btn) {
     btn.addEventListener("click", (e) => {
         e.preventDefault();
         
-        const confirmation = confirm("Are you sure you want to clear the form?");
-        if (confirmation) {
-            ClearForm(); 
-        } 
+        DialogModal.confirm("Are you sure you want to clear the form?").then((confirmation) => {
+            if (confirmation) {
+            ClearForm();
+            }
+        });
     });
 }
 
