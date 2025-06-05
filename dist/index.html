@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MRI Workflow Sim</title>
+  </head>
+  <body>
+    <header>
+      <h1>MRI Workflow Simulator</h1>
+      <span id="level1-options-left">
+        <button type="button" class="btn icon" disabled id="home-btn">
+          <span>
+            <i class="fa-solid fa-house"></i>
+          </span>
+        </button>
+        <button type="button" class="btn icon" disabled id="schedule-btn">
+          <span>
+            <i class="fa-solid fa-calendar-days"></i>
+          </span>
+        </button>
+        <button type="button" class="btn icon" disabled id="registration-btn">
+          <span>
+            <i class="fa-solid fa-contact-card">‌</i>
+          </span>
+        </button>
+      </span>
+      <span class="space"></span>
+      <span id="level1-options-right">
+        <button type="button" class="btn icon" disabled id="help-btn">
+          <span>
+            <i class="fa-solid fa-circle-question"></i> 
+          </span>
+        </button>
+        <button type="button" class="btn icon" disabled id="headset-btn">
+          <span>
+            <i class="fa-solid fa-headset">‌</i>
+          </span>
+        </button>
+        <button type="button" class="btn icon" disabled id="network-btn">
+          <span>
+            <i class="fa-solid fa-network-wired"></i>
+          </span>
+        </button>
+        <button type="button" class="btn icon" disabled id="database-btn">
+          <span>
+            <i class="fa-solid fa-database">‌</i>
+          </span>
+        </button>
+        <button type="button" class="btn icon" disabled id="settings-btn">
+          <span>
+            <i class="fa-solid fa-gear"></i>
+          </span>
+        </button>
+        <button type="button" class="btn icon" disabled id="briefcase-btn">
+          <span>
+            <i class="fa-solid fa-briefcase"></i>
+          </span>
+        </button>
+        <button type="button" class="btn icon" disabled id="camera-btn">
+          <span>
+            <i class="fa-solid fa-video"></i>
+          </span>
+        </button>
+        <button type="button" class="btn icon" disabled id="cart-btn">
+          <span>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </span>
+        </button>
+        
+        <button type="button" class="btn icon" disabled id="user-btn">
+          <span>
+            <i class="fa-solid fa-user"></i>
+          </span>
+        </button>
+      </span>
+    </header>
+    <div class="main-container">
+      <section id="scheduler">
+        <h2>Scheduler</h2>
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="basic-addon1"
+            disabled
+            id="search"
+          />
+          <span class="input-group-text" id="basic-addon1"
+            ><i class="fa-solid fa-magnifying-glass"></i
+          ></span>
+        </div>
+
+        <div id="schedule-options">
+          <span id="schedule-selected-text" class="small"><i>Scheduled, Today</i></span>
+          <span class="space"></span>
+          <span id="schedule-options-right">
+            <button type="button" class="btn btn-sm" id="refresh-btn" disabled>
+              <span>
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </span>
+            </button>
+            <button type="button" class="btn btn-sm" id="schedule-select-btn" title="Select Schedule" disabled>
+              <span>
+                <i class="fa-solid fa-address-card">‌</i>
+              </span>
+            </button> 
+          </span>
+        </div>
+
+        <table id="scheduler-table" class="table table-dark">
+          <thead>
+            <tr>
+              <th>
+                <span 
+                  id="scheduler-sortIndex-btn" 
+                  class="table-head-btn" 
+                  title="Sort by Patient or registeration time">
+                  <i class="fa-solid fa-arrow-down-1-9"></i>
+                </span>
+              </th>
+              <th>                
+                <span 
+                  id="scheduler-sortPatient-btn" >
+                  Patient
+                </span>
+              </th>
+              <th>Procedure</th>
+              <th>
+                <span 
+                  id="scheduler-sortDate-btn" >
+                  Date &amp; Time
+                </span>
+              </th>    
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      </section>
+
+      <section id="registration">
+        <div id="registration-options">
+          
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Patient Registration</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" disabled href="#">Program Registration</a>
+            </li>
+          </ul>
+          
+          <span class="space"></span>
+
+          <span id="registration-options-right" >
+            <button disabled type="button" class="btn icon" id="erPatient-btn" >
+              <span>
+                <i class="fa-solid fa-hospital-user"></i>
+              </span>
+              <label>Emergency Patient</label>
+            </button>
+            <button type="button" class="btn icon" id="registerPatient-btn" >
+              <span>
+                <i class="fa-solid fa-user-plus"></i>
+              </span>
+              <label>Register Patient</label>
+            </button>  
+            <button type="button" class="btn icon" id="deleteProcedure-btn" title="Clear form">
+              <span>
+                <i class="fa-solid fa-trash"></i>
+              </span>
+              <label>Delete Procedure</label>
+            </button>
+          </span>
+        </div>
+        <form id="pt-registration" action="#">
+          <div>
+            <h2> &nbsp;</h2>
+            <span><label for="lastName"><b class="mandatory"> * </b> Last Name </label>
+              <input class="field-info-safety" required type="text" id="lastName" name="lastName" title="Last Name"/></span>
+
+            <span><label for="firstName"> First Name </label>
+              <input type="text" id="firstName" name="firstName" title="First Name"/></span>
+
+            <span><label for="title">Title </label>
+              <input type="text" id="title" name="title"/></span>
+
+            <span><label for="suffix" suffix>Suffix </label>
+              <input type="text" id="suffix" name="suffix"/></span>
+
+            <span><label for="middleName">Middle Name </label>
+              <input type="text" id="middleName" name="middleName"/></span>
+
+            <span><label for="patientId"><b class="mandatory"> * </b> Patient ID </label>
+              <input class="field-info-safety" required type="text" id="patientId" name="patientId" /></span>
+
+            <span>
+                <label><b class="mandatory"> * </b> Date of Birth </label>
+                <span>        
+                  <select class="field-info-safety" required id="dobMonth" name="dobMonth" aria-placeholder="M">
+                      <option value="" disabled selected>M</option>
+                      <option value="01">Jan</option>
+                      <option value="02">Feb</option>
+                      <option value="03">Mar</option>
+                      <option value="04">Apr</option>
+                      <option value="05">May</option>
+                      <option value="06">Jun</option>
+                      <option value="07">Jul</option>
+                      <option value="08">Aug</option>
+                      <option value="09">Sep</option>
+                      <option value="10">Oct</option>
+                      <option value="11">Nov</option>
+                      <option value="12">Dec</option>
+                  </select>
+                  <input class="field-info-safety" required type="number" id="dobDay" name="dobDay" min="1" max="31" step="1" placeholder="dd"/>
+                  <input class="field-info-safety" required type="number" id="dobYear" name="dobYear" min="1900" max="2099" step="1" placeholder="yyyy"/>
+                </span>
+                
+            </span>
+            
+            <span>
+                <label for="age"><b class="mandatory"> * </b> Age </label>
+                <span>
+                    <input class="field-info-safety" disabled type="number" id="age" name="age" min="0" step="1" 
+                      title="Age will be calcuated from DOB. Select the desired age unit (Y, M, W, D)."/
+                      style="color:white"/>
+                    <select class="field-info-safety" required id="ageUnit" name="ageUnit">
+                        <option value="years" selected>Year(s)</option>
+                        <option value="months">Month(s)</option>
+                        <option value="weeks">Week(s)</option>
+                        <option value="days">Day(s)</option>
+                    </select> 
+                </span>
+            </span>
+
+            <span>
+                <label for="sex"><b class="mandatory"> * </b> Sex </label>
+                <select class="field-info-safety" required id="sex" name="sex">
+                    <option value="" disabled selected>Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </span>
+
+            <span>
+                <label><b class="mandatory"> * </b> Height </label>
+                <span>
+                    <span>
+                        <input class="field-info-safety" required type="number" id="height1" name="height1" min="0" step="1" /> 
+                        <label id="unitsFt"> ft </label></span>
+                    <span>
+                        <input class="field-info-safety" required type="number" id="height2" name="height2" min="0" step="1" />
+                        <label id="unitsIn"> in </label></span>
+                </span>
+            </span>
+
+            <span>
+                <label for="weight" ><b class="mandatory"> * </b> Weight </label>
+                <span>
+                    <span>
+                      <input class="field-info-safety" required type="number" id="weight" name="weight" min="0" step="1"/> 
+                      <label id="unitsLb"> lb </label>
+                    </span>
+                    <select class="field-info-safety" required id="units" name="units" title="Change from U.S imperial units to metric" >
+                        <option value="us" selected>U.S.</option>
+                        <option value="metric">Metric</option>
+                    </select>
+                </span>
+            </span>
+          </div>
+
+          <div>
+            <h2>Medical Information</h2>
+
+            <span><label for="admittingDiagnosis">Admitting Diagnosis </label>
+              <textarea
+                id="admittingDiagnosis"
+                name="admittingDiagnosis"
+                rows="4"
+                cols="50"
+              ></textarea>
+            </span>
+
+            <h2>Alerts</h2>
+            <span><label for="medicalAlerts">Medical Alerts </label>
+              <textarea
+                id="medicalAlerts"
+                name="medicalAlerts"
+                rows="4"
+                cols="50"
+              ></textarea>
+            </span>
+
+            <span><label for="allergies">Allergies </label>
+              <textarea
+                id="allergies"
+                name="allergies"
+                rows="4"
+                cols="50"
+              ></textarea>
+            </span>
+
+            <h2>Institution</h2>
+            <span><label for="institution">Institution Name </label>
+              <select id="institution" name="institution">
+                <option value="" selected>Select</option>
+                <option value="hospital1">Institution 1</option>
+                <option value="hospital2">Institution 2</option>
+                <option value="hospital3">Institution 3</option>
+              </select></span>
+            
+              <span>
+                <label for="performingPhysician">Performing Physician </label>
+                <textarea
+                  id="performingPhysician"
+                  name="performingPhysician"
+                  rows="4"
+                  cols="50"
+                ></textarea>
+              </span>
+              <span>
+                <label for="refPhysician">Referring Physician </label>
+                <select id="refPhysician" name="refPhysician">
+                  <option value="" selected>Select</option>
+                  <option value="physician1">Physician 1</option>
+                  <option value="physician2">Physician 2</option>
+                  <option value="physician3">Physician 3</option>
+                </select>
+              </span>
+              <span>
+                <label for="reqPhysician">Requesting Physician </label>
+                <select id="reqPhysician" name="reqPhysician">
+                  <option value="" selected>Select</option>
+                  <option value="physician1">Physician 1</option>
+                  <option value="physician2">Physician 2</option>
+                  <option value="physician3">Physician 3</option>
+                </select>
+              </span>
+              <span>
+                <label for="operator">Operator </label>
+                <textarea
+                  id="operator"
+                  name="operator"
+                  rows="4"
+                  cols="50"
+                ></textarea>
+            </span>
+
+          </div>
+
+          <div>
+                <h2>Examination Information</h2>
+
+                <div class="box">
+                    <h3>Procedure</h3>
+                    <span>
+                        <label for="accessionNr">Accession Nr. </label>
+                        <input type="text" id="accessionNr" name="accessionNr"/>
+                    </span>
+                    <span>
+                        <label for="reqProcId">Req. Proc. ID</label>
+                        <input type="text" id="reqProcId" name="reqProcId"/>
+                    </span>
+                    <span>
+                        <label for="studyDesc">Study Description</label>
+                        <input type="text" id="studyDesc" name="studyDesc"/>
+                    </span>
+                    <span>
+                        <label for="studyComments">Study Comments</label>
+                        <input type="text" id="studyComments" name="studyComments"/>
+                    </span>
+                </div>
+                
+                <h2>Program Selection</h2>
+                <div class="inline-flex"> <b class="mandatory"> * </b> &nbsp;
+                    <select required id="programSelection" name="programSelection">
+                        <option value="0" selected>...&#187; WorkflowSimulation >> Other</option>
+                    </select>
+                </div>
+                
+                <h2>RF Transmit Mode</h2>
+                <div class="inline-flex"> <b class="mandatory"> * </b> &nbsp;
+                    <select required id="rfTransmit" name="rfTransmit">
+                        <option value="0" selected>Any Polarization</option>
+                    </select>
+                </div>
+                
+
+                <h2>Body Part and Laterality</h2>
+                <div class="inline-flex"> 
+                  <b class="mandatory"> * </b> &nbsp;
+                  <select required id="bodyPart" name="bodyPart">
+                      <option value="" disabled selected>Select</option>
+                      <option value="abdomen">Abdomen</option>
+                      <option value="abdomenpelvis">AbdomenPelvis</option>
+                      <option value="ankle">Ankle</option>
+                      <option value="aorta">Aorta</option>
+                      <option value="arm">Arm</option>
+                      <option value="axilla">Axilla</option>
+                      <option value="back">Back</option>
+                      <option value="bladder">Bladder</option>
+                      <option value="breast">Breast</option>
+                      <option value="brain">Brain</option>
+                      <option value="bronchus">Bronchus</option>
+                      <option value="calcaneus">Calcaneus</option>
+                      <option value="calf">Calf</option>
+                      <option value="carotid">Carotid</option>
+                      <option value="cerebellum">Cerebellum</option>
+                      <option value="cervix">Cervix</option>
+                      <option value="chest">Chest</option>
+                      <option value="chestabdomen">ChestAbdomen</option>
+                      <option value="chestabdpelvis">ChestAbdPelvis</option>
+                      <option value="circleofwillis">CircleOfWillis</option>
+                      <option value="clavicle">Clavicle</option>
+                      <option value="coccyx">Coccyx</option>
+                      <option value="colon">Colon</option>
+                      <option value="coronaryartery">CoronaryArtery</option>
+                      <option value="cspine">C-Spine</option>
+                      <option value="ctspine">CtSpine</option>
+                      <option value="duodenum">Duodenum</option>
+                      <option value="ear">Ear</option>
+                      <option value="elbow">Elbow</option>
+                      <option value="esophagus">Esophagus</option>
+                      <option value="extremity">Extremity</option>
+                      <option value="eye">Eye</option>
+                      <option value="femur">Femur</option>
+                      <option value="finger">Finger</option>
+                      <option value="foot">Foot</option>
+                      <option value="gallbladder">GallBladder</option>
+                      <option value="hand">Hand</option>
+                      <option value="head">Head</option>
+                      <option value="headneck">HeadNeck</option>
+                      <option value="heart">Heart</option>
+                      <option value="hip">Hip</option>
+                      <option value="humerus">Humerus</option>
+                      <option value="iac">IAC</option>
+                      <option value="ileum">Ileum</option>
+                      <option value="ilium">Ilium</option>
+                      <option value="jaw">Jaw</option>
+                      <option value="jawmandible">Jaw(Mandible)</option>
+                      <option value="jejunum">Jejunum</option>
+                      <option value="kidney">Kidney</option>
+                      <option value="knee">Knee</option>
+                      <option value="larynx">Larynx</option>
+                      <option value="leg">Leg</option>
+                      <option value="liver">Liver</option>
+                      <option value="lspine">L-Spine</option>
+                      <option value="lsspone">LsSpone</option>
+                      <option value="lung">Lung</option>
+                      <option value="maxilla">Maxilla</option>
+                      <option value="mediastinum">Mediastinum</option>
+                      <option value="mouth">Mouth</option>
+                      <option value="neck">Neck</option>
+                      <option value="neckchest">NeckChest</option>
+                      <option value="neckchestabdomen">NeckChestAbdomen</option>
+                      <option value="neckchestabdpelvis">NeckChestAbdPelvis</option>
+                      <option value="nose">Nose</option>
+                      <option value="orbit">Orbit</option>
+                      <option value="ovary">Ovary</option>
+                      <option value="pancreas">Pancreas</option>
+                      <option value="parotid">Parotid</option>
+                      <option value="patella">Patella</option>
+                      <option value="pelvis">Pelvis</option>
+                      <option value="penis">Penis</option>
+                      <option value="pharynx">Pharynx</option>
+                      <option value="prostate">Prostate</option>
+                      <option value="rectum">Rectum</option>
+                      <option value="rib">Rib</option>
+                      <option value="scapula">Scapula</option>
+                      <option value="scrotum">Scrotum</option>
+                      <option value="shoulder">Shoulder</option>
+                      <option value="skull">Skull</option>
+                      <option value="spine">Spine</option>
+                      <option value="spleen">Spleen</option>
+                      <option value="sspine">S-Spine</option>
+                      <option value="sternum">Sternum</option>
+                      <option value="stomach">Stomach</option>
+                      <option value="submandibular">Submandibular</option>
+                      <option value="testis">Testis</option>
+                      <option value="thigh">Thigh</option>
+                      <option value="thumb">Thumb</option>
+                      <option value="thymus">Thymus</option>
+                      <option value="thyroid">Thyroid</option>
+                      <option value="tlspine">TlSpine</option>
+                      <option value="tmj">TMJ</option>
+                      <option value="toe">Toe</option>
+                      <option value="tongue">Tongue</option>
+                      <option value="trachea">Trachea</option>
+                      <option value="tspine">T-Spine</option>
+                      <option value="ureter">Ureter</option>
+                      <option value="vagina">Vagina</option>
+                      <option value="vulva">Vulva</option>
+                      <option value="wholebody">WholeBody</option>
+                      <option value="wrist">Wrist</option>
+                      <option value="zygoma">Zygoma</option>
+                  </select>
+                  <span class="space">&nbsp;</span>
+                  <select id="laterality" name="laterality" disabled>
+                      <option value="" disabled selected>Unpaired</option>
+                      <option value="left">Left</option>
+                      <option value="right">Right</option>
+                      <option value="bilateral">Both</option>
+                  </select>
+                </div>
+            
+                <h2>Patient Orientation</h2>
+                <div class="inline-flex">
+                  <b class="mandatory"> * </b> &nbsp; 
+                    <button type="button" class="select-btn field-info-safety" id="orientation-btn" name="orientation-btn" title="Select Patient Orientation">
+                        <img src="56caf12afa83679fad99.svg" class="select-btn-icon" id="orientationIcon"/>
+                        <span id="orientationText">Select</span>  
+                        <i class="right fa-solid fa-angle-down"></i>
+                    </button>
+                    
+                </div>
+                
+                <div id="orientationOptions" class="select-options hidden">
+                    <span>
+                        <img src="8ad5f5e579585783cdad.svg" alt="Head First Supine" id="headSupine" class="select-icon" title="Head First Supine"/>
+                        <img src="c41b27adf51c73054f22.svg" alt="Head First Prone" id="headProne" class="select-icon" title="Head First Prone"/>
+                        <img src="855c15e2c6c7f2983908.svg" alt="Head First Lef Lateral" id="headLeft" class="select-icon" />
+                        <img src="733925866ff2f1f0cbec.svg" alt="Head First Right Lateral" id="headRight" class="select-icon" />
+                    </span>
+                    <span>
+                        <img src="2a51cf3c1efbddf8bc79.svg" alt="Feet First Supine" id="feetSupine" class="select-icon" title="Feet First Supine" />
+                        <img src="302dd9b339cb86dbf727.svg" alt="Feet First Prone" id="feetProne" class="select-icon" title="Feet First Prone" />
+                        <img src="a827339719807b6c729e.svg" alt="Feet First Left Lateral" id="feetLeft" class="select-icon" title="Feet First Left Lateral" />
+                        <img src="cd5bd71776692f49a637.svg" alt="Feet First Right Lateral" id="feetRight" class="select-icon" title="Feet First Right Lateral" />
+                    </span>
+                </div>
+                
+                
+          </div>
+
+          <div class="break"></div> 
+          
+        </form>
+        <div id="registration-note" class="center alert" role="alert">
+          <span class="field-info-safety"> 
+            &nbsp;&nbsp; 
+            Safety relevent information needs to be validated and confirmed</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+          <span class="field-info-required"><b class="mandatory"> * </b> Mandatory information</span>
+          <div class="break"></div> 
+        </div>
+      
+        <footer>    
+          <span>
+            <button type="button" class="btn btn-secondary" id="save-btn" disabled>Save</button>
+            <button type="button" class="btn btn-secondary" id="cancel-btn" disabled>Cancel</button>
+            <button type="button" class="btn btn-secondary" id="delete-btn" disabled>Delete</button>
+          </span>
+          <span>
+              <button type="button" class="btn btn-secondary" id="localData-btn" disabled>Local Data</button>
+              <button type="button" class="btn  btn-secondary" id="priorStudies-btn" disabled>Prior Studies</button>
+          </span>
+          <span>
+              <button type="button" class="btn btn-warning" id="exam-btn">Exam</button>
+          </span>
+                      
+        </footer>
+      </section>
+
+    </div>
+    
+  <script defer src="bundle.js"></script></body>
+</html>
