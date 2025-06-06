@@ -7,29 +7,39 @@ Below is a summary of the main features and improvements based on recent GitHub 
 
 ### Main Features
 
-#### Patient registration workflow simulation  
+#### Fillable form based on Siemans MRI user interface
 
-- Fillable form based on Siemans MRI user interface
-  - Patient orientation selection with visual thumbnails and icons
-  - Age calculation based on date of birth
-  - Metric and US measurement unit conversion
+![image](https://github.com/user-attachments/assets/3d3a952c-9593-4289-a2f3-8887ab059870)
 
-- Ability to clear the form from `Delete Procedure`, with confirmation prompt before clearing
-- Validation that mandatory fields are filed before registering patient
-- Ability to `Register Patient`:
+Special Form Features:  
+- **Age** calculation based on **date of birth**
+- Metric and US measurement unit conversion for weight and height
+- **Body part** selected determines if **Laterality** is enabled & set to mandatory
+- **Patient Orientation** selection with icons
+
+#### Registration Options:  
+
+![image](https://github.com/user-attachments/assets/e23976db-7890-4ab0-9152-34c8d6339576)  
+- Only active for new registrations; inactive if user loads registered patient data from **Scheduler**.
+- Ability to clear the form from **Delete Procedure**, with confirmation prompt before clearing
+- Ability to **Register Patient**:
+  - Validae **mandatory** fields are filed before registering patient
   - Adds `schedulerTableRowType` data to sceduler table data
   - Saves `FormDataType` to `__DATA__`
-  - Resorts the table by table index so the most recently added is last row
+  - Re-Sorts the table by table index so the most recently added is last row
 
-#### Scheduler table with sorting functionality
+#### Scheduler table with sorting 
 
-- Ability to load specfied registration data to `Patient Registration` when scehduler row is clicked
+![image](https://github.com/user-attachments/assets/1e8ff3cb-63d1-482b-8fcf-bffa069c1966)
+
+- Sort by row index (1-9) or Patient (A-Z) by toggling the first column header
+- When scehduler row is clicked, load the patient registration info to the form
 - Enable `save`, `cancel`, and `delete` options when saved data is loaded
-  - Deactiviates registration options since the patient is already registered
-  - `save` : Upon confirmation prompt OK, saves the current form fields to `__DATA__` (overwrites existing) & updates scheduler table if associated fields are changed
-  - `cancel`: clears the form, re-enables new patient registration options
-  - `delete`: Upon confirmation prompt OK, deletes patient info from `__DATA__` and assocated scheduler row.
+  - Deactiviates **Registration Options** since the patient is already registered
+  - **Save** : Upon confirmation prompt OK, saves the current form fields to `__DATA__` (overwrites existing) & updates scheduler table if associated fields are changed
+  - **Cancel**: clears the form, re-enables new patient registration options
+  - **Delete**: Upon confirmation prompt OK, deletes patient info from `__DATA__` and assocated scheduler row.
 
 #### Test and QA
 
-For testing, you can use `Prior Studies` to load randomly generated data for mandatory fields.
+For testing, you can use **Prior Studies** to load randomly generated data for mandatory fields.
