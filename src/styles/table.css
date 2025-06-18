@@ -17,3 +17,25 @@
     background-color: #4a4a4a;
     border: 1px solid black;
 }
+
+.table-head-btn {
+    margin:auto;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+th:first-child .table-head-btn {
+    font-size: large;
+    display: flex;
+    justify-content: center;
+}
+
+tbody tr {
+    cursor: pointer;
+}
+tbody tr.selected {
+    outline: 2px solid #ffc720;
+}
