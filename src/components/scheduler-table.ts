@@ -62,7 +62,7 @@ function RemoveSchedulerTableRow(rowIndex?: number) {
 
 // Update the scheduler table data
 function UpdateSchedulerTableRow(rowIndex: number, formdata: FormDataType) {
-    const rowData: schedulerTableRowType = getRowdDataFromFormData(formdata);
+    const rowData: schedulerTableRowType = getRowdDataFromFormData(formdata);SortTableByIndex(); // Resort the table by index
     const row = schedulerTable.rows[rowIndex];
     if (row) {
         row.cells[0].innerText = (rowIndex).toString(); // Update index
@@ -70,7 +70,7 @@ function UpdateSchedulerTableRow(rowIndex: number, formdata: FormDataType) {
         row.cells[2].innerText = rowData.procedure; // Update procedure
     }
     
-    SortTableByIndex(); // Resort the table by index
+    
 }
 
 // Sort table by patient
